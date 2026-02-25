@@ -1,0 +1,85 @@
+import { ChevronLeft, Lightbulb, BookOpen } from 'lucide-react';
+import { TimelineEvent } from '@/data/timelines';
+
+interface Props {
+  event: TimelineEvent;
+  isRead: boolean;
+  onMarkRead: () => void;
+  onBack: () => void;
+}
+
+export default function TimelineEventDetail({ event, isRead, onMarkRead, onBack }: Props) {
+  return (
+    <div className="min-h-screen bg-background pb-24">
+      {/* Hero image */}
+      <div className="relative h-64 w-full bg-muted">
+        <img
+          src={event.image}
+          alt={event.title}
+          className="w-full h-full object-cover"
+          onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+        <button
+          onClick={onBack}
+          className="absolute top-4 left-4 w-9 h-9 bg-white/90 rounded-full flex items-center justify-center shadow"
+        >
+          <ChevronLeft className="w-4 h-4 text-foreground" />
+        </button>
+      </div>
+
+      <div className="max-w-xl mx-auto px-4 py-6">
+        {/* Year badge + title */}
+        <span className="text-xs font-bold text-primary uppercase tracking-wide">{event.year}</span>
+        <h1 className="text-2xl font-bold font-serif mt-1 mb-1 leading-snug">{event.title}</h1>
+
+        {/* Image caption */}
+        {event.imageCaption && (
+          <p className="text-xs text-muted-foreground italic mb-4 leading-relaxed border-l-2 border-border pl-3">
+            {event.imageCaption}
+          </p>
+        )}
+
+        {/* Content */}
+        <div className="space-y-3 mb-6">
+          {event.content.split('\n\n').map((para, i) => (
+            <p key={i} className="text-sm text-foreground leading-relaxed">
+              {para.trim()}
+            </p>
+          ))}
+        </div>
+
+        {/* Fun fact */}
+        {event.funFact && (
+          <div className="bg-[hsl(var(--surface-secondary))] rounded-2xl p-4 mb-6 flex gap-3">
+            <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+              <Lightbulb className="w-4 h-4 text-primary" />
+            </div>
+            <div>
+              <p className="text-xs font-semibold text-primary mb-1">Fun Fact</p>
+              <p className="text-sm text-foreground leading-relaxed">{event.funFact}</p>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Bottom action bar */}
+      <div className="fixed bottom-0 left-0 right-0 bg-background border-t border-border px-4 py-3">
+        <div className="max-w-xl mx-auto">
+          <button
+            onClick={() => { onMarkRead(); onBack(); }}
+            disabled={isRead}
+            className={`w-full py-3 rounded-2xl font-semibold text-sm flex items-center justify-center gap-2 transition-all ${
+              isRead
+                ? 'bg-muted text-muted-foreground cursor-default'
+                : 'bg-primary text-primary-foreground hover:opacity-90'
+            }`}
+          >
+            <BookOpen className="w-4 h-4" />
+            {isRead ? '✓ Marked as Read' : 'Mark as Read'}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}

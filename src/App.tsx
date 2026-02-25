@@ -10,6 +10,8 @@ import LessonPreviewPage from "./pages/LessonPreviewPage";
 import ReadingPage from "./pages/ReadingPage";
 import QuizPage from "./pages/QuizPage";
 import ProfilePage from "./pages/ProfilePage";
+import TimelineCategoriesPage from "./pages/TimelineCategoriesPage";
+import TimelinePage from "./pages/TimelinePage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +30,8 @@ const App = () => (
             <Route path="/read/:courseId/:lessonId" element={<ReadingPage />} />
             <Route path="/quiz/:courseId/:lessonId" element={<QuizPage />} />
             <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/timelines" element={<TimelineCategoriesPage />} />
+            <Route path="/timeline/:categoryId" element={<TimelinePage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
