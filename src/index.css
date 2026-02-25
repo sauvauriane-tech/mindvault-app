@@ -18,6 +18,8 @@
     --primary: 153 41% 30%;
     --primary-foreground: 60 33% 98%;
 
+    --primary-dark: 153 41% 15%;
+
     --secondary: 35 50% 63%;
     --secondary-foreground: 0 0% 10%;
 
@@ -26,6 +28,15 @@
 
     --accent: 35 50% 63%;
     --accent-foreground: 0 0% 10%;
+
+    --accent-light: 35 50% 75%;
+
+    --surface-secondary: 38 43% 95%;
+    --surface-tertiary: 36 33% 90%;
+
+    --streak: 38 91% 60%;
+    --locked: 0 0% 77%;
+    --progress-bg: 36 25% 88%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;

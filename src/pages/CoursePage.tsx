@@ -1,101 +1,88 @@
-import { useParams, useNavigate, Link } from 'react-router-dom';
-import { ChevronLeft, BookOpen, CheckCircle, Lock, Star } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Progress } from '@/components/ui/progress';
-import { Badge } from '@/components/ui/badge';
+import { useParams, useNavigate } from 'react-router-dom';
+import { ChevronLeft, CheckCircle, Lock, BookOpen } from 'lucide-react';
 import { getCourse } from '@/data/content';
-import { useProgress, checkLessonUnlocked as ctxCheck } from '@/context/ProgressContext';
+import { useProgress } from '@/context/ProgressContext';
 import Navbar from '@/components/Navbar';
 
 export default function CoursePage() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const { state, getCourseProgress, getLessonProgress } = useProgress();
+  const { isLessonCompleted, isLessonUnlocked, getLessonProgress } = useProgress();
 
   const course = getCourse(id!);
   if (!course) return <div className="p-8 text-center">Course not found.</div>;
-
-  const progress = getCourseProgress(course.id, course.lessons.length);
 
   return (
     <div className="min-h-screen bg-background pb-24">
       <Navbar />
       <div className="pt-14">
         {/* Hero */}
-        <div className="relative h-52">
-          <img src={course.coverImage} alt={course.title} className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+        <div className="relative h-[280px]">
+          <img src={course.imageUrl} alt={course.title} className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-black/10" />
           <button
             onClick={() => navigate(-1)}
-            className="absolute top-4 left-4 bg-black/40 text-white rounded-full p-1.5 backdrop-blur"
+            className="absolute top-4 left-4 w-9 h-9 rounded-full bg-white/90 flex items-center justify-center shadow-sm"
           >
-            <ChevronLeft className="w-5 h-5" />
+            <ChevronLeft className="w-5 h-5 text-foreground" />
           </button>
-          <div className="absolute bottom-4 left-4 right-4">
-            <Badge className="bg-secondary text-secondary-foreground mb-2 text-xs">{course.topic}</Badge>
-            <h1 className="text-2xl font-bold text-white">{course.title}</h1>
-          </div>
         </div>
 
         <div className="max-w-2xl mx-auto px-4 py-6">
-          {/* Meta */}
-          <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
-            <span className="flex items-center gap-1">
-              <Star className="w-4 h-4 fill-secondary text-secondary" /> {course.rating}
-            </span>
-            <span>{course.estimatedMinutes} min</span>
-            <span>{course.lessons.length} lessons</span>
-          </div>
-
-          {/* Progress */}
-          <div className="mb-6">
-            <div className="flex justify-between text-xs text-muted-foreground mb-1">
-              <span>Course progress</span>
-              <span>{progress}%</span>
-            </div>
-            <Progress value={progress} className="h-2" />
-          </div>
-
-          <h2 className="font-semibold text-lg mb-3">Lessons</h2>
+          <p className="text-xs text-muted-foreground mb-1">Course · {course.lessons.length} lessons</p>
+          <h1 className="font-serif text-2xl font-bold mb-6">{course.title}</h1>
 
           <div className="flex flex-col gap-3">
             {course.lessons.map((lesson, idx) => {
-              const unlocked = ctxCheck(course.lessons, idx, course.id, state);
-              const lp = getLessonProgress(course.id, lesson.id);
+              const unlocked = isLessonUnlocked(course.id, idx);
+              const completed = isLessonCompleted(lesson.id);
+              const lp = getLessonProgress(lesson.id);
+              const isActive = !completed && unlocked;
+
               return (
                 <button
                   key={lesson.id}
                   onClick={() => unlocked && navigate(`/lesson/${course.id}/${lesson.id}`)}
                   disabled={!unlocked}
-                  className={`flex items-center gap-4 p-3 rounded-xl border text-left transition-all ${
-                    unlocked
-                      ? 'bg-card hover:shadow-md cursor-pointer border-border'
-                      : 'bg-muted/50 cursor-not-allowed border-transparent opacity-60'
-                  }`}
+                  className={`flex items-center gap-4 p-3.5 rounded-2xl border text-left transition-all ${
+                    unlocked ? 'bg-card border-border hover:shadow-sm cursor-pointer' : 'bg-card border-border cursor-not-allowed'
+                  } ${!unlocked ? 'opacity-60' : ''}`}
                 >
-                  <img
-                    src={lesson.thumbnail}
-                    alt={lesson.title}
-                    className="w-16 h-16 rounded-lg object-cover shrink-0"
-                  />
+                  {/* Status icon */}
+                  <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 ${
+                    completed
+                      ? 'bg-primary'
+                      : isActive
+                      ? 'border-2 border-primary bg-transparent'
+                      : 'bg-[hsl(var(--locked))]'
+                  }`}>
+                    {completed ? (
+                      <CheckCircle className="w-4 h-4 text-primary-foreground" />
+                    ) : isActive ? (
+                      <div className="w-2 h-2 rounded-full bg-primary" />
+                    ) : (
+                      <Lock className="w-3.5 h-3.5 text-white" />
+                    )}
+                  </div>
+
+                  {/* Text */}
                   <div className="flex-1 min-w-0">
-                    <p className="font-medium text-sm leading-snug">{lesson.title}</p>
-                    <p className="text-xs text-muted-foreground mt-0.5">{lesson.pages.length} pages · {lesson.quiz.length} questions</p>
+                    <p className={`font-medium text-sm leading-snug ${!unlocked ? 'text-muted-foreground' : 'text-foreground'}`}>
+                      {lesson.title}
+                    </p>
                     {lp.quizScore !== undefined && (
                       <span className="inline-block mt-1 text-xs bg-primary/10 text-primary px-2 py-0.5 rounded-full font-medium">
                         Quiz: {lp.quizScore}%
                       </span>
                     )}
                   </div>
-                  <div className="shrink-0">
-                    {lp.completed ? (
-                      <CheckCircle className="w-5 h-5 text-primary" />
-                    ) : !unlocked ? (
-                      <Lock className="w-5 h-5 text-muted-foreground" />
-                    ) : (
-                      <BookOpen className="w-5 h-5 text-muted-foreground" />
-                    )}
-                  </div>
+
+                  {/* Thumbnail */}
+                  <img
+                    src={lesson.imageUrl}
+                    alt={lesson.title}
+                    className="w-[70px] h-[70px] rounded-xl object-cover shrink-0"
+                  />
                 </button>
               );
             })}

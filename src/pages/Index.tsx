@@ -1,103 +1,112 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Flame, Target, Star, Clock, BookOpen, CheckCircle } from 'lucide-react';
-import { Progress } from '@/components/ui/progress';
-import { courses, topics, Topic } from '@/data/content';
-import { useProgress, checkLessonUnlocked } from '@/context/ProgressContext';
+import { ChevronDown, ChevronRight, Flag, Check } from 'lucide-react';
+import { courses, TOPICS, getCoursesByTopic } from '@/data/content';
+import { useProgress } from '@/context/ProgressContext';
 import CourseCard from '@/components/CourseCard';
 import Navbar from '@/components/Navbar';
 
 export default function Index() {
   const navigate = useNavigate();
-  const { state, setSelectedTopic, getCourseProgress } = useProgress();
-  const { selectedTopic, streakDays, todayMinutes, dailyGoalMinutes } = state;
+  const { state, setCurrentTopic, getCourseProgress, getTopicProgress } = useProgress();
+  const { currentTopicId, streak, todayMinutes, dailyGoalMinutes } = state;
+  const [topicOpen, setTopicOpen] = useState(false);
 
-  const filteredCourses = courses.filter(c => c.topic === selectedTopic);
-  const goalProgress = Math.min((todayMinutes / dailyGoalMinutes) * 100, 100);
+  const currentTopic = TOPICS.find(t => t.id === currentTopicId) ?? TOPICS[0];
+  const filteredCourses = getCoursesByTopic(currentTopicId);
+  const topicProgress = getTopicProgress(currentTopicId);
 
   return (
     <div className="min-h-screen bg-background pb-24">
       <Navbar />
       <div className="pt-14">
-        {/* Header stats */}
-        <div className="bg-primary text-primary-foreground px-4 py-5">
-          <div className="max-w-xl mx-auto flex items-center justify-between">
-            <div>
-              <h2 className="text-lg font-bold">Good day, learner! 👋</h2>
-              <p className="text-primary-foreground/70 text-sm">Keep building your knowledge</p>
-            </div>
-            <div className="flex items-center gap-4">
-              {/* Streak */}
-              <div className="text-center">
-                <div className="flex items-center gap-1 text-secondary font-bold text-lg">
-                  <Flame className="w-5 h-5" />
-                  {streakDays}
-                </div>
-                <p className="text-xs text-primary-foreground/70">streak</p>
-              </div>
-              {/* Daily goal ring */}
-              <div className="text-center">
-                <div className="relative w-10 h-10">
-                  <svg className="w-10 h-10 -rotate-90" viewBox="0 0 36 36">
-                    <circle cx="18" cy="18" r="15" fill="none" stroke="rgba(255,255,255,0.2)" strokeWidth="3" />
-                    <circle
-                      cx="18" cy="18" r="15" fill="none"
-                      stroke="hsl(35 50% 63%)"
-                      strokeWidth="3"
-                      strokeDasharray={`${goalProgress * 0.942} 100`}
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                  <Target className="absolute inset-0 m-auto w-4 h-4 text-primary-foreground" />
-                </div>
-                <p className="text-xs text-primary-foreground/70 mt-0.5">{Math.round(todayMinutes)}m</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
         <div className="max-w-xl mx-auto px-4 py-4">
+
+          {/* Stats bar */}
+          <div className="bg-card rounded-2xl border border-border p-4 mb-4 flex items-center">
+            <div className="flex items-center gap-3 flex-1">
+              <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                <Flag className="w-4 h-4 text-primary" />
+              </div>
+              <div>
+                <p className="font-bold text-base leading-none">{Math.round(todayMinutes)} / {dailyGoalMinutes} min</p>
+                <p className="text-xs text-muted-foreground mt-0.5">Daily Goal</p>
+              </div>
+            </div>
+            <div className="w-px h-10 bg-border mx-4" />
+            <div className="text-center flex-1">
+              <p className="font-bold text-3xl leading-none text-[hsl(var(--streak))]">{streak}</p>
+              <p className="text-xs text-muted-foreground mt-0.5">Days Streak</p>
+            </div>
+          </div>
+
           {/* Topic selector */}
-          <div className="mb-5">
-            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Topic</p>
-            <div className="flex gap-2 flex-wrap">
-              {topics.map(topic => (
-                <button
-                  key={topic}
-                  onClick={() => setSelectedTopic(topic)}
-                  className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all border ${
-                    selectedTopic === topic
-                      ? 'bg-primary text-primary-foreground border-primary'
-                      : 'bg-card text-foreground border-border hover:border-primary/40'
-                  }`}
-                >
-                  {topic}
-                </button>
-              ))}
-            </div>
+          <div className="mb-4">
+            <button
+              onClick={() => setTopicOpen(o => !o)}
+              className="w-full flex items-center justify-between px-5 py-3.5 rounded-2xl text-left"
+              style={{ backgroundColor: 'hsl(var(--primary-dark))' }}
+            >
+              <div>
+                <p className="text-xs font-medium opacity-60 text-primary-foreground mb-0.5">Topic</p>
+                <p className="text-lg font-bold text-primary-foreground">{currentTopic.name}</p>
+              </div>
+              <div
+                className="px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1"
+                style={{ backgroundColor: 'rgba(255,255,255,0.15)', color: 'hsl(var(--accent-light))' }}
+              >
+                Change <ChevronDown className="w-3 h-3" />
+              </div>
+            </button>
+
+            {topicOpen && (
+              <div className="mt-1 bg-card rounded-2xl border border-border overflow-hidden shadow-md">
+                {TOPICS.map(topic => (
+                  <button
+                    key={topic.id}
+                    onClick={() => { setCurrentTopic(topic.id); setTopicOpen(false); }}
+                    className="w-full flex items-center justify-between px-5 py-3.5 hover:bg-muted transition-colors text-left"
+                  >
+                    <span className="font-medium text-sm">{topic.name}</span>
+                    {topic.id === currentTopicId && <Check className="w-4 h-4 text-primary" />}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
-          {/* Course grid */}
-          <div className="mb-2 flex items-center justify-between">
-            <h2 className="font-semibold text-base">{selectedTopic} Courses</h2>
-            <span className="text-xs text-muted-foreground">{filteredCourses.length} courses</span>
-          </div>
-
-          {filteredCourses.length === 0 ? (
-            <div className="text-center py-16 text-muted-foreground">
-              <BookOpen className="w-10 h-10 mx-auto mb-3 opacity-40" />
-              <p>No courses yet for this topic.</p>
+          {/* Topic progress */}
+          {topicProgress > 0 && (
+            <div className="mb-4">
+              <div className="flex justify-between text-xs text-muted-foreground mb-1">
+                <span>{currentTopic.name} progress</span>
+                <span>{topicProgress}%</span>
+              </div>
+              <div className="h-1.5 rounded-full bg-[hsl(var(--progress-bg))] overflow-hidden">
+                <div
+                  className="h-full rounded-full bg-primary transition-all"
+                  style={{ width: `${topicProgress}%` }}
+                />
+              </div>
             </div>
-          ) : (
-            <div className="grid grid-cols-2 gap-3">
-              {filteredCourses.map(course => (
+          )}
+
+          {/* Course list */}
+          <div className="flex flex-col gap-4">
+            {filteredCourses.length === 0 ? (
+              <div className="text-center py-16 text-muted-foreground">
+                <p>No courses yet for this topic.</p>
+              </div>
+            ) : (
+              filteredCourses.map(course => (
                 <CourseCard
                   key={course.id}
                   course={course}
                   progress={getCourseProgress(course.id, course.lessons.length)}
                 />
-              ))}
-            </div>
-          )}
+              ))
+            )}
+          </div>
         </div>
       </div>
     </div>

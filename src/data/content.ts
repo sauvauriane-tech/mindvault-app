@@ -1,6 +1,11 @@
-export type Topic = 'History' | 'Culture' | 'Politics' | 'Philosophy';
+export interface Topic {
+  id: string;
+  name: string;
+  icon: string;
+}
 
 export interface QuizQuestion {
+  id: string;
   question: string;
   options: string[];
   correctIndex: number;
@@ -9,14 +14,14 @@ export interface QuizQuestion {
 
 export interface LessonPage {
   title: string;
-  image?: string;
+  imageUrl?: string;
   body: string;
 }
 
 export interface Lesson {
   id: string;
   title: string;
-  thumbnail: string;
+  imageUrl: string;
   pages: LessonPage[];
   quiz: QuizQuestion[];
 }
@@ -24,150 +29,110 @@ export interface Lesson {
 export interface Course {
   id: string;
   title: string;
-  topic: Topic;
-  coverImage: string;
+  topicId: string;
+  imageUrl: string;
   rating: number;
   estimatedMinutes: number;
   lessons: Lesson[];
 }
 
+export const TOPICS: Topic[] = [
+  { id: 'history', name: 'History', icon: 'book' },
+  { id: 'culture', name: 'Culture', icon: 'globe' },
+  { id: 'politics', name: 'Politics', icon: 'flag' },
+  { id: 'philosophy', name: 'Philosophy', icon: 'bulb' },
+];
+
+// Keep a flat topics array for backwards compat
+export const topics = TOPICS;
+
 export const courses: Course[] = [
   {
     id: 'medieval-europe',
-    title: 'Medieval Europe',
-    topic: 'History',
-    coverImage: 'https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=800&q=80',
+    title: 'Medieval Europe: Myths & Realities',
+    imageUrl: 'https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=800&q=80',
+    topicId: 'history',
     rating: 4.8,
-    estimatedMinutes: 25,
+    estimatedMinutes: 20,
     lessons: [
       {
         id: 'real-middle-ages',
         title: 'The Real Middle Ages',
-        thumbnail: 'https://images.unsplash.com/photo-1466442929976-97f336a657be?w=400&q=80',
+        imageUrl: 'https://images.unsplash.com/photo-1564415315949-7a0c4c73aab4?w=800&q=80',
         pages: [
           {
-            title: 'Rethinking the Middle Ages',
-            image: 'https://images.unsplash.com/photo-1466442929976-97f336a657be?w=800&q=80',
-            body: `The Middle Ages — roughly 500 to 1500 CE — are often painted as a dark, stagnant interlude between the glory of ancient Rome and the brilliance of the Renaissance. The reality is far more fascinating.\n\nThis era witnessed the construction of soaring Gothic cathedrals, the birth of universities, advances in agriculture that fed growing cities, and a rich tapestry of trade across continents. Far from being "dark," it was a period of remarkable creativity and complexity.`,
+            title: 'Not as Dark as You Think',
+            imageUrl: 'https://images.unsplash.com/photo-1564415315949-7a0c4c73aab4?w=800&q=80',
+            body: 'The Middle Ages are often called the "Dark Ages," but this label is deeply misleading. Between roughly 500 and 1500 CE, Europe was a place of remarkable creativity, scholarship, and innovation.\n\nDespite the popular image of ignorant, superstitious peasants stumbling through filthy villages, medieval people built soaring cathedrals, wrote sophisticated philosophy, and established the first universities. Places like Bologna (founded 1088), Oxford (circa 1096), and Paris (circa 1150) were thriving centers of learning.\n\nMedieval scholars preserved and expanded upon classical knowledge. Far from rejecting ancient Greek and Roman texts, they translated them, debated them, and built on them. Figures like Thomas Aquinas synthesized Aristotelian philosophy with Christian theology in ways that shaped Western thought for centuries.',
           },
           {
-            title: 'A World of Contrasts',
-            body: `Medieval society was deeply hierarchical but also surprisingly dynamic. At the top sat kings and nobles; below them, clergy; then merchants; and finally, peasants who formed the backbone of the economy.\n\nYet social mobility existed. A talented merchant's son could enter the Church and rise to become a bishop. A skilled craftsman could join a guild and gain civic influence. The rigid picture we often imagine was more fluid than textbooks suggest.`,
-          },
-          {
-            title: 'The Legacy Lives On',
-            body: `Many institutions we take for granted today have medieval roots. Universities at Bologna, Oxford, and Paris were founded in the 11th and 12th centuries. Parliamentary bodies emerged in England and elsewhere. Common law took shape. Even the concept of individual rights began its long journey.\n\nThe Middle Ages were not a pause in progress — they were its foundation.`,
+            title: 'Inventions & Innovations',
+            body: 'The medieval period gave us inventions we still use today. The mechanical clock, eyeglasses, the printing press (late medieval), the heavy plow that transformed European agriculture — all emerged in this era.\n\nWater mills and windmills harnessed natural energy to grind grain and power workshops. The horse collar, invented around the 9th century, allowed horses to pull heavy loads without choking, revolutionizing farming and transport.\n\nGothic architecture, with its pointed arches and flying buttresses, solved engineering problems that had stumped builders for centuries — allowing churches to soar to previously impossible heights while flooding interiors with light through stained glass windows.',
           },
         ],
         quiz: [
-          {
-            question: 'When did the Middle Ages roughly span?',
-            options: ['200–700 CE', '500–1500 CE', '1000–1600 CE', '300–900 CE'],
-            correctIndex: 1,
-            explanation: 'The Middle Ages span from approximately 500 CE (fall of the Western Roman Empire) to 1500 CE (the start of the Renaissance and Age of Exploration).',
-          },
-          {
-            question: 'Which of these was NOT a feature of the Middle Ages?',
-            options: ['Construction of Gothic cathedrals', 'Birth of universities', 'Complete social immobility', 'Growth of trade routes'],
-            correctIndex: 2,
-            explanation: 'While society was hierarchical, social mobility did exist — through the Church, guilds, and trade. Complete immobility is a myth.',
-          },
-          {
-            question: 'Where was one of the first universities founded?',
-            options: ['Florence', 'Bologna', 'Athens', 'Constantinople'],
-            correctIndex: 1,
-            explanation: 'The University of Bologna, founded in 1088, is considered the oldest university in the Western world.',
-          },
+          { id: 'q1', question: 'What was the first European university, founded around 1088?', options: ['Oxford', 'Paris', 'Bologna', 'Cambridge'], correctIndex: 2, explanation: 'The University of Bologna, founded in 1088, is widely considered the first university in the Western world.' },
+          { id: 'q2', question: 'Which medieval invention allowed horses to pull heavy loads without choking?', options: ['The stirrup', 'The horseshoe', 'The horse collar', 'The bridle'], correctIndex: 2, explanation: 'The horse collar, developed around the 9th century, distributed weight across the horse\'s shoulders rather than the throat.' },
         ],
       },
       {
         id: 'peasant-life',
-        title: 'Peasant Life',
-        thumbnail: 'https://images.unsplash.com/photo-1472396961693-142e6e269027?w=400&q=80',
+        title: 'Peasant Life: Harder Than You Know',
+        imageUrl: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80',
         pages: [
           {
-            title: 'The Backbone of Medieval Society',
-            image: 'https://images.unsplash.com/photo-1472396961693-142e6e269027?w=800&q=80',
-            body: `Peasants made up roughly 85–90% of the medieval European population. Their lives revolved around the agricultural calendar — plowing in spring, harvesting in autumn, surviving winter.\n\nMost peasants were serfs, legally bound to the land of a lord. They owed labor — typically three days a week — in exchange for protection and the right to farm their own strips of land.`,
+            title: 'The Village World',
+            imageUrl: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80',
+            body: 'About 90% of medieval Europeans were peasants — farmers tied to the land and the rhythms of the agricultural calendar. Life was hard, but it was not quite the miserable squalor of popular imagination.\n\nMost peasants lived in small villages of perhaps 50 to 150 people, in timber-framed houses with thatched roofs. Families slept together in one or two rooms, often sharing space with their most valuable animals during cold months.\n\nThe peasant diet, while limited, was not as poor as often depicted. Bread was the staple — dark, dense loaves of rye or barley. Peas, beans, onions, and cabbages were common. Ale (safer than water, which was often contaminated) was drunk by men, women, and children alike.',
           },
           {
-            title: 'Daily Life and Resilience',
-            body: `Peasant homes were simple: a single room of timber and thatch, shared with livestock during winter for warmth. Meals were humble — bread, pottage (a thick vegetable stew), and the occasional piece of salted meat.\n\nYet peasant communities were not without joy. Village festivals, saints' days, and communal harvests created bonds of solidarity. Folklore, music, and storytelling flourished after dark.`,
+            title: 'Work, Rest & Feasts',
+            body: 'Peasants worked hard, but they also had considerable time off. Medieval Christianity mandated rest on Sundays and on saints\' days — and there were dozens of saints\' days throughout the year. By some estimates, peasants worked fewer total hours per year than modern office workers.\n\nThe agricultural year had its own rhythm. Spring meant plowing and planting. Summer brought haymaking and tending crops. Autumn was harvest time — the most critical and busiest period. Winter allowed for rest, maintenance of tools, and various craft activities.',
           },
         ],
         quiz: [
-          {
-            question: 'What percentage of medieval Europeans were peasants?',
-            options: ['20–30%', '50–60%', '85–90%', '95–99%'],
-            correctIndex: 2,
-            explanation: 'Peasants formed about 85–90% of the population, making them by far the largest social class.',
-          },
-          {
-            question: 'What was "pottage"?',
-            options: ['A type of pottery', 'A thick vegetable stew', 'A grain storage building', 'A peasant festival'],
-            correctIndex: 1,
-            explanation: 'Pottage was a staple peasant food — a thick soup or stew made from vegetables, grains, and sometimes scraps of meat.',
-          },
+          { id: 'q1', question: 'What percentage of medieval Europeans were peasants?', options: ['About 50%', 'About 70%', 'About 90%', 'About 30%'], correctIndex: 2, explanation: 'Approximately 90% of medieval Europeans were peasants who farmed the land.' },
+          { id: 'q2', question: 'Why did medieval peasants commonly drink ale instead of water?', options: ['Water was expensive', 'Water was often contaminated and unsafe', 'Ale was cheaper to produce', 'Religious rules required it'], correctIndex: 1, explanation: 'Water sources were frequently contaminated. The brewing process for ale killed most pathogens, making it safer to drink.' },
         ],
       },
       {
-        id: 'monks-saved-knowledge',
+        id: 'monks-knowledge',
         title: 'How Monks Saved Knowledge',
-        thumbnail: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=400&q=80',
+        imageUrl: 'https://images.unsplash.com/photo-1568667256549-094345857637?w=800&q=80',
         pages: [
           {
-            title: 'The Great Preservation',
-            image: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800&q=80',
-            body: `When the Roman Empire collapsed, its vast libraries faced destruction, neglect, and looting. Much ancient knowledge — Greek philosophy, Roman law, medical treatises — teetered on the edge of oblivion.\n\nInto this void stepped monastic communities. Benedictine monks, following Saint Benedict's Rule, made copying manuscripts a sacred duty. Scriptoria — dedicated writing rooms — buzzed with the scratch of quill on vellum.`,
+            title: 'Scriptoria: The Knowledge Factories',
+            imageUrl: 'https://images.unsplash.com/photo-1568667256549-094345857637?w=800&q=80',
+            body: 'When the Western Roman Empire collapsed in the 5th century, vast amounts of knowledge were at risk of being lost forever. It was largely Christian monasteries that preserved the intellectual heritage of the ancient world.\n\nEvery major monastery had a scriptorium — a room dedicated to copying manuscripts. Monks worked for hours each day, painstakingly transcribing ancient texts by hand. They copied not just religious works but classical literature, philosophy, science, and medicine.\n\nWithout the monks of Ireland, England, France, Germany, and Italy, we might never have heard of Cicero, Virgil, or Plato.',
           },
           {
-            title: 'Illuminated Manuscripts',
-            body: `Monks didn't merely copy — they created. Illuminated manuscripts like the Book of Kells are masterpieces of art and devotion, adorned with gold leaf, vivid pigments, and intricate knotwork.\n\nBeyond the Bible, monks preserved works of Aristotle, Cicero, Virgil, and medical texts of Galen. Without monastic libraries, vast swaths of classical learning would have been lost forever.`,
+            title: 'Monasteries as Centers of Learning',
+            body: 'Monasteries were far more than just places of prayer. They ran hospitals for the sick, hospices for travelers, schools for local children, and agricultural estates that pioneered new farming techniques.\n\nBenedictine monks, following the Rule of Saint Benedict, divided their day between prayer, work, and study. This balance between intellectual and physical labor made monasteries unusually productive institutions.',
           },
         ],
         quiz: [
-          {
-            question: 'What was a scriptorium?',
-            options: ['A type of medieval weapon', 'A room for copying manuscripts', 'A musical instrument', 'A monastic garden'],
-            correctIndex: 1,
-            explanation: 'A scriptorium was a dedicated room in a monastery where monks copied manuscripts — a crucial task for preserving knowledge.',
-          },
-          {
-            question: 'Which famous illustrated manuscript was created by monks?',
-            options: ['The Magna Carta', 'The Book of Kells', 'The Domesday Book', 'The Canterbury Tales'],
-            correctIndex: 1,
-            explanation: 'The Book of Kells, created around 800 CE by Celtic monks, is one of the most celebrated illuminated manuscripts in the world.',
-          },
+          { id: 'q1', question: 'What was a scriptorium?', options: ['A medieval prison', 'A room in a monastery for copying manuscripts', 'A type of musical instrument', 'A surgical tool'], correctIndex: 1, explanation: 'A scriptorium was a dedicated room in a monastery where monks copied manuscripts.' },
+          { id: 'q2', question: 'Who was the Venerable Bede?', options: ['A French king', 'A Roman general', 'An English monk and scholar', 'A medieval pope'], correctIndex: 2, explanation: 'The Venerable Bede (672–735) was an English Benedictine monk considered the "Father of English History."' },
         ],
       },
       {
         id: 'flat-earth-myth',
         title: 'The Flat Earth Myth',
-        thumbnail: 'https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?w=400&q=80',
+        imageUrl: 'https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=800&q=80',
         pages: [
           {
-            title: 'Did Medieval People Think the Earth Was Flat?',
-            image: 'https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?w=800&q=80',
-            body: `One of the most persistent myths about the Middle Ages is that educated people believed the Earth was flat. This is simply not true.\n\nAncient Greeks had already proven the Earth was spherical. Eratosthenes calculated its circumference with impressive accuracy around 240 BCE. Medieval scholars inherited and built upon this knowledge — they knew perfectly well that the Earth was a sphere.`,
+            title: 'Did Medieval People Think Earth Was Flat?',
+            imageUrl: 'https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=800&q=80',
+            body: 'One of the most persistent myths about the Middle Ages is that people believed the Earth was flat. This is almost entirely false. Educated medieval people — and even most ordinary people — knew perfectly well that the Earth was round.\n\nThe ancient Greeks had established the Earth\'s spherical shape through careful observation and reasoning. By around 240 BCE, Eratosthenes had even calculated the Earth\'s circumference with remarkable accuracy.',
           },
           {
             title: 'Where Did the Myth Come From?',
-            body: `The idea that medieval people believed in a flat Earth was largely invented in the 19th century — particularly by Washington Irving in his fictionalized biography of Columbus (1828), which falsely depicted scholars opposing Columbus on flat-Earth grounds.\n\nIn reality, Columbus's critics were right that his distance calculations were wrong. He was lucky that the Americas happened to be in the way, otherwise his crew would have run out of supplies.`,
+            body: 'The myth that medieval people believed in a flat Earth was largely invented in the 19th century — particularly by Washington Irving in his 1828 fictionalized biography of Christopher Columbus.\n\nColumbus\'s contemporaries did not think he would fall off the edge of the world. They thought (correctly) that he was underestimating the distance to Asia.',
           },
         ],
         quiz: [
-          {
-            question: 'Who calculated the Earth\'s circumference around 240 BCE?',
-            options: ['Aristotle', 'Ptolemy', 'Eratosthenes', 'Plato'],
-            correctIndex: 2,
-            explanation: 'Eratosthenes used shadows and geometry to calculate the Earth\'s circumference with remarkable accuracy — knowledge that was well-known in medieval universities.',
-          },
-          {
-            question: 'Who popularized the myth that medieval people believed in a flat Earth?',
-            options: ['Christopher Columbus', 'Washington Irving', 'Galileo Galilei', 'Thomas Aquinas'],
-            correctIndex: 1,
-            explanation: 'Washington Irving\'s 1828 fictionalized biography of Columbus invented the story of flat-Earth opponents — a myth that stuck in popular culture.',
-          },
+          { id: 'q1', question: 'Who calculated the Earth\'s circumference in ancient times with remarkable accuracy?', options: ['Aristotle', 'Plato', 'Eratosthenes', 'Ptolemy'], correctIndex: 2, explanation: 'Eratosthenes calculated the Earth\'s circumference around 240 BCE using the angle of shadows at different locations.' },
+          { id: 'q2', question: 'What was Columbus\'s actual error regarding the Earth?', options: ['He thought it was flat', 'He underestimated the Earth\'s circumference', 'He thought Asia was to the east', 'He believed in sea monsters'], correctIndex: 1, explanation: 'Columbus underestimated the Earth\'s circumference, thinking it was much smaller than it is.' },
         ],
       },
     ],
@@ -175,296 +140,144 @@ export const courses: Course[] = [
   {
     id: 'ancient-egypt',
     title: 'Mysteries of Ancient Egypt',
-    topic: 'History',
-    coverImage: 'https://images.unsplash.com/photo-1539768942893-daf53e448371?w=800&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=800&q=80',
+    topicId: 'history',
     rating: 4.9,
-    estimatedMinutes: 15,
+    estimatedMinutes: 12,
     lessons: [
       {
-        id: 'who-built-pyramids',
-        title: 'Who Built the Pyramids?',
-        thumbnail: 'https://images.unsplash.com/photo-1539768942893-daf53e448371?w=400&q=80',
+        id: 'pyramid-builders',
+        title: 'Who Really Built the Pyramids?',
+        imageUrl: 'https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=800&q=80',
         pages: [
           {
             title: 'Not Slaves — Skilled Workers',
-            image: 'https://images.unsplash.com/photo-1539768942893-daf53e448371?w=800&q=80',
-            body: `For centuries, the popular image of pyramid builders was one of enslaved masses whipped under the desert sun. Archaeological evidence tells a very different story.\n\nExcavations near Giza have uncovered a workers' village — complete with bakeries, breweries, and a medical facility. The workers who built the Great Pyramid were paid laborers, well-fed and cared for, who received medical treatment and were buried with honor near the pharaoh they served.`,
+            imageUrl: 'https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=800&q=80',
+            body: 'The popular image of thousands of slaves being whipped as they drag massive stones under the Egyptian sun is wrong. Archaeological evidence discovered since the 1990s paints a very different picture.\n\nThe pyramid builders were skilled Egyptian workers — craftsmen, engineers, and laborers who were paid in food, beer, and medical care. Their village has been excavated near Giza: a well-planned settlement with bakeries, breweries, and even a hospital.',
           },
           {
-            title: 'Engineering Mastery',
-            body: `The Great Pyramid of Giza contains over 2.3 million stone blocks, some weighing up to 80 tons. Ancient Egyptians moved these without wheels or iron tools — using sledges, water lubrication, ramps, and organized labor teams.\n\nRecent discoveries of a papyrus diary — the oldest ever found — describes in detail how workers ferried limestone blocks by boat along a specially constructed canal system. The logistics were staggering in their sophistication.`,
+            title: 'How Was It Done?',
+            body: 'The logistics of building the Great Pyramid of Giza are staggering. About 2.3 million stone blocks, averaging 2.5 tons each, were quarried, transported, and precisely placed.\n\nModern experiments and computer modeling have shown that relatively small teams could move the stones using wooden sledges, water-lubricated sand, and ramps. A workforce of around 20,000–30,000 workers could have built the Great Pyramid over 20 years.',
           },
         ],
         quiz: [
-          {
-            question: 'How were pyramid workers treated according to archaeological evidence?',
-            options: ['They were enslaved', 'They were paid and received medical care', 'They were prisoners of war', 'They were volunteers'],
-            correctIndex: 1,
-            explanation: 'Archaeological evidence including a workers\' village with medical facilities shows pyramid builders were paid laborers who received care and were buried with honor.',
-          },
-          {
-            question: 'How many stone blocks does the Great Pyramid contain?',
-            options: ['About 500,000', 'About 1 million', 'Over 2.3 million', 'About 5 million'],
-            correctIndex: 2,
-            explanation: 'The Great Pyramid contains over 2.3 million stone blocks, an astonishing feat of organization and engineering.',
-          },
+          { id: 'q1', question: 'What have archaeologists found near Giza about pyramid builders?', options: ['A slave market', 'A workers\' village with bakeries and a hospital', 'A royal tomb', 'A military barracks'], correctIndex: 1, explanation: 'Archaeologists excavated a workers\' village near Giza showing the builders were skilled, well-fed workers, not slaves.' },
+          { id: 'q2', question: 'What ancient document gives direct evidence about pyramid construction?', options: ['The Book of the Dead', 'The Rosetta Stone', 'The diary of overseer Merer', 'The Ebers Papyrus'], correctIndex: 2, explanation: 'The diary of Merer, discovered in 2013, describes the transportation of limestone blocks to Giza.' },
         ],
       },
       {
-        id: 'cleopatra-beyond-myth',
-        title: 'Cleopatra Beyond the Myth',
-        thumbnail: 'https://images.unsplash.com/photo-1554907984-15263bfd63bd?w=400&q=80',
+        id: 'cleopatra',
+        title: 'Cleopatra: Beyond the Myth',
+        imageUrl: 'https://images.unsplash.com/photo-1569949381669-ecf31ae8e613?w=800&q=80',
         pages: [
           {
             title: 'The Real Cleopatra',
-            image: 'https://images.unsplash.com/photo-1554907984-15263bfd63bd?w=800&q=80',
-            body: `Cleopatra VII is often remembered primarily for her romantic relationships with Julius Caesar and Mark Antony. But this framing erases her true significance as one of history's most politically brilliant rulers.\n\nShe was the first ruler of the Ptolemaic dynasty — which had ruled Egypt for 275 years — to actually learn the Egyptian language. She also spoke nine other languages, including Ethiopian, Hebrew, Arabic, and Parthian.`,
+            imageUrl: 'https://images.unsplash.com/photo-1569949381669-ecf31ae8e613?w=800&q=80',
+            body: 'Cleopatra VII was far more remarkable than Hollywood suggests. She was not primarily known for her looks but for her extraordinary intelligence and political skill.\n\nCleopatra was the first ruler of her dynasty to actually learn the Egyptian language. She spoke nine languages in total. Previous Ptolemaic rulers had ruled Egypt for nearly 300 years without learning Egyptian.',
           },
           {
-            title: 'A Political Genius',
-            body: `Cleopatra came to power at 18, co-ruling with her brother. When her brother had her expelled, she allied with Caesar not out of romance but political calculation — it was her best path back to power. The strategy worked brilliantly.\n\nShe ruled Egypt for 21 years, maintained its independence against Rome at a time when Rome was swallowing kingdoms whole, and kept her nation's economy prosperous. Her death, by contrast, brought Egypt directly under Roman control.`,
+            title: 'A Political Mastermind',
+            body: 'Cleopatra\'s relationships with Julius Caesar and Mark Antony were calculated political alliances to protect Egypt\'s independence from the growing Roman Republic.\n\nAfter Caesar\'s assassination, she allied with Mark Antony. Together they tried to create an Eastern empire. When their forces were defeated at the Battle of Actium in 31 BCE, Cleopatra chose death over the humiliation of being paraded through Rome as a captive.',
           },
         ],
         quiz: [
-          {
-            question: 'How many languages could Cleopatra speak?',
-            options: ['2', '5', '10', '15'],
-            correctIndex: 2,
-            explanation: 'Cleopatra spoke approximately 9–10 languages, including Egyptian (which no previous Ptolemaic ruler had bothered to learn), making her exceptional even by today\'s standards.',
-          },
-          {
-            question: 'What happened to Egypt after Cleopatra\'s death?',
-            options: ['It was ruled by her son', 'It became a Roman province', 'It was conquered by Persia', 'It maintained independence'],
-            correctIndex: 1,
-            explanation: 'After Cleopatra\'s death in 30 BCE, Egypt was absorbed into the Roman Empire — exactly what she had spent her reign trying to prevent.',
-          },
+          { id: 'q1', question: 'How many languages did Cleopatra reportedly speak?', options: ['Three', 'Five', 'Nine', 'Fifteen'], correctIndex: 2, explanation: 'Ancient sources indicate Cleopatra spoke nine languages, including Egyptian — the first of her dynasty to do so.' },
+          { id: 'q2', question: 'What was the primary motivation behind Cleopatra\'s alliances?', options: ['Romance and love', 'Protecting Egypt\'s independence from Rome', 'Expanding Egyptian territory', 'Religious devotion'], correctIndex: 1, explanation: 'Cleopatra\'s alliances were politically calculated to protect Egypt from Roman domination.' },
         ],
       },
     ],
   },
   {
-    id: 'great-thinkers',
+    id: 'ancient-philosophy',
     title: 'Great Thinkers of Antiquity',
-    topic: 'Philosophy',
-    coverImage: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&q=80',
+    topicId: 'philosophy',
     rating: 4.7,
-    estimatedMinutes: 20,
+    estimatedMinutes: 10,
     lessons: [
       {
-        id: 'socrates',
-        title: 'Socrates: The Gadfly of Athens',
-        thumbnail: 'https://images.unsplash.com/photo-1580477667995-2b94f01c9516?w=400&q=80',
+        id: 'socrates-method',
+        title: 'Socrates and the Art of Questions',
+        imageUrl: 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&q=80',
         pages: [
           {
-            title: 'A Man Who Wrote Nothing',
-            image: 'https://images.unsplash.com/photo-1580477667995-2b94f01c9516?w=800&q=80',
-            body: `Socrates (469–399 BCE) is one of the most famous philosophers in history — and yet he wrote not a single word. Everything we know about him comes from others, primarily his student Plato, creating an enduring mystery: where does the historical Socrates end and Plato's invention begin?\n\nWhat we can say is that Socrates walked the streets of Athens engaging anyone who would listen in relentless questioning. He asked politicians about justice, poets about beauty, craftsmen about their craft — always revealing that people knew less than they thought.`,
+            title: 'The Man Who Knew Nothing',
+            imageUrl: 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&q=80',
+            body: 'Socrates (470–399 BCE) is one of the most important figures in Western philosophy — and one of the most unusual. He wrote nothing. Everything we know about him comes from others, particularly his student Plato.\n\nSocrates claimed to know nothing — or rather, he claimed that his only wisdom was knowing that he knew nothing. When the Oracle at Delphi declared him the wisest man in Athens, he was puzzled.',
           },
           {
             title: 'The Socratic Method',
-            body: `Socrates's technique — asking probing questions to expose contradictions in someone's thinking — is called the Socratic method or elenchus. It remains the foundation of philosophical inquiry and legal cross-examination today.\n\nHis most famous insight: "I know that I know nothing." True wisdom begins with recognizing the limits of your own knowledge. This intellectual humility was radical in a culture that prized confident expertise.`,
-          },
-          {
-            title: 'Death by Democracy',
-            body: `In 399 BCE, Socrates was put on trial by a jury of 501 Athenian citizens. The charges: impiety toward the gods and corrupting the youth. He was found guilty by a narrow margin and sentenced to death by drinking hemlock.\n\nSocrates refused the chance to escape, arguing that fleeing would violate his obligation to the laws of Athens. His death became the ultimate statement of philosophical integrity — dying for the right to question everything.`,
+            body: 'Socrates developed a distinctive way of pursuing truth: through questions. Rather than lecturing, he would ask questions that exposed the contradictions and hidden assumptions in his interlocutor\'s beliefs.\n\nSocrates was eventually tried and executed by Athens for "corrupting the youth" and "impiety." He accepted the death sentence rather than flee or recant, arguing that an unexamined life is not worth living.',
           },
         ],
         quiz: [
-          {
-            question: 'What is the "Socratic method"?',
-            options: ['Writing long philosophical treatises', 'Using probing questions to reveal contradictions', 'Memorizing ancient texts', 'Debating in formal competitions'],
-            correctIndex: 1,
-            explanation: 'The Socratic method involves asking probing questions to expose contradictions in thinking — a technique Socrates used in conversation and which remains foundational in philosophy and law.',
-          },
-          {
-            question: 'How did Socrates die?',
-            options: ['In battle', 'By natural causes', 'By drinking hemlock', 'By exile'],
-            correctIndex: 2,
-            explanation: 'Socrates was sentenced to death by an Athenian jury and executed by drinking hemlock — a poison — in 399 BCE.',
-          },
-          {
-            question: 'Who wrote down Socrates\'s ideas?',
-            options: ['Aristotle', 'Plato', 'Socrates himself', 'Xenophon only'],
-            correctIndex: 1,
-            explanation: 'Plato is the primary source for Socrates\'s philosophy. Socrates himself wrote nothing — he believed philosophy was a living conversation, not a written text.',
-          },
-        ],
-      },
-      {
-        id: 'aristotle',
-        title: 'Aristotle: The First Scientist',
-        thumbnail: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?w=400&q=80',
-        pages: [
-          {
-            title: 'The Philosopher Who Studied Everything',
-            image: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?w=800&q=80',
-            body: `Aristotle (384–322 BCE) is arguably the single most influential thinker in Western intellectual history. He wrote on biology, physics, poetry, ethics, politics, logic, and psychology — essentially founding most of these as formal disciplines.\n\nUnlike Plato, who sought abstract ideals, Aristotle was fascinated by the physical world. He dissected animals, catalogued plants, and observed the stars — a spirit that makes him recognizable as the first scientist.`,
-          },
-          {
-            title: 'Tutor to Alexander',
-            body: `At age 17, Aristotle left Macedonia for Athens to study at Plato's Academy. He stayed for 20 years. After Plato's death, he eventually became the tutor of a 13-year-old Macedonian prince: Alexander, who would become Alexander the Great.\n\nAristotle's influence on Alexander is fascinating to speculate on. He taught Alexander rhetoric, medicine, philosophy, and science. Alexander reportedly carried a copy of Homer annotated by Aristotle throughout his campaigns.`,
-          },
-        ],
-        quiz: [
-          {
-            question: 'What made Aristotle different from Plato in approach?',
-            options: ['Aristotle only studied mathematics', 'Aristotle focused on the physical world and observation', 'Aristotle rejected philosophy entirely', 'Aristotle only studied politics'],
-            correctIndex: 1,
-            explanation: 'While Plato sought abstract ideal forms, Aristotle was empirical — he studied the physical world through observation, dissection, and cataloguing, making him a forerunner of modern science.',
-          },
-          {
-            question: 'Who was Aristotle\'s most famous student?',
-            options: ['Julius Caesar', 'Socrates', 'Alexander the Great', 'Plato'],
-            correctIndex: 2,
-            explanation: 'Aristotle tutored the young Alexander of Macedon — who became Alexander the Great — teaching him philosophy, medicine, and rhetoric.',
-          },
+          { id: 'q1', question: 'What did the Oracle at Delphi declare about Socrates?', options: ['That he was the most pious man', 'That he was the wisest man in Athens', 'That he would die young', 'That he should rule Athens'], correctIndex: 1, explanation: 'The Oracle declared Socrates the wisest man in Athens, which he investigated by questioning others.' },
+          { id: 'q2', question: 'What was Socrates charged with at his trial?', options: ['Treason and murder', 'Corrupting the youth and impiety', 'Theft and fraud', 'Blasphemy and witchcraft'], correctIndex: 1, explanation: 'Socrates was charged with corrupting the youth and impiety, found guilty, and sentenced to death by hemlock.' },
         ],
       },
     ],
   },
   {
-    id: 'japanese-culture',
-    title: 'The Soul of Japanese Culture',
-    topic: 'Culture',
-    coverImage: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80',
+    id: 'cold-war-politics',
+    title: 'The Cold War Explained',
+    imageUrl: 'https://images.unsplash.com/photo-1584824486509-112e4181ff6b?w=800&q=80',
+    topicId: 'politics',
     rating: 4.6,
-    estimatedMinutes: 18,
+    estimatedMinutes: 10,
     lessons: [
       {
-        id: 'wabi-sabi',
-        title: 'Wabi-Sabi: Beauty in Imperfection',
-        thumbnail: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=400&q=80',
+        id: 'iron-curtain',
+        title: 'Behind the Iron Curtain',
+        imageUrl: 'https://images.unsplash.com/photo-1584824486509-112e4181ff6b?w=800&q=80',
         pages: [
           {
-            title: 'The Art of Impermanence',
-            image: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80',
-            body: `Wabi-sabi is one of Japan's most distinctive aesthetic philosophies — a worldview centered on the acceptance of imperfection, impermanence, and incompleteness. It is in many ways the opposite of Western ideals of beauty, which often celebrate symmetry, permanence, and flawlessness.\n\nThe word combines "wabi" (rustic simplicity, solitary beauty) and "sabi" (the beauty that comes with age and wear). Together, they describe the bittersweet appreciation of things that are worn, weathered, and fading.`,
+            title: 'A World Divided',
+            imageUrl: 'https://images.unsplash.com/photo-1584824486509-112e4181ff6b?w=800&q=80',
+            body: 'The Cold War (1947–1991) was not a traditional war fought with armies on battlefields. It was a prolonged geopolitical, ideological, and economic struggle between two superpowers: the United States and the Soviet Union.\n\nThe term "Iron Curtain" was popularized by Winston Churchill in a 1946 speech. It described the division of Europe into Western liberal democracies and Eastern Soviet-dominated communist states.',
           },
           {
-            title: 'Wabi-Sabi in Practice',
-            body: `You see wabi-sabi in the Japanese tea ceremony, where rough, asymmetrical pottery is prized over perfectly smooth porcelain. You see it in the art of kintsugi — repairing broken pottery with gold lacquer, making the cracks themselves the most beautiful feature.\n\nIt's in the appreciation of cherry blossoms (sakura) — beautiful precisely because they fall within days. The Japanese have a word for this: mono no aware — "the pathos of things," a gentle sadness at impermanence that deepens our appreciation of beauty.`,
+            title: 'Ideology and Proxy Wars',
+            body: 'The Cold War was fundamentally a battle of ideas: American capitalism and liberal democracy versus Soviet communism. Both sides believed their system was the natural destiny of humanity.\n\nBecause direct war between nuclear-armed superpowers would risk mutual annihilation, the conflict played out through proxy wars in Korea, Vietnam, Angola, Afghanistan, and dozens of other countries.',
           },
         ],
         quiz: [
-          {
-            question: 'What does "kintsugi" involve?',
-            options: ['Creating perfect symmetrical pottery', 'Repairing broken pottery with gold', 'A type of Japanese flower arrangement', 'A style of calligraphy'],
-            correctIndex: 1,
-            explanation: 'Kintsugi is the art of repairing broken pottery with gold lacquer — making the cracks the most visually striking part, embodying the wabi-sabi acceptance of imperfection.',
-          },
-          {
-            question: 'What is "mono no aware"?',
-            options: ['A Japanese musical form', 'A type of pottery glaze', 'The pathos of impermanence', 'A martial arts philosophy'],
-            correctIndex: 2,
-            explanation: '"Mono no aware" translates as "the pathos of things" — a gentle sadness at the impermanence of beautiful things that deepens our appreciation of them.',
-          },
-        ],
-      },
-      {
-        id: 'samurai-code',
-        title: 'Bushido: The Samurai Code',
-        thumbnail: 'https://images.unsplash.com/photo-1551200744-88c3f30a0c26?w=400&q=80',
-        pages: [
-          {
-            title: 'The Way of the Warrior',
-            image: 'https://images.unsplash.com/photo-1551200744-88c3f30a0c26?w=800&q=80',
-            body: `Bushido — "the way of the warrior" — was the ethical code of the samurai class that shaped Japanese culture for centuries. It emphasized eight virtues: righteousness, courage, benevolence, respect, honesty, honor, loyalty, and self-control.\n\nContrary to their fierce reputation, samurai were expected to be cultivated individuals — poets, calligraphers, and tea ceremony practitioners as well as warriors. The ideal samurai embodied the union of martial and literary arts: "bu" (military) and "bun" (literary).`,
-          },
-          {
-            title: 'Legacy in Modern Japan',
-            body: `Bushido's influence runs deep in modern Japanese culture. The concepts of giri (duty), on (obligation), and haji (shame) that pervade Japanese social life have roots in the samurai ethical framework.\n\nIn business, the legendary Japanese work ethic and loyalty to the company echo bushido values. In sports, the discipline and respect shown by Japanese athletes — the team that cleaned their stadium after losing the 2022 World Cup — reflects centuries of cultural conditioning.`,
-          },
-        ],
-        quiz: [
-          {
-            question: 'What does "Bushido" literally mean?',
-            options: ['The path of the sword', 'The way of the warrior', 'The code of honor', 'The spirit of Japan'],
-            correctIndex: 1,
-            explanation: 'Bushido means "the way of the warrior" — bu (military/warrior) + do (way/path), the ethical code of the samurai.',
-          },
-          {
-            question: 'Which of these was NOT among the eight virtues of Bushido?',
-            options: ['Courage', 'Wealth', 'Loyalty', 'Honor'],
-            correctIndex: 1,
-            explanation: 'Wealth was not a Bushido virtue. The eight virtues were righteousness, courage, benevolence, respect, honesty, honor, loyalty, and self-control.',
-          },
+          { id: 'q1', question: 'Who popularized the term "Iron Curtain" in a famous 1946 speech?', options: ['Harry Truman', 'Joseph Stalin', 'Winston Churchill', 'Charles de Gaulle'], correctIndex: 2, explanation: 'Winston Churchill used "Iron Curtain" in his 1946 "Sinews of Peace" speech in Fulton, Missouri.' },
+          { id: 'q2', question: 'What does MAD stand for in Cold War strategy?', options: ['Military Armament Division', 'Mutual Alliance Defense', 'Mutually Assured Destruction', 'Military Advancement Doctrine'], correctIndex: 2, explanation: 'MAD stands for Mutually Assured Destruction — nuclear attack by one side would annihilate both, deterring first strikes.' },
         ],
       },
     ],
   },
   {
-    id: 'democracy-origins',
-    title: 'The Origins of Democracy',
-    topic: 'Politics',
-    coverImage: 'https://images.unsplash.com/photo-1525874684015-58379d421a52?w=800&q=80',
-    rating: 4.5,
-    estimatedMinutes: 16,
+    id: 'world-cultures',
+    title: 'Lost Civilizations',
+    imageUrl: 'https://images.unsplash.com/photo-1518638150340-f706e86654de?w=800&q=80',
+    topicId: 'culture',
+    rating: 4.8,
+    estimatedMinutes: 10,
     lessons: [
       {
-        id: 'athenian-democracy',
-        title: 'Athens: The First Democracy',
-        thumbnail: 'https://images.unsplash.com/photo-1555993539-1732b0258235?w=400&q=80',
+        id: 'maya-civilization',
+        title: 'The Maya: Masters of Time',
+        imageUrl: 'https://images.unsplash.com/photo-1518638150340-f706e86654de?w=800&q=80',
         pages: [
           {
-            title: 'Inventing the People\'s Rule',
-            image: 'https://images.unsplash.com/photo-1555993539-1732b0258235?w=800&q=80',
-            body: `In 508 BCE, the Athenian reformer Cleisthenes introduced a radical new system of government: demokratia — "rule by the people." For the first time in recorded history, ordinary citizens (male, free, Athenian-born) would make the laws that governed them.\n\nThe Athenian assembly, the Ekklesia, met 40 times a year. Any eligible citizen could speak and vote. At its peak, perhaps 6,000 citizens attended major sessions. Decisions on war, peace, laws, and finances were made directly — not through representatives.`,
+            title: 'A Civilization of Genius',
+            imageUrl: 'https://images.unsplash.com/photo-1518638150340-f706e86654de?w=800&q=80',
+            body: 'The Maya civilization flourished for over two thousand years in Mesoamerica. At their height (roughly 250–900 CE), the Maya built some of the most sophisticated cities in the ancient world.\n\nMayan cities like Tikal, Palenque, and Chichen Itza featured towering pyramids, elaborate palaces, astronomic observatories, and complex water management systems. Tikal at its peak had a population of perhaps 100,000 people.',
           },
           {
-            title: 'Radical and Flawed',
-            body: `Athenian democracy was genuinely radical for its time — but deeply limited by today's standards. Women had no political rights. Slaves, who made up perhaps 30–40% of the population, were excluded entirely. Foreign residents (metics), even those born in Athens, could not vote.\n\nDemocracy also had its dark moments. It was an Athenian jury of 501 citizens that condemned Socrates to death. Critics like Plato argued passionately that rule by an uneducated mob was dangerous — a debate that has never fully resolved.`,
+            title: 'Mathematics, Astronomy & Collapse',
+            body: 'The Maya made extraordinary advances in mathematics and astronomy. They independently developed the concept of zero — one of history\'s most important mathematical innovations. Their calendar system was so precise it rivals our own.\n\nThe "Classic Maya Collapse" between 800 and 1000 CE saw the abandonment of major southern lowland cities. But the Maya did not disappear — millions of Maya people live in Mexico and Central America today.',
           },
         ],
         quiz: [
-          {
-            question: 'What does "demokratia" mean?',
-            options: ['Rule by the wise', 'Rule by the people', 'Rule by law', 'Rule by consent'],
-            correctIndex: 1,
-            explanation: 'Demokratia combines "demos" (people) and "kratos" (rule/power) — literally "rule by the people."',
-          },
-          {
-            question: 'Who introduced democracy in Athens around 508 BCE?',
-            options: ['Pericles', 'Solon', 'Cleisthenes', 'Themistocles'],
-            correctIndex: 2,
-            explanation: 'Cleisthenes introduced the democratic reforms in 508 BCE, earning him the title "Father of Athenian Democracy."',
-          },
-        ],
-      },
-      {
-        id: 'magna-carta',
-        title: 'Magna Carta: Limiting Power',
-        thumbnail: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=400&q=80',
-        pages: [
-          {
-            title: 'The Great Charter',
-            image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80',
-            body: `In June 1215, a group of rebellious barons forced King John of England to put his seal on a document that would change the course of history: Magna Carta, the "Great Charter."\n\nAt its core was a revolutionary idea: even the king was subject to the law. No free man could be imprisoned, dispossessed, or harmed except by the lawful judgment of his peers. This principle — that power has limits — became the seed from which constitutional democracy grew.`,
-          },
-          {
-            title: 'Why It Still Matters',
-            body: `Most of Magna Carta's 63 original clauses dealt with specific medieval grievances that are long irrelevant. But a handful of clauses planted ideas that grew into some of the most important principles in democratic governance.\n\nHabeas corpus (the right not to be imprisoned without charge), due process, and the rule of law all trace ancestry to this muddy field in Runnymede. The U.S. Constitution and the Universal Declaration of Human Rights both bear its imprint.`,
-          },
-        ],
-        quiz: [
-          {
-            question: 'When was Magna Carta signed?',
-            options: ['1066', '1215', '1348', '1485'],
-            correctIndex: 1,
-            explanation: 'Magna Carta was sealed by King John of England in June 1215 at Runnymede, a meadow beside the River Thames.',
-          },
-          {
-            question: 'What was the revolutionary core idea of Magna Carta?',
-            options: ['All men are equal', 'The king is subject to the law', 'Parliament should govern', 'The church has supreme power'],
-            correctIndex: 1,
-            explanation: 'Magna Carta\'s revolutionary core was that even the king must obey the law — planting the seed of constitutional governance and the rule of law.',
-          },
+          { id: 'q1', question: 'What major mathematical concept did the Maya independently develop?', options: ['Pi', 'The decimal system', 'Zero', 'The square root'], correctIndex: 2, explanation: 'The Maya independently developed the concept of zero, enabling complex calculations and a precise calendar.' },
+          { id: 'q2', question: 'Approximately how large was the Maya city of Tikal at its peak?', options: ['10,000 people', '100,000 people', '500,000 people', '1 million people'], correctIndex: 1, explanation: 'Tikal at its peak had a population estimated at around 100,000 people.' },
         ],
       },
     ],
   },
 ];
-
-export const topics: Topic[] = ['History', 'Culture', 'Politics', 'Philosophy'];
 
 export function getCourse(id: string): Course | undefined {
   return courses.find(c => c.id === id);
@@ -478,6 +291,6 @@ export function getLesson(courseId: string, lessonId: string): { course: Course;
   return { course, lesson };
 }
 
-export function getCoursesByTopic(topic: Topic): Course[] {
-  return courses.filter(c => c.topic === topic);
+export function getCoursesByTopic(topicId: string): Course[] {
+  return courses.filter(c => c.topicId === topicId);
 }

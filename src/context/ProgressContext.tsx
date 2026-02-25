@@ -1,45 +1,46 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { Topic } from '@/data/content';
 
 interface LessonProgress {
-  pagesRead: number;
   completed: boolean;
-  quizScore?: number; // 0-100
+  pagesRead: number;
+  quizScore?: number;
+  quizAnswers?: number[];
 }
 
 interface ProgressState {
-  lessons: Record<string, LessonProgress>; // key: `${courseId}/${lessonId}`
-  selectedTopic: Topic;
-  streakDays: number;
-  lastActiveDate: string; // ISO date string YYYY-MM-DD
-  todayMinutes: number;
+  completedLessons: Record<string, LessonProgress>;
+  currentTopicId: string;
+  streak: number;
+  lastActiveDate: string;
   dailyGoalMinutes: number;
+  todayMinutes: number;
 }
 
 interface ProgressContextValue {
   state: ProgressState;
-  setSelectedTopic: (topic: Topic) => void;
-  markPageRead: (courseId: string, lessonId: string, pageIndex: number, totalPages: number) => void;
-  markLessonComplete: (courseId: string, lessonId: string) => void;
-  saveQuizScore: (courseId: string, lessonId: string, score: number) => void;
-  addStudyMinutes: (minutes: number) => void;
-  getLessonProgress: (courseId: string, lessonId: string) => LessonProgress;
+  setCurrentTopic: (topicId: string) => void;
+  markPageRead: (lessonId: string, pageIndex: number, totalPages: number) => void;
+  markQuizComplete: (lessonId: string, score: number, answers: number[]) => void;
+  isLessonCompleted: (lessonId: string) => boolean;
   isLessonUnlocked: (courseId: string, lessonIndex: number) => boolean;
-  getCourseProgress: (courseId: string, totalLessons: number) => number; // 0-100
+  getLessonProgress: (lessonId: string) => LessonProgress;
+  getCourseProgress: (courseId: string, totalLessons: number) => number;
+  getTopicProgress: (topicId: string) => number;
+  addMinutes: (minutes: number) => void;
 }
 
 const defaultState: ProgressState = {
-  lessons: {},
-  selectedTopic: 'History',
-  streakDays: 0,
+  completedLessons: {},
+  currentTopicId: 'history',
+  streak: 0,
   lastActiveDate: '',
-  todayMinutes: 0,
   dailyGoalMinutes: 5,
+  todayMinutes: 0,
 };
 
 const ProgressContext = createContext<ProgressContextValue | null>(null);
 
-const STORAGE_KEY = 'mindvault_progress';
+const STORAGE_KEY = '@mindvault_progress';
 
 function loadState(): ProgressState {
   try {
@@ -51,129 +52,129 @@ function loadState(): ProgressState {
   }
 }
 
-function saveState(state: ProgressState) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+function saveState(s: ProgressState) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(s));
 }
 
-function todayISO(): string {
-  return new Date().toISOString().split('T')[0];
+function todayStr(): string {
+  return new Date().toDateString();
+}
+
+// lazy import to avoid circular dep
+async function getCourses() {
+  const { courses } = await import('@/data/content');
+  return courses;
 }
 
 export function ProgressProvider({ children }: { children: React.ReactNode }) {
   const [state, setState] = useState<ProgressState>(() => {
     const loaded = loadState();
-    // Update streak on load
-    const today = todayISO();
+    const today = todayStr();
     if (loaded.lastActiveDate !== today) {
       const yesterday = new Date();
       yesterday.setDate(yesterday.getDate() - 1);
-      const yesterdayStr = yesterday.toISOString().split('T')[0];
-      const newStreak = loaded.lastActiveDate === yesterdayStr ? loaded.streakDays : 0;
-      return { ...loaded, streakDays: newStreak, todayMinutes: 0, lastActiveDate: today };
+      const ysStr = yesterday.toDateString();
+      const newStreak = loaded.lastActiveDate === ysStr ? loaded.streak : 0;
+      return { ...loaded, streak: newStreak, todayMinutes: 0, lastActiveDate: today };
     }
     return loaded;
   });
+
+  // courses cache
+  const [coursesData, setCoursesData] = React.useState<{ id: string; lessons: { id: string }[]; topicId: string }[]>([]);
+  useEffect(() => {
+    getCourses().then(c => setCoursesData(c));
+  }, []);
 
   useEffect(() => {
     saveState(state);
   }, [state]);
 
-  const updateActivity = (s: ProgressState): ProgressState => {
-    const today = todayISO();
-    if (s.lastActiveDate !== today) {
-      const yesterday = new Date();
-      yesterday.setDate(yesterday.getDate() - 1);
-      const yesterdayStr = yesterday.toISOString().split('T')[0];
-      const newStreak = s.lastActiveDate === yesterdayStr ? s.streakDays + 1 : 1;
-      return { ...s, lastActiveDate: today, streakDays: newStreak };
-    }
-    return s;
+  const updateStreak = (s: ProgressState): ProgressState => {
+    const today = todayStr();
+    if (s.lastActiveDate === today) return s;
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    const ysStr = yesterday.toDateString();
+    const newStreak = s.lastActiveDate === ysStr ? s.streak + 1 : 1;
+    return { ...s, lastActiveDate: today, streak: newStreak };
   };
 
-  const setSelectedTopic = (topic: Topic) => {
-    setState(s => ({ ...s, selectedTopic: topic }));
+  const setCurrentTopic = (topicId: string) => {
+    setState(s => ({ ...s, currentTopicId: topicId }));
   };
 
-  const getLessonProgress = (courseId: string, lessonId: string): LessonProgress => {
-    return state.lessons[`${courseId}/${lessonId}`] ?? { pagesRead: 0, completed: false };
+  const getLessonProgress = (lessonId: string): LessonProgress => {
+    return state.completedLessons[lessonId] ?? { pagesRead: 0, completed: false };
   };
 
-  const markPageRead = (courseId: string, lessonId: string, pageIndex: number, totalPages: number) => {
-    const key = `${courseId}/${lessonId}`;
+  const isLessonCompleted = (lessonId: string): boolean => {
+    return state.completedLessons[lessonId]?.completed === true;
+  };
+
+  const isLessonUnlocked = (courseId: string, lessonIndex: number): boolean => {
+    if (lessonIndex === 0) return true;
+    const course = coursesData.find(c => c.id === courseId);
+    if (!course) return false;
+    const prevLesson = course.lessons[lessonIndex - 1];
+    return state.completedLessons[prevLesson.id]?.completed === true;
+  };
+
+  const markPageRead = (lessonId: string, pageIndex: number, _totalPages: number) => {
     setState(s => {
-      const current = s.lessons[key] ?? { pagesRead: 0, completed: false };
+      const current = s.completedLessons[lessonId] ?? { pagesRead: 0, completed: false };
       const pagesRead = Math.max(current.pagesRead, pageIndex + 1);
-      return updateActivity({
+      return {
         ...s,
-        lessons: {
-          ...s.lessons,
-          [key]: { ...current, pagesRead },
+        completedLessons: { ...s.completedLessons, [lessonId]: { ...current, pagesRead } },
+      };
+    });
+  };
+
+  const markQuizComplete = (lessonId: string, score: number, answers: number[]) => {
+    setState(s => {
+      const current = s.completedLessons[lessonId] ?? { pagesRead: 0, completed: false };
+      return updateStreak({
+        ...s,
+        completedLessons: {
+          ...s.completedLessons,
+          [lessonId]: { ...current, completed: true, quizScore: score, quizAnswers: answers },
         },
       });
     });
   };
 
-  const markLessonComplete = (courseId: string, lessonId: string) => {
-    const key = `${courseId}/${lessonId}`;
-    setState(s => {
-      const current = s.lessons[key] ?? { pagesRead: 0, completed: false };
-      return updateActivity({
-        ...s,
-        lessons: { ...s.lessons, [key]: { ...current, completed: true } },
-      });
-    });
-  };
-
-  const saveQuizScore = (courseId: string, lessonId: string, score: number) => {
-    const key = `${courseId}/${lessonId}`;
-    setState(s => {
-      const current = s.lessons[key] ?? { pagesRead: 0, completed: false };
-      return updateActivity({
-        ...s,
-        lessons: { ...s.lessons, [key]: { ...current, completed: true, quizScore: score } },
-      });
-    });
-  };
-
-  const addStudyMinutes = (minutes: number) => {
-    setState(s => updateActivity({ ...s, todayMinutes: s.todayMinutes + minutes }));
-  };
-
-  const isLessonUnlocked = (courseId: string, lessonIndex: number): boolean => {
-    if (lessonIndex === 0) return true;
-    // Need the course's lesson list — look at state
-    // We check if previous lesson is completed by looking at the lessons record
-    // We need courseId + lessonId of previous lesson — this is passed from the page
-    // For now we just look at whether any lesson at index-1 is completed
-    // Callers should pass lessonIds from the course
-    return false; // overridden by the real check below
-  };
-
-  const isLessonUnlockedById = (courseId: string, lessonIndex: number): boolean => {
-    if (lessonIndex === 0) return true;
-    return false;
-  };
-
   const getCourseProgress = (courseId: string, totalLessons: number): number => {
     if (totalLessons === 0) return 0;
-    let completed = 0;
-    Object.keys(state.lessons).forEach(key => {
-      if (key.startsWith(`${courseId}/`) && state.lessons[key].completed) completed++;
-    });
+    const course = coursesData.find(c => c.id === courseId);
+    if (!course) return 0;
+    const completed = course.lessons.filter(l => state.completedLessons[l.id]?.completed).length;
     return Math.round((completed / totalLessons) * 100);
+  };
+
+  const getTopicProgress = (topicId: string): number => {
+    const topicCourses = coursesData.filter(c => c.topicId === topicId);
+    if (topicCourses.length === 0) return 0;
+    const completed = topicCourses.filter(c => getCourseProgress(c.id, c.lessons.length) === 100).length;
+    return Math.round((completed / topicCourses.length) * 100);
+  };
+
+  const addMinutes = (minutes: number) => {
+    setState(s => ({ ...s, todayMinutes: s.todayMinutes + minutes }));
   };
 
   return (
     <ProgressContext.Provider value={{
       state,
-      setSelectedTopic,
+      setCurrentTopic,
       markPageRead,
-      markLessonComplete,
-      saveQuizScore,
-      addStudyMinutes,
-      getLessonProgress,
+      markQuizComplete,
+      isLessonCompleted,
       isLessonUnlocked,
+      getLessonProgress,
       getCourseProgress,
+      getTopicProgress,
+      addMinutes,
     }}>
       {children}
     </ProgressContext.Provider>
@@ -184,17 +185,4 @@ export function useProgress() {
   const ctx = useContext(ProgressContext);
   if (!ctx) throw new Error('useProgress must be used within ProgressProvider');
   return ctx;
-}
-
-// Helper to check if a specific lesson (by index in course.lessons) is unlocked
-export function checkLessonUnlocked(
-  lessons: { id: string }[],
-  lessonIndex: number,
-  courseId: string,
-  progressState: ProgressState
-): boolean {
-  if (lessonIndex === 0) return true;
-  const prevLesson = lessons[lessonIndex - 1];
-  const key = `${courseId}/${prevLesson.id}`;
-  return progressState.lessons[key]?.completed === true;
 }
