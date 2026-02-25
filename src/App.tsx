@@ -3,7 +3,13 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ProgressProvider } from "@/context/ProgressContext";
 import Index from "./pages/Index";
+import CoursePage from "./pages/CoursePage";
+import LessonPreviewPage from "./pages/LessonPreviewPage";
+import ReadingPage from "./pages/ReadingPage";
+import QuizPage from "./pages/QuizPage";
+import ProfilePage from "./pages/ProfilePage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -11,15 +17,21 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <ProgressProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/course/:id" element={<CoursePage />} />
+            <Route path="/lesson/:courseId/:lessonId" element={<LessonPreviewPage />} />
+            <Route path="/read/:courseId/:lessonId" element={<ReadingPage />} />
+            <Route path="/quiz/:courseId/:lessonId" element={<QuizPage />} />
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </ProgressProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );
