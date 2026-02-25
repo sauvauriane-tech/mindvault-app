@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ChevronDown, ChevronRight, Flag, Check } from 'lucide-react';
+import { ChevronDown, ChevronRight, Flag, Check, Scroll } from 'lucide-react';
 import { courses, TOPICS, getCoursesByTopic } from '@/data/content';
 import { useProgress } from '@/context/ProgressContext';
 import CourseCard from '@/components/CourseCard';
@@ -89,6 +89,26 @@ export default function Index() {
                 />
               </div>
             </div>
+          )}
+
+          {/* Timelines banner — shown for History topic */}
+          {currentTopicId === 'history' && (
+            <button
+              onClick={() => navigate('/timelines')}
+              className="w-full flex items-center justify-between rounded-2xl p-4 mb-4 text-left hover:opacity-90 transition-opacity"
+              style={{ background: 'linear-gradient(135deg, hsl(var(--primary-dark)), hsl(var(--primary)))' }}
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center shrink-0">
+                  <Scroll className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <p className="font-bold text-sm text-white">History Timelines</p>
+                  <p className="text-xs text-white/70">French · German · European · Spanish · Italian</p>
+                </div>
+              </div>
+              <ChevronRight className="w-4 h-4 text-white/80 shrink-0" />
+            </button>
           )}
 
           {/* Course list */}
