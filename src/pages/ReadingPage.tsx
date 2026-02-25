@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Progress } from '@/components/ui/progress';
 import { getLesson } from '@/data/content';
 import { useProgress } from '@/context/ProgressContext';
 import Navbar from '@/components/Navbar';
@@ -10,7 +9,7 @@ import Navbar from '@/components/Navbar';
 export default function ReadingPage() {
   const { courseId, lessonId } = useParams<{ courseId: string; lessonId: string }>();
   const navigate = useNavigate();
-  const { markPageRead, markLessonComplete, addStudyMinutes } = useProgress();
+  const { markPageRead, addMinutes } = useProgress();
   const [currentPage, setCurrentPage] = useState(0);
   const startTimeRef = useRef(Date.now());
 
@@ -19,21 +18,20 @@ export default function ReadingPage() {
   useEffect(() => {
     return () => {
       const minutes = (Date.now() - startTimeRef.current) / 60000;
-      if (minutes > 0.1) addStudyMinutes(Math.round(minutes * 10) / 10);
+      if (minutes > 0.1) addMinutes(Math.round(minutes * 10) / 10);
     };
   }, []);
 
   if (!data) return <div className="p-8 text-center">Lesson not found.</div>;
-  const { course, lesson } = data;
+  const { lesson } = data;
   const pages = lesson.pages;
   const page = pages[currentPage];
   const isLast = currentPage === pages.length - 1;
   const progress = ((currentPage + 1) / pages.length) * 100;
 
   const handleNext = () => {
-    markPageRead(courseId!, lessonId!, currentPage, pages.length);
+    markPageRead(lessonId!, currentPage, pages.length);
     if (isLast) {
-      markLessonComplete(courseId!, lessonId!);
       navigate(`/quiz/${courseId}/${lessonId}`);
     } else {
       setCurrentPage(p => p + 1);
@@ -49,13 +47,19 @@ export default function ReadingPage() {
       <Navbar />
       <div className="pt-14">
         {/* Progress bar */}
-        <div className="sticky top-14 z-40 bg-background/95 backdrop-blur border-b border-border px-4 py-2">
-          <div className="max-w-2xl mx-auto flex items-center gap-3">
+        <div className="sticky top-14 z-40 bg-background/95 backdrop-blur border-b border-border">
+          <div className="h-1.5 bg-[hsl(var(--progress-bg))] w-full">
+            <div
+              className="h-full bg-primary transition-all duration-300"
+              style={{ width: `${progress}%` }}
+            />
+          </div>
+          <div className="max-w-2xl mx-auto px-4 py-2 flex items-center gap-3">
             <button onClick={() => navigate(-1)} className="text-muted-foreground hover:text-foreground">
               <ChevronLeft className="w-5 h-5" />
             </button>
-            <Progress value={progress} className="flex-1 h-2" />
-            <span className="text-xs text-muted-foreground whitespace-nowrap">{currentPage + 1} / {pages.length}</span>
+            <span className="text-xs text-muted-foreground flex-1 text-center">{currentPage + 1} / {pages.length}</span>
+            <div className="w-5" />
           </div>
         </div>
 
@@ -63,15 +67,15 @@ export default function ReadingPage() {
           <p className="text-xs font-medium text-primary uppercase tracking-wider mb-1">{lesson.title}</p>
           <h1 className="text-2xl font-bold mb-6">{page.title}</h1>
 
-          {page.image && (
+          {page.imageUrl && (
             <img
-              src={page.image}
+              src={page.imageUrl}
               alt={page.title}
               className="w-full h-52 object-cover rounded-xl mb-6"
             />
           )}
 
-          <div className="prose prose-lg max-w-none">
+          <div className="max-w-none">
             {page.body.split('\n\n').map((para, i) => (
               <p key={i} className="font-serif text-lg leading-relaxed text-foreground mb-4">
                 {para}

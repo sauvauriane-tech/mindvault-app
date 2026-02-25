@@ -1,42 +1,54 @@
 import { Link } from 'react-router-dom';
-import { Star, Clock, Lock } from 'lucide-react';
-import { Card } from '@/components/ui/card';
-import { Progress } from '@/components/ui/progress';
+import { Star, Clock, Headphones } from 'lucide-react';
 import { Course } from '@/data/content';
 
 interface CourseCardProps {
   course: Course;
-  progress: number; // 0-100
+  progress: number;
 }
 
 export default function CourseCard({ course, progress }: CourseCardProps) {
   return (
-    <Link to={`/course/${course.id}`}>
-      <Card className="overflow-hidden hover:shadow-md transition-shadow cursor-pointer group">
-        <div className="relative">
+    <Link to={`/course/${course.id}`} className="block">
+      <div className="rounded-2xl overflow-hidden border border-border bg-[hsl(var(--surface-secondary))] hover:shadow-md transition-shadow">
+        {/* Image */}
+        <div className="relative h-[200px]">
           <img
-            src={course.coverImage}
+            src={course.imageUrl}
             alt={course.title}
-            className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300"
+            className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+          <div className="absolute inset-0 bg-black/10" />
+          {progress > 0 && (
+            <div className="absolute top-3 left-3 bg-primary text-primary-foreground text-xs font-semibold px-2.5 py-1 rounded-full">
+              {progress}%
+            </div>
+          )}
+          <button
+            onClick={e => e.preventDefault()}
+            className="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/90 flex items-center justify-center shadow-sm"
+          >
+            <Headphones className="w-4 h-4 text-foreground" />
+          </button>
         </div>
-        <div className="p-3">
-          <h3 className="font-semibold text-sm leading-tight mb-2 line-clamp-2">{course.title}</h3>
-          <div className="flex items-center gap-3 text-xs text-muted-foreground mb-2">
-            <span className="flex items-center gap-0.5">
-              <Star className="w-3 h-3 fill-secondary text-secondary" />
-              {course.rating}
-            </span>
-            <span className="flex items-center gap-0.5">
-              <Clock className="w-3 h-3" />
-              {course.estimatedMinutes}m
-            </span>
-          </div>
-          <Progress value={progress} className="h-1.5" />
-          <p className="text-xs text-muted-foreground mt-1">{progress}% complete</p>
+
+        {/* Content */}
+        <div className="px-5 py-4 text-center">
+          <p className="text-xs text-muted-foreground mb-1">
+            {course.lessons.length} lessons · {course.estimatedMinutes} min ·{' '}
+            <Star className="w-3 h-3 inline fill-[hsl(var(--secondary))] text-[hsl(var(--secondary))]" />{' '}
+            {course.rating}
+          </p>
+          <h3 className="font-serif text-xl font-semibold text-foreground mb-3 leading-snug">
+            {course.title}
+          </h3>
+          {progress === 0 && (
+            <div className="inline-flex items-center px-6 py-2 rounded-full bg-foreground text-background text-sm font-semibold">
+              Start
+            </div>
+          )}
         </div>
-      </Card>
+      </div>
     </Link>
   );
 }
