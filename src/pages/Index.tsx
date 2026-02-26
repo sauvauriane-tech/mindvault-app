@@ -92,42 +92,71 @@ export default function Index() {
             </div>
           )}
 
-          {/* Timelines banner — shown for History topic */}
-          {currentTopicId === 'history' && (
-            <button
-              onClick={() => navigate('/timelines')}
-              className="w-full flex items-center justify-between rounded-2xl p-4 mb-4 text-left hover:opacity-90 transition-opacity"
-              style={{ background: 'linear-gradient(135deg, hsl(var(--primary-dark)), hsl(var(--primary)))' }}
-            >
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center shrink-0">
-                  <Scroll className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <p className="font-bold text-sm text-white">History Timelines</p>
-                  <p className="text-xs text-white/70">French · German · European · Spanish · Italian</p>
-                </div>
-              </div>
-              <ChevronRight className="w-4 h-4 text-white/80 shrink-0" />
-            </button>
-          )}
+          {/* History topic: show timeline categories */}
+          {currentTopicId === 'history' ? (
+            <div className="flex flex-col gap-3">
+              <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Full Timelines</p>
+              {TIMELINE_CATEGORIES.map(cat => {
+                const events = getTimelineForCategory(cat.id);
+                return (
+                  <button
+                    key={cat.id}
+                    onClick={() => navigate(`/timeline/${cat.id}`)}
+                    className="w-full flex items-center justify-between bg-card rounded-2xl border border-border p-4 text-left hover:border-primary/50 hover:shadow-md transition-all group"
+                  >
+                    <div className="flex-1 min-w-0">
+                      <p className="font-semibold text-sm text-foreground">{cat.name}</p>
+                      <p className="text-xs text-muted-foreground mt-0.5 leading-snug">{cat.description}</p>
+                      <div className="flex items-center gap-1 mt-2 text-xs text-muted-foreground">
+                        <Clock className="w-3 h-3" />
+                        <span>{events.length} events</span>
+                      </div>
+                    </div>
+                    <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors ml-3 shrink-0" />
+                  </button>
+                );
+              })}
 
-          {/* Course list */}
-          <div className="flex flex-col gap-4">
-            {filteredCourses.length === 0 ? (
-              <div className="text-center py-16 text-muted-foreground">
-                <p>No courses yet for this topic.</p>
-              </div>
-            ) : (
-              filteredCourses.map(course => (
-                <CourseCard
-                  key={course.id}
-                  course={course}
-                  progress={getCourseProgress(course.id, course.lessons.length)}
-                />
-              ))
-            )}
-          </div>
+              <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mt-3">Recent History</p>
+              {TIMELINE_CATEGORIES_RECENT.map(cat => {
+                const events = getTimelineForCategory(cat.id);
+                return (
+                  <button
+                    key={cat.id}
+                    onClick={() => navigate(`/timeline/${cat.id}`)}
+                    className="w-full flex items-center justify-between bg-card rounded-2xl border border-border p-4 text-left hover:border-primary/50 hover:shadow-md transition-all group"
+                  >
+                    <div className="flex-1 min-w-0">
+                      <p className="font-semibold text-sm text-foreground">{cat.name}</p>
+                      <p className="text-xs text-muted-foreground mt-0.5 leading-snug">{cat.description}</p>
+                      <div className="flex items-center gap-1 mt-2 text-xs text-muted-foreground">
+                        <Clock className="w-3 h-3" />
+                        <span>{events.length} events</span>
+                      </div>
+                    </div>
+                    <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors ml-3 shrink-0" />
+                  </button>
+                );
+              })}
+            </div>
+          ) : (
+            /* Other topics: show courses */
+            <div className="flex flex-col gap-4">
+              {filteredCourses.length === 0 ? (
+                <div className="text-center py-16 text-muted-foreground">
+                  <p>No courses yet for this topic.</p>
+                </div>
+              ) : (
+                filteredCourses.map(course => (
+                  <CourseCard
+                    key={course.id}
+                    course={course}
+                    progress={getCourseProgress(course.id, course.lessons.length)}
+                  />
+                ))
+              )}
+            </div>
+          )}
         </div>
       </div>
     </div>
