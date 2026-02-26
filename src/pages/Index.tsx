@@ -92,39 +92,13 @@ export default function Index() {
             </div>
           )}
 
-          {/* History topic: show timeline categories */}
+          {/* History topic: show unified timeline categories */}
           {currentTopicId === 'history' ? (
             <div className="flex flex-col gap-4">
-              <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Full Timelines</p>
-              {TIMELINE_CATEGORIES.map(cat => {
+              {ALL_TIMELINE_CATEGORIES.map(cat => {
                 const events = getTimelineForCategory(cat.id);
                 return (
-                  <button key={cat.id} onClick={() => navigate(`/timeline/${cat.id}`)} className="w-full text-left">
-                    <div className="rounded-2xl overflow-hidden border border-border bg-[hsl(var(--surface-secondary))] hover:shadow-md transition-shadow">
-                      <div className="relative h-[200px]">
-                        <img src={cat.imageUrl} alt={cat.name} className="w-full h-full object-cover" />
-                        <div className="absolute inset-0 bg-black/10" />
-                        <button onClick={e => e.stopPropagation()} className="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/90 flex items-center justify-center shadow-sm">
-                          <Headphones className="w-4 h-4 text-foreground" />
-                        </button>
-                      </div>
-                      <div className="px-5 py-4 text-center">
-                        <p className="text-xs text-muted-foreground mb-1 flex items-center justify-center gap-1">
-                          <Clock className="w-3 h-3 inline" /> {events.length} events
-                        </p>
-                        <h3 className="font-serif text-xl font-semibold text-foreground mb-3 leading-snug">{cat.name}</h3>
-                        <div className="inline-flex items-center px-6 py-2 rounded-full bg-foreground text-background text-sm font-semibold">Start</div>
-                      </div>
-                    </div>
-                  </button>
-                );
-              })}
-
-              <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mt-2">Recent History</p>
-              {TIMELINE_CATEGORIES_RECENT.map(cat => {
-                const events = getTimelineForCategory(cat.id);
-                return (
-                  <button key={cat.id} onClick={() => navigate(`/timeline/${cat.id}`)} className="w-full text-left">
+                  <button key={cat.id} onClick={() => navigate(`/timeline/${cat.id}/mode`)} className="w-full text-left">
                     <div className="rounded-2xl overflow-hidden border border-border bg-[hsl(var(--surface-secondary))] hover:shadow-md transition-shadow">
                       <div className="relative h-[200px]">
                         <img src={cat.imageUrl} alt={cat.name} className="w-full h-full object-cover" />
