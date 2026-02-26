@@ -54,8 +54,8 @@ export default function TimelineModeSelectPage() {
           {/* Quiz */}
           <button
             onClick={() => navigate(`/timeline/${categoryId}/quiz`)}
-            className="w-full flex items-center gap-4 p-4 rounded-2xl border border-border bg-[hsl(var(--quiz-bg,238,242,255))] hover:shadow-md transition-shadow text-left"
-            style={{ backgroundColor: '#EEF2FF' }}
+            className="w-full flex items-center gap-4 p-4 rounded-2xl border border-border bg-card hover:shadow-md transition-shadow text-left"
+            style={{ background: 'hsl(238 100% 97%)' }}
           >
             <div className="w-12 h-12 rounded-xl bg-indigo-100 flex items-center justify-center shrink-0">
               <HelpCircle className="w-6 h-6 text-indigo-500" />

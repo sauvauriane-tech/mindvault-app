@@ -34,6 +34,8 @@ const App = () => (
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/timelines" element={<TimelineCategoriesPage />} />
             <Route path="/timeline/:categoryId" element={<TimelinePage />} />
+            <Route path="/timeline/:categoryId/mode" element={<TimelineModeSelectPage />} />
+            <Route path="/timeline/:categoryId/quiz" element={<TimelineQuizPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
