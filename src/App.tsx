@@ -12,6 +12,8 @@ import QuizPage from "./pages/QuizPage";
 import ProfilePage from "./pages/ProfilePage";
 import TimelineCategoriesPage from "./pages/TimelineCategoriesPage";
 import TimelinePage from "./pages/TimelinePage";
+import TimelineModeSelectPage from "./pages/TimelineModeSelectPage";
+import TimelineQuizPage from "./pages/TimelineQuizPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
