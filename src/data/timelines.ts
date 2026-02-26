@@ -737,4 +737,4 @@ export function hasTimeline(categoryId: string): boolean {
   return Object.keys(timelines).includes(categoryId);
 }
 
-export const ALL_TIMELINE_CATEGORIES = [...TIMELINE_CATEGORIES, ...TIMELINE_CATEGORIES_RECENT];
+// ALL_TIMELINE_CATEGORIES is now defined at line 19
