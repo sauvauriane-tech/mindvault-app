@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ChevronDown, ChevronRight, Flag, Check, Scroll } from 'lucide-react';
-import { courses, TOPICS, getCoursesByTopic } from '@/data/content';
+import { ChevronDown, ChevronRight, Flag, Check, Clock } from 'lucide-react';
+import { TOPICS, getCoursesByTopic } from '@/data/content';
 import { useProgress } from '@/context/ProgressContext';
 import CourseCard from '@/components/CourseCard';
 import Navbar from '@/components/Navbar';
+import { TIMELINE_CATEGORIES, TIMELINE_CATEGORIES_RECENT, getTimelineForCategory } from '@/data/timelines';
 
 export default function Index() {
   const navigate = useNavigate();
