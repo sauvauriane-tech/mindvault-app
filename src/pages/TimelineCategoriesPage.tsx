@@ -46,16 +46,8 @@ export default function TimelineCategoriesPage() {
             </div>
           </div>
 
-          {/* Main timelines */}
-          <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Full Timelines</p>
-          <div className="flex flex-col gap-3 mb-6">
-            {TIMELINE_CATEGORIES.map(renderCategory)}
-          </div>
-
-          {/* Recent history */}
-          <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Recent History</p>
           <div className="flex flex-col gap-3">
-            {TIMELINE_CATEGORIES_RECENT.map(renderCategory)}
+            {ALL_TIMELINE_CATEGORIES.map(renderCategory)}
           </div>
         </div>
       </div>

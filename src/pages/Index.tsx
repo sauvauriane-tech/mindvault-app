@@ -5,7 +5,7 @@ import { TOPICS, getCoursesByTopic } from '@/data/content';
 import { useProgress } from '@/context/ProgressContext';
 import CourseCard from '@/components/CourseCard';
 import Navbar from '@/components/Navbar';
-import { TIMELINE_CATEGORIES, TIMELINE_CATEGORIES_RECENT, getTimelineForCategory } from '@/data/timelines';
+import { ALL_TIMELINE_CATEGORIES, getTimelineForCategory } from '@/data/timelines';
 
 export default function Index() {
   const navigate = useNavigate();
