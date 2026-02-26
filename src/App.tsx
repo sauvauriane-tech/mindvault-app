@@ -12,6 +12,8 @@ import QuizPage from "./pages/QuizPage";
 import ProfilePage from "./pages/ProfilePage";
 import TimelineCategoriesPage from "./pages/TimelineCategoriesPage";
 import TimelinePage from "./pages/TimelinePage";
+import TimelineModeSelectPage from "./pages/TimelineModeSelectPage";
+import TimelineQuizPage from "./pages/TimelineQuizPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,6 +34,8 @@ const App = () => (
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/timelines" element={<TimelineCategoriesPage />} />
             <Route path="/timeline/:categoryId" element={<TimelinePage />} />
+            <Route path="/timeline/:categoryId/mode" element={<TimelineModeSelectPage />} />
+            <Route path="/timeline/:categoryId/quiz" element={<TimelineQuizPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
