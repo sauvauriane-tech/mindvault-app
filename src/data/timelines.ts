@@ -653,7 +653,7 @@ const timelines: Record<string, TimelineEvent[]> = {
       year: '1950s–1960s',
       title: 'The Italian Economic Miracle',
       period: 'contemporary',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Gustave_Caillebotte_-_Paris_Street%3B_Rainy_Day_-_Google_Art_Project.jpg/1024px-Gustave_Caillebotte_-_Paris_Street%3B_Rainy_Day_-_Google_Art_Project.jpg',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/1/17/Gustave_Caillebotte_-_Paris_Street%3B_Rainy_Day_-_Google_Art_Project.jpg',
       imageCaption: 'Gustave Caillebotte, "Paris Street; Rainy Day" (1877) — urban modernity and the new prosperity of a rebuilt city, mirroring Italy\'s postwar boom.',
       content: `Italy experienced rapid economic growth after World War II. Industry expanded, cities grew, and millions moved from rural regions to urban centers.\n\nLiving standards rose, but inequality and regional divides remained significant.\n\nModern consumer culture took root during this boom.`,
       funFact: "Internal migration from southern to northern Italy reshaped the country's social fabric.",
