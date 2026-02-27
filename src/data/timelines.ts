@@ -141,7 +141,7 @@ const timelines: Record<string, TimelineEvent[]> = {
       year: '1981',
       title: 'Mitterrand and Modern France',
       period: 'contemporary',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Camille_Pissarro_-_Boulevard_Montmartre%2C_Spring_-_Google_Art_Project.jpg/1024px-Camille_Pissarro_-_Boulevard_Montmartre%2C_Spring_-_Google_Art_Project.jpg',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/f/ff/Camille_Pissarro_-_Boulevard_Montmartre%2C_Spring_-_Google_Art_Project.jpg',
       imageCaption: 'Camille Pissarro, "Boulevard Montmartre, Spring" (1897) — the enduring heart of Paris through the ages of French politics.',
       content: `François Mitterrand's election in 1981 marked the first socialist presidency of the Fifth Republic. His reforms expanded social rights and transformed cultural life.\n\nHis presidency symbolized France's transition into a modern European democracy.\n\nIt closed the era of post-war political transformation.`,
       funFact: 'Mitterrand served two full terms, shaping France through major social reforms and cultural projects.',
