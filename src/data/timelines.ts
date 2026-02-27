@@ -400,7 +400,7 @@ const timelines: Record<string, TimelineEvent[]> = {
       year: '711',
       title: 'Al-Andalus and the Muslim Conquest of Iberia',
       period: 'medieval',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/088_L%27odalisca%2C_de_Mari%C3%A0_Fortuny.jpg/1024px-088_L%27odalisca%2C_de_Mari%C3%A0_Fortuny.jpg',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/c/c7/088_L%27odalisca%2C_de_Mari%C3%A0_Fortuny.jpg',
       imageCaption: 'Marià Fortuny, "L\'Odalisca" (c. 1861) — Spanish Orientalist master, evoking the splendor and exoticism of Al-Andalus.',
       content: `In 711, Muslim forces entered the Iberian Peninsula and created Al-Andalus, a society where Muslims, Christians, and Jews lived in shifting patterns of conflict and coexistence.\n\nAl-Andalus became a major center of learning, architecture, and trade, influencing Europe through science, philosophy, and translation.\n\nThis period shaped Spanish culture and left a lasting architectural legacy.`,
       funFact: 'Medieval Iberia helped transmit classical Greek knowledge to later European scholars through translation networks.',
