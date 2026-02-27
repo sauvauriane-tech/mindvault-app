@@ -633,7 +633,7 @@ const timelines: Record<string, TimelineEvent[]> = {
       year: '1943–1945',
       title: 'Collapse of Fascism and Civil War',
       period: 'contemporary',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/PicassoGuernica.jpg/1024px-PicassoGuernica.jpg',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/6/6a/PicassoGuernica.jpg',
       imageCaption: 'Pablo Picasso, "Guernica" (1937) — the definitive anti-war painting, deeply connected to the fascist violence that devastated Italy and Spain.',
       content: `In 1943, Mussolini's regime collapsed, and Italy became a battleground. The country experienced occupation, resistance, and a civil conflict between fascist and anti-fascist forces.\n\nThe period left deep scars and reshaped Italian politics.\n\nResistance became a foundational memory for the post-war republic.`,
       funFact: 'Italy switched sides during WWII, leading to complex divisions inside the country.',
