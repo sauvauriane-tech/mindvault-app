@@ -111,7 +111,7 @@ const timelines: Record<string, TimelineEvent[]> = {
       year: '1945',
       title: 'Liberation & Reconstruction',
       period: 'contemporary',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Camille_Pissarro_-_Boulevard_Montmartre%2C_Spring_-_Google_Art_Project.jpg/1024px-Camille_Pissarro_-_Boulevard_Montmartre%2C_Spring_-_Google_Art_Project.jpg',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/f/ff/Camille_Pissarro_-_Boulevard_Montmartre%2C_Spring_-_Google_Art_Project.jpg',
       imageCaption: 'Camille Pissarro, "Boulevard Montmartre, Spring" (1897) — Paris renews itself, as it did after liberation and reconstruction.',
       content: `After World War II, France focused on rebuilding its economy and institutions. The state expanded social protections, laying the foundations of the modern welfare state.\n\nEconomic planning and reconstruction transformed daily life and infrastructure.\n\nFrance also began redefining its place in a changing world.`,
       funFact: 'Postwar reconstruction accelerated modernization—new housing, industries, and public services reshaped everyday life.',
