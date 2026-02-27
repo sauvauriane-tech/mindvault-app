@@ -11,34 +11,37 @@ interface Props {
 export default function TimelineEventDetail({ event, isRead, onMarkRead, onBack }: Props) {
   return (
     <div className="min-h-screen bg-background pb-24">
-      {/* Hero image */}
-      <div className="relative h-64 w-full bg-muted">
-        <img
-          src={event.image}
-          alt={event.title}
-          className="w-full h-full object-cover"
-          onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+      {/* Sticky back button */}
+      <div className="sticky top-0 z-10 bg-background border-b border-border px-4 py-3 flex items-center gap-3">
         <button
           onClick={onBack}
-          className="absolute top-4 left-4 w-9 h-9 bg-white/90 rounded-full flex items-center justify-center shadow"
+          className="w-9 h-9 rounded-full bg-muted flex items-center justify-center shrink-0"
         >
           <ChevronLeft className="w-4 h-4 text-foreground" />
         </button>
+        <span className="text-xs font-bold text-primary uppercase tracking-wide">{event.year}</span>
       </div>
 
       <div className="max-w-xl mx-auto px-4 py-6">
-        {/* Year badge + title */}
-        <span className="text-xs font-bold text-primary uppercase tracking-wide">{event.year}</span>
-        <h1 className="text-2xl font-bold font-serif mt-1 mb-1 leading-snug">{event.title}</h1>
+        {/* Title */}
+        <h1 className="text-2xl font-bold font-serif mb-6 leading-snug">{event.title}</h1>
 
-        {/* Image caption */}
-        {event.imageCaption && (
-          <p className="text-xs text-muted-foreground italic mb-4 leading-relaxed border-l-2 border-border pl-3">
-            {event.imageCaption}
-          </p>
-        )}
+        {/* Article-style image with caption */}
+        <figure className="mb-6">
+          <div className="bg-muted rounded-xl overflow-hidden flex items-center justify-center">
+            <img
+              src={event.image}
+              alt={event.imageCaption ?? event.title}
+              className="w-full h-auto block"
+              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+            />
+          </div>
+          {event.imageCaption && (
+            <figcaption className="mt-2 text-xs text-muted-foreground italic leading-relaxed text-center px-2">
+              {event.imageCaption}
+            </figcaption>
+          )}
+        </figure>
 
         {/* Content */}
         <div className="space-y-3 mb-6">
