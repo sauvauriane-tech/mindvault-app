@@ -81,7 +81,7 @@ const timelines: Record<string, TimelineEvent[]> = {
       year: '1870–1871',
       title: 'Franco-Prussian War & Paris Commune',
       period: 'modern',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Edouard_Manet_-_Olympia_-_Google_Art_Project_3.jpg/1024px-Edouard_Manet_-_Olympia_-_Google_Art_Project_3.jpg',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/5/5c/Edouard_Manet_-_Olympia_-_Google_Art_Project_3.jpg',
       imageCaption: 'Édouard Manet, "Olympia" (1863) — Manet\'s provocative masterpiece, emblematic of the social tensions that erupted in the Paris Commune era.',
       content: `France's defeat in the Franco-Prussian War led to the collapse of the Second Empire. Shortly after, radical workers briefly controlled Paris during the Paris Commune.\n\nThe Commune experimented with social reforms before being brutally crushed by the French army. Thousands were killed in the repression.\n\nThis episode deeply marked French political memory and sharpened divisions between left and right.`,
       funFact: 'The Paris Commune became a lasting reference point for later socialist and revolutionary movements.',
