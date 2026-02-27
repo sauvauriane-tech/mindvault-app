@@ -515,9 +515,6 @@ const timelines: Record<string, TimelineEvent[]> = {
       content: `Spain's entry into the European Union marked a major shift in its economy and political identity. European membership helped modernize infrastructure and anchor democratic institutions.\n\nIt also tied Spain's future to a shared European project.\n\nEU membership became a defining feature of contemporary Spain.`,
       funFact: 'EU membership accelerated investment and reshaped Spain\'s economy, especially through infrastructure and trade.',
     },
-  ],
-
-  'spanishHistoryRecent': [
     {
       id: 'es_r_001',
       year: '2008',
