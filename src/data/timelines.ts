@@ -22,8 +22,6 @@ export const ALL_TIMELINE_CATEGORIES: TimelineCategory[] = [
   { id: 'european-history', name: 'European History', description: 'The big picture: antiquity to the modern era', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Prise_de_la_Bastille.jpg/1024px-Prise_de_la_Bastille.jpg' },
   { id: 'spanish-history', name: 'Spanish History', description: 'Empire, civil war, and democracy', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Goya-Guerra_%281810-1815%29.jpg/1024px-Goya-Guerra_%281810-1815%29.jpg' },
   { id: 'italian-history', name: 'Italian History', description: 'Rome, Renaissance, and the Republic', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg/1024px-Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg' },
-  { id: 'spanishHistoryRecent', name: 'Spain: Recent History', description: 'From 2008 financial crisis to today', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Rajoy_en_el_Congreso_de_los_Diputados.jpg/1024px-Rajoy_en_el_Congreso_de_los_Diputados.jpg' },
-  { id: 'italianHistoryRecent', name: 'Italy: Recent History', description: 'From financial crisis to populism', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Rome_Colosseum_evening.jpg/1024px-Rome_Colosseum_evening.jpg' },
 ];
 
 const timelines: Record<string, TimelineEvent[]> = {
