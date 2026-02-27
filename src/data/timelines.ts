@@ -41,7 +41,7 @@ const timelines: Record<string, TimelineEvent[]> = {
       year: '1793–1794',
       title: 'The Reign of Terror',
       period: 'revolution',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Jacques-Louis_David_-_Marat_assassinated_-_Google_Art_Project.jpg/800px-Jacques-Louis_David_-_Marat_assassinated_-_Google_Art_Project.jpg',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/2/21/Jacques-Louis_David_-_Marat_assassinated_-_Google_Art_Project.jpg',
       imageCaption: 'Jacques-Louis David, "The Death of Marat" (1793) — one of the most powerful paintings of the Revolution\'s violent turn.',
       content: `The Reign of Terror was a period of extreme political violence during the French Revolution. Led by the Committee of Public Safety, the revolutionary government sought to eliminate all perceived enemies.\n\nThousands were executed by guillotine, including former revolutionaries. Fear and suspicion dominated daily life as the revolution turned against itself.\n\nThe Terror ended with the fall of its leading figures, revealing how revolutionary ideals could spiral into paranoia and state violence.`,
       funFact: '"Terror" was framed as a form of "revolutionary justice," but it became one of the Revolution\'s most controversial legacies.',
