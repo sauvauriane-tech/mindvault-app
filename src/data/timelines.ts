@@ -678,9 +678,6 @@ const timelines: Record<string, TimelineEvent[]> = {
       content: `In the 1990s, corruption scandals revealed deep problems in Italy's political system. Major parties collapsed and new political movements rose.\n\nThis transition reshaped Italian politics and increased public cynicism.\n\nModern Italy's political instability cannot be understood without this rupture.`,
       funFact: 'The "Clean Hands" investigations transformed politics so deeply it\'s often described as the end of an era.',
     },
-  ],
-
-  'italianHistoryRecent': [
     {
       id: 'it_r_001',
       year: '2008',
