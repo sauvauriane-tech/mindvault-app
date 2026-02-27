@@ -121,7 +121,7 @@ const timelines: Record<string, TimelineEvent[]> = {
       year: '1958',
       title: 'Birth of the Fifth Republic',
       period: 'contemporary',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Camille_Pissarro_-_Boulevard_Montmartre_at_Night_-_c_1897_-_National_Gallery_UK.jpg/1024px-Camille_Pissarro_-_Boulevard_Montmartre_at_Night_-_c_1897_-_National_Gallery_UK.jpg',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/1/14/Camille_Pissarro_-_Boulevard_Montmartre_at_Night_-_c_1897_-_National_Gallery_UK.jpg',
       imageCaption: 'Camille Pissarro, "Boulevard Montmartre at Night" (1897) — Paris by gaslight, capital of the modern French republic.',
       content: `Political instability led Charles de Gaulle to establish the Fifth Republic in 1958. The new constitution strengthened the presidency.\n\nThis system brought stability and remains in place today.\n\nIt fundamentally reshaped French political life.`,
       funFact: "The Fifth Republic is still France's current constitutional system—its strong presidency shapes French politics today.",
