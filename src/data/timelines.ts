@@ -101,7 +101,7 @@ const timelines: Record<string, TimelineEvent[]> = {
       year: '1940–1944',
       title: 'Occupation & Resistance',
       period: 'contemporary',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Gustave_Caillebotte_-_Paris_Street%3B_Rainy_Day_-_Google_Art_Project.jpg/1024px-Gustave_Caillebotte_-_Paris_Street%3B_Rainy_Day_-_Google_Art_Project.jpg',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/1/17/Gustave_Caillebotte_-_Paris_Street%3B_Rainy_Day_-_Google_Art_Project.jpg',
       imageCaption: 'Gustave Caillebotte, "Paris Street; Rainy Day" (1877) — the streets of occupied and liberated Paris, enduring through storm.',
       content: `After defeat in 1940, France was occupied by Nazi Germany while the Vichy regime collaborated with the occupiers. Many French citizens resisted through underground networks.\n\nThe Resistance played a crucial role in intelligence, sabotage, and maintaining national pride.\n\nThe period left lasting moral and political debates about collaboration and resistance.`,
       funFact: '"Resistance" covered many realities—from covert printing presses to armed sabotage and intelligence networks.',
