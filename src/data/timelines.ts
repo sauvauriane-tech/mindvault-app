@@ -663,7 +663,7 @@ const timelines: Record<string, TimelineEvent[]> = {
       year: '1970s',
       title: 'Years of Lead',
       period: 'contemporary',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Giorgio_de_Chirico_-_The_Enigma_of_the_Hour.jpg/1024px-Giorgio_de_Chirico_-_The_Enigma_of_the_Hour.jpg',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/9/9f/Giorgio_de_Chirico_-_The_Enigma_of_the_Hour.jpg',
       imageCaption: 'Giorgio de Chirico, "The Enigma of the Hour" (c. 1911) — Italian Metaphysical Art embodying the unsettling silence of political violence.',
       content: `The "Years of Lead" were marked by political violence, terrorism, and social tension. Far-left and far-right groups carried out attacks, and the state responded with repression and surveillance.\n\nThe era deepened distrust in institutions and left a long political shadow.\n\nItaly's democracy survived, but with lasting trauma.`,
       funFact: "The period's violence shaped Italian political culture for decades and influenced debates about security and civil liberties.",
