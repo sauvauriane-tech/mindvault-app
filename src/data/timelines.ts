@@ -234,7 +234,7 @@ const timelines: Record<string, TimelineEvent[]> = {
       year: '1945',
       title: 'Defeat and Division',
       period: 'contemporary',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg/800px-Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/b/b9/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg',
       imageCaption: 'Caspar David Friedrich, "Wanderer above the Sea of Fog" (c. 1818) — German Romantic symbol of standing amid ruins, contemplating an uncertain future.',
       content: `After defeat in World War II, Germany was divided into occupation zones. Millions were displaced and cities lay in ruins.\n\nThe division hardened into two states with opposing ideologies.\n\nGermany became a central front of the Cold War.`,
       funFact: 'Berlin was divided despite being located deep inside East Germany.',
