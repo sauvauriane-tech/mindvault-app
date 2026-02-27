@@ -234,7 +234,7 @@ const timelines: Record<string, TimelineEvent[]> = {
       year: '1945',
       title: 'Defeat and Division',
       period: 'contemporary',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Berlin_1945.jpg/1024px-Berlin_1945.jpg',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/K%C3%A4the_Kollwitz_-_Die_Eltern_%28The_Parents%29.jpg/800px-K%C3%A4the_Kollwitz_-_Die_Eltern_%28The_Parents%29.jpg',
       imageCaption: 'Käthe Kollwitz, "The Parents" (1932) — bronze memorial sculpture mourning the fallen of WWI and WWII, embodying German grief.',
       content: `After defeat in World War II, Germany was divided into occupation zones. Millions were displaced and cities lay in ruins.\n\nThe division hardened into two states with opposing ideologies.\n\nGermany became a central front of the Cold War.`,
       funFact: 'Berlin was divided despite being located deep inside East Germany.',
