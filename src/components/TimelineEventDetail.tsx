@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { ChevronLeft, Lightbulb, BookOpen } from 'lucide-react';
 import { TimelineEvent } from '@/data/timelines';
 
@@ -6,6 +7,28 @@ interface Props {
   isRead: boolean;
   onMarkRead: () => void;
   onBack: () => void;
+}
+
+function ImageWithCaption({ src, alt, caption }: { src: string; alt: string; caption?: string }) {
+  const [failed, setFailed] = useState(false);
+  if (failed) return null;
+  return (
+    <figure className="mb-6">
+      <div className="bg-muted rounded-xl overflow-hidden">
+        <img
+          src={src}
+          alt={alt}
+          className="w-full h-auto block"
+          onError={() => setFailed(true)}
+        />
+      </div>
+      {caption && (
+        <figcaption className="mt-2 text-xs text-muted-foreground italic leading-relaxed text-center px-2">
+          {caption}
+        </figcaption>
+      )}
+    </figure>
+  );
 }
 
 export default function TimelineEventDetail({ event, isRead, onMarkRead, onBack }: Props) {
@@ -28,7 +51,7 @@ export default function TimelineEventDetail({ event, isRead, onMarkRead, onBack 
 
         {/* Article-style image with caption */}
         {event.image && (
-          <ImageWithCaption src={event.image} caption={event.imageCaption} alt={event.title} />
+          <ImageWithCaption src={event.image} alt={event.imageCaption ?? event.title} caption={event.imageCaption} />
         )}
 
         {/* Content */}
