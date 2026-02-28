@@ -13,6 +13,21 @@ export default function Index() {
   const { currentTopicId, streak, todayMinutes, dailyGoalMinutes } = state;
   const [topicOpen, setTopicOpen] = useState(false);
 
+  // Compute per-category read progress from localStorage
+  const timelineProgress = useMemo(() => {
+    return ALL_TIMELINE_CATEGORIES.reduce<Record<string, { read: number; total: number }>>((acc, cat) => {
+      const total = getTimelineForCategory(cat.id).length;
+      try {
+        const stored = localStorage.getItem(`timeline_read_${cat.id}`);
+        const readIds: string[] = stored ? JSON.parse(stored) : [];
+        acc[cat.id] = { read: readIds.length, total };
+      } catch {
+        acc[cat.id] = { read: 0, total };
+      }
+      return acc;
+    }, {});
+  }, []);
+
   const currentTopic = TOPICS.find(t => t.id === currentTopicId) ?? TOPICS[0];
   const filteredCourses = getCoursesByTopic(currentTopicId);
   const topicProgress = getTopicProgress(currentTopicId);
