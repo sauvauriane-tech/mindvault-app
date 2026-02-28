@@ -118,7 +118,7 @@ export default function Index() {
                   <button key={cat.id} onClick={() => navigate(`/timeline/${cat.id}/mode`)} className="w-full text-left">
                     <div className="rounded-2xl overflow-hidden border border-border bg-[hsl(var(--surface-secondary))] hover:shadow-md transition-shadow">
                       <div className="relative h-[200px]">
-                        <img src={cat.imageUrl} alt={cat.name} className="w-full h-full object-cover" />
+                        <img src={cat.imageUrl.includes('upload.wikimedia.org') ? `https://images.weserv.nl/?url=${encodeURIComponent(cat.imageUrl)}&w=600&output=jpg` : cat.imageUrl} alt={cat.name} className="w-full h-full object-cover" />
                         <div className="absolute inset-0 bg-black/10" />
                         {/* Progress badge */}
                         <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-sm flex items-center gap-1.5">
