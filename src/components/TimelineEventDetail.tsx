@@ -59,7 +59,7 @@ export default function TimelineEventDetail({ event, isRead, onMarkRead, onBack 
 
         {/* Article-style image with caption */}
         {event.image && (
-          <ImageWithCaption src={event.image} alt={event.imageCaption ?? event.title} caption={event.imageCaption} />
+          <ImageWithCaption src={proxyImg(event.image)} alt={event.imageCaption ?? event.title} caption={event.imageCaption} />
         )}
 
         {/* Content */}
