@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ChevronDown, ChevronRight, Flag, Check, Clock, Headphones } from 'lucide-react';
+import { ChevronDown, Flag, Check, Clock, Headphones, BookOpen } from 'lucide-react';
 import { TOPICS, getCoursesByTopic } from '@/data/content';
 import { useProgress } from '@/context/ProgressContext';
 import CourseCard from '@/components/CourseCard';
