@@ -1,11 +1,42 @@
+import { useState } from 'react';
 import { ChevronLeft, Lightbulb, BookOpen } from 'lucide-react';
 import { TimelineEvent } from '@/data/timelines';
+
+// Proxy Wikimedia images to avoid hotlink/CORS blocks
+function proxyImg(url: string): string {
+  if (url.includes('upload.wikimedia.org')) {
+    return `https://images.weserv.nl/?url=${encodeURIComponent(url)}&w=800&output=jpg`;
+  }
+  return url;
+}
 
 interface Props {
   event: TimelineEvent;
   isRead: boolean;
   onMarkRead: () => void;
   onBack: () => void;
+}
+
+function ImageWithCaption({ src, alt, caption }: { src: string; alt: string; caption?: string }) {
+  const [failed, setFailed] = useState(false);
+  if (failed) return null;
+  return (
+    <figure className="mb-6">
+      <div className="bg-muted rounded-xl overflow-hidden">
+        <img
+          src={src}
+          alt={alt}
+          className="w-full h-auto block"
+          onError={() => setFailed(true)}
+        />
+      </div>
+      {caption && (
+        <figcaption className="mt-2 text-xs text-muted-foreground italic leading-relaxed text-center px-2">
+          {caption}
+        </figcaption>
+      )}
+    </figure>
+  );
 }
 
 export default function TimelineEventDetail({ event, isRead, onMarkRead, onBack }: Props) {
@@ -27,21 +58,9 @@ export default function TimelineEventDetail({ event, isRead, onMarkRead, onBack 
         <h1 className="text-2xl font-bold font-serif mb-6 leading-snug">{event.title}</h1>
 
         {/* Article-style image with caption */}
-        <figure className="mb-6">
-          <div className="bg-muted rounded-xl overflow-hidden flex items-center justify-center">
-            <img
-              src={event.image}
-              alt={event.imageCaption ?? event.title}
-              className="w-full h-auto block"
-              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-            />
-          </div>
-          {event.imageCaption && (
-            <figcaption className="mt-2 text-xs text-muted-foreground italic leading-relaxed text-center px-2">
-              {event.imageCaption}
-            </figcaption>
-          )}
-        </figure>
+        {event.image && (
+          <ImageWithCaption src={proxyImg(event.image)} alt={event.imageCaption ?? event.title} caption={event.imageCaption} />
+        )}
 
         {/* Content */}
         <div className="space-y-3 mb-6">

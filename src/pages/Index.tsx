@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ChevronDown, ChevronRight, Flag, Check, Clock, Headphones } from 'lucide-react';
+import { ChevronDown, Flag, Check, Clock, Headphones, BookOpen } from 'lucide-react';
 import { TOPICS, getCoursesByTopic } from '@/data/content';
 import { useProgress } from '@/context/ProgressContext';
 import CourseCard from '@/components/CourseCard';
@@ -12,6 +12,21 @@ export default function Index() {
   const { state, setCurrentTopic, getCourseProgress, getTopicProgress } = useProgress();
   const { currentTopicId, streak, todayMinutes, dailyGoalMinutes } = state;
   const [topicOpen, setTopicOpen] = useState(false);
+
+  // Compute per-category read progress from localStorage
+  const timelineProgress = useMemo(() => {
+    return ALL_TIMELINE_CATEGORIES.reduce<Record<string, { read: number; total: number }>>((acc, cat) => {
+      const total = getTimelineForCategory(cat.id).length;
+      try {
+        const stored = localStorage.getItem(`timeline_read_${cat.id}`);
+        const readIds: string[] = stored ? JSON.parse(stored) : [];
+        acc[cat.id] = { read: readIds.length, total };
+      } catch {
+        acc[cat.id] = { read: 0, total };
+      }
+      return acc;
+    }, {});
+  }, []);
 
   const currentTopic = TOPICS.find(t => t.id === currentTopicId) ?? TOPICS[0];
   const filteredCourses = getCoursesByTopic(currentTopicId);
@@ -96,23 +111,37 @@ export default function Index() {
           {currentTopicId === 'history' ? (
             <div className="flex flex-col gap-4">
               {ALL_TIMELINE_CATEGORIES.map(cat => {
-                const events = getTimelineForCategory(cat.id);
+                const prog = timelineProgress[cat.id] ?? { read: 0, total: 0 };
+                const hasProgress = prog.read > 0;
+                const pct = prog.total > 0 ? Math.round((prog.read / prog.total) * 100) : 0;
                 return (
                   <button key={cat.id} onClick={() => navigate(`/timeline/${cat.id}/mode`)} className="w-full text-left">
                     <div className="rounded-2xl overflow-hidden border border-border bg-[hsl(var(--surface-secondary))] hover:shadow-md transition-shadow">
                       <div className="relative h-[200px]">
-                        <img src={cat.imageUrl} alt={cat.name} className="w-full h-full object-cover" />
+                        <img src={cat.imageUrl.includes('upload.wikimedia.org') ? `https://images.weserv.nl/?url=${encodeURIComponent(cat.imageUrl)}&w=600&output=jpg` : cat.imageUrl} alt={cat.name} className="w-full h-full object-cover" />
                         <div className="absolute inset-0 bg-black/10" />
+                        {/* Progress badge */}
+                        <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-sm flex items-center gap-1.5">
+                          <BookOpen className="w-3 h-3 text-white" />
+                          <span className="text-xs font-semibold text-white">{prog.read} / {prog.total} read</span>
+                        </div>
                         <button onClick={e => e.stopPropagation()} className="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/90 flex items-center justify-center shadow-sm">
                           <Headphones className="w-4 h-4 text-foreground" />
                         </button>
                       </div>
                       <div className="px-5 py-4 text-center">
                         <p className="text-xs text-muted-foreground mb-1 flex items-center justify-center gap-1">
-                          <Clock className="w-3 h-3 inline" /> {events.length} events
+                          <Clock className="w-3 h-3 inline" /> {prog.total} events
                         </p>
                         <h3 className="font-serif text-xl font-semibold text-foreground mb-3 leading-snug">{cat.name}</h3>
-                        <div className="inline-flex items-center px-6 py-2 rounded-full bg-foreground text-background text-sm font-semibold">Start</div>
+                        {hasProgress && (
+                          <div className="h-1 rounded-full bg-muted overflow-hidden mb-3">
+                            <div className="h-full rounded-full bg-primary transition-all" style={{ width: `${pct}%` }} />
+                          </div>
+                        )}
+                        <div className="inline-flex items-center px-6 py-2 rounded-full bg-foreground text-background text-sm font-semibold">
+                          {hasProgress ? 'Continue' : 'Start'}
+                        </div>
                       </div>
                     </div>
                   </button>
