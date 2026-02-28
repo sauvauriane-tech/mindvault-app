@@ -2,6 +2,14 @@ import { useState } from 'react';
 import { ChevronLeft, Lightbulb, BookOpen } from 'lucide-react';
 import { TimelineEvent } from '@/data/timelines';
 
+// Proxy Wikimedia images to avoid hotlink/CORS blocks
+function proxyImg(url: string): string {
+  if (url.includes('upload.wikimedia.org')) {
+    return `https://images.weserv.nl/?url=${encodeURIComponent(url)}&w=800&output=jpg`;
+  }
+  return url;
+}
+
 interface Props {
   event: TimelineEvent;
   isRead: boolean;
