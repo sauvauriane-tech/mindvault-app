@@ -15,6 +15,7 @@ import TimelinePage from "./pages/TimelinePage";
 import TimelineModeSelectPage from "./pages/TimelineModeSelectPage";
 import TimelineQuizPage from "./pages/TimelineQuizPage";
 import NotFound from "./pages/NotFound";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/course/:id" element={<CoursePage />} />

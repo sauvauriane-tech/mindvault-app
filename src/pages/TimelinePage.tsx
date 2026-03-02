@@ -51,7 +51,7 @@ export default function TimelinePage() {
       <div className="sticky top-0 z-10 bg-background border-b border-border">
         <div className="max-w-xl mx-auto px-4 py-3 flex items-center gap-3">
           <button
-            onClick={() => navigate(-1)}
+            onClick={() => navigate('/timelines')}
             className="w-9 h-9 rounded-full bg-muted flex items-center justify-center shrink-0"
           >
             <ChevronLeft className="w-4 h-4" />
