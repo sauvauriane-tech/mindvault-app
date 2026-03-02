@@ -1,3 +1,9 @@
+export interface EventImage {
+  src: string;
+  alt: string;
+  source?: string;
+}
+
 export interface TimelineEvent {
   id: string;
   year: string;
@@ -5,6 +11,7 @@ export interface TimelineEvent {
   period: string;
   image: string;
   imageCaption: string;
+  images?: EventImage[];
   content: string;
   funFact: string;
 }
