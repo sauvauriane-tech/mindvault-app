@@ -24,7 +24,7 @@ function ImageWithCaption({ src, alt, caption }: { src: string; alt: string; cap
         />
       </div>
       <figcaption className="mt-2 text-xs text-muted-foreground italic leading-relaxed text-center px-2">
-        {caption ? `${caption} · AI-generated illustration` : 'AI-generated illustration'}
+        {caption || ''}
       </figcaption>
     </figure>
   );
