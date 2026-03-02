@@ -23,11 +23,9 @@ function ImageWithCaption({ src, alt, caption }: { src: string; alt: string; cap
           onError={() => setFailed(true)}
         />
       </div>
-      {caption && (
-        <figcaption className="mt-2 text-xs text-muted-foreground italic leading-relaxed text-center px-2">
-          {caption}
-        </figcaption>
-      )}
+      <figcaption className="mt-2 text-xs text-muted-foreground italic leading-relaxed text-center px-2">
+        {caption ? `${caption} · AI-generated illustration` : 'AI-generated illustration'}
+      </figcaption>
     </figure>
   );
 }
