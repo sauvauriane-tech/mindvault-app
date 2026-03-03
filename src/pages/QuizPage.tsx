@@ -136,7 +136,7 @@ export default function QuizPage() {
         )}
 
         {showResult && (
-          <Button onClick={handleNext} className="w-full bg-primary text-primary-foreground">
+          <Button variant="primary" onClick={handleNext} className="w-full">
             {currentQ + 1 >= questions.length ? 'See Results' : 'Next Question'}
           </Button>
         )}
