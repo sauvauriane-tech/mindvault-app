@@ -81,8 +81,8 @@ export default function TimelinePage() {
         <div className="relative z-0">
           {/* Vertical line */}
           <div
-            className="absolute left-5 top-0 bottom-0 w-0.5"
-            style={{ background: 'linear-gradient(180deg, hsl(var(--primary)) 0%, hsl(var(--primary-dark)) 100%)' }}
+            className="absolute left-4 top-0 bottom-0 w-px"
+            style={{ background: 'linear-gradient(180deg, hsl(var(--primary) / 0.3) 0%, hsl(var(--primary)) 15%, hsl(var(--primary)) 85%, hsl(var(--primary) / 0.3) 100%)' }}
           />
 
           <div className="flex flex-col gap-5">
@@ -93,17 +93,17 @@ export default function TimelinePage() {
                 <button
                   key={event.id}
                   onClick={() => setSelectedEvent(event)}
-                  className="relative pl-14 text-left group"
+                  className="relative pl-12 text-left group"
                 >
-                  {/* Diamond marker — centered on the card */}
+                  {/* Diamond marker — perfectly centered on the line (left-4 = 16px, diamond 10px → offset -5px) */}
                   <div
-                    className="absolute left-[11px] top-1/2 -translate-y-1/2 w-6 h-6 flex items-center justify-center z-[10]"
+                    className="absolute left-4 top-1/2 -translate-x-1/2 -translate-y-1/2 w-5 h-5 flex items-center justify-center z-[10]"
                   >
                     <div
-                      className={`w-4 h-4 rotate-45 border-2 transition-all ${
+                      className={`w-[11px] h-[11px] rotate-45 border-[1.5px] transition-all duration-200 ${
                         isRead
-                          ? 'bg-primary border-primary'
-                          : 'bg-background border-primary group-hover:bg-primary/20'
+                          ? 'bg-primary border-primary shadow-[0_0_0_3px_hsl(var(--primary)/0.15)]'
+                          : 'bg-background border-primary group-hover:bg-primary/20 group-hover:shadow-[0_0_0_3px_hsl(var(--primary)/0.1)]'
                       }`}
                     />
                   </div>
