@@ -78,7 +78,7 @@ export default function TimelinePage() {
 
       {/* Timeline */}
       <div className="max-w-xl mx-auto px-4 pt-6 pb-8">
-        <div className="relative">
+        <div className="relative z-0">
           {/* Vertical line */}
           <div
             className="absolute left-5 top-0 bottom-0 w-0.5"
