@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ChevronLeft, CheckCircle2 } from 'lucide-react';
+import { ChevronLeft } from 'lucide-react';
 import { getTimelineForCategory, ALL_TIMELINE_CATEGORIES, TimelineEvent } from '@/data/timelines';
 import TimelineEventDetail from '@/components/TimelineEventDetail';
 
