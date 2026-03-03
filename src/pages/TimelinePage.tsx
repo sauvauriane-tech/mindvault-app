@@ -97,7 +97,7 @@ export default function TimelinePage() {
                 >
                   {/* Marker */}
                   <div
-                    className={`absolute left-[13px] top-3 w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all z-10 ${
+                    className={`absolute left-[13px] top-3 w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all z-[10] ${
                       isRead
                         ? 'bg-primary border-primary'
                         : 'bg-background border-primary group-hover:bg-primary/10'
