@@ -70,11 +70,11 @@ export default function QuizPage() {
           <p className="text-lg font-medium mb-8">
             {perfect ? 'Perfect score! Brilliant!' : finalScore >= 70 ? 'Great work!' : 'Keep studying!'}
           </p>
-          <div className="flex gap-3">
+          <div className="flex gap-3 mt-4 justify-center sm:justify-start">
             <Button variant="outline" onClick={() => navigate(`/course/${courseId}`)} className="flex-1">
               Back to Course
             </Button>
-            <Button onClick={() => navigate('/')} className="flex-1 bg-primary text-primary-foreground">
+            <Button variant="primary" onClick={() => navigate('/')} className="flex-1">
               Home
             </Button>
           </div>
