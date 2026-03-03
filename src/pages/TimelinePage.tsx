@@ -109,7 +109,7 @@ export default function TimelinePage() {
                   {/* Card */}
                   <div className="bg-card border border-border rounded-2xl p-4 group-hover:border-primary/40 group-hover:shadow-sm transition-all">
                     <div className="flex items-start justify-between gap-2 mb-1">
-                      <span className="text-sm font-bold text-primary">{event.year}</span>
+                      <span className="text-year font-bold text-primary">{event.year}</span>
                       <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full shrink-0 capitalize ${periodClass}`}>
                         {event.period.replace('-', ' ')}
                       </span>
