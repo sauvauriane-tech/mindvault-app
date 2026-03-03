@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <>
       {/* Top bar */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur border-b border-border h-14 flex items-center px-4">
+      <header className="fixed top-0 left-0 right-0 z-30 bg-card/95 backdrop-blur border-b border-border h-14 flex items-center px-4">
         <Link to="/" className="flex items-center gap-2 font-bold text-lg text-primary">
           <BookOpen className="w-5 h-5" />
           <span>MindVault</span>
