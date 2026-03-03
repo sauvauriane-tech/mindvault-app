@@ -90,14 +90,14 @@ export default function TimelineEventDetail({ event, isRead, onMarkRead, onBack 
   return (
     <div className="min-h-screen bg-background pb-24">
       {/* Sticky back button */}
-      <div className="sticky top-0 z-10 bg-background border-b border-border px-4 py-3 flex items-center gap-3">
+      <div className="sticky top-0 z-20 bg-background border-b border-border px-4 py-3 flex items-center gap-3">
         <button
           onClick={onBack}
           className="w-9 h-9 rounded-full bg-muted flex items-center justify-center shrink-0"
         >
           <ChevronLeft className="w-4 h-4 text-foreground" />
         </button>
-        <span className="text-xs font-bold text-primary uppercase tracking-wide">{event.year}</span>
+        <span className="text-lg font-bold text-primary tracking-tight">{event.year}</span>
       </div>
 
       <div className="max-w-xl mx-auto px-4 py-6">
