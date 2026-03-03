@@ -13,7 +13,20 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['"Inter"', '"SF Pro Text"', '"Helvetica Neue"', 'sans-serif'],
+        serif: ['Lora', 'Georgia', 'serif'],
+      },
+      fontSize: {
+        body: ['clamp(1rem, 0.9rem + 0.4vw, 1.125rem)', { lineHeight: '1.65' }],
+        year: ['clamp(0.875rem, 0.8rem + 0.25vw, 1rem)', { lineHeight: '1.4' }],
+      },
       colors: {
+        btn: {
+          bg: 'hsl(var(--btn-bg))',
+          hover: 'hsl(var(--btn-bg-hover))',
+          text: 'hsl(var(--btn-text))',
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

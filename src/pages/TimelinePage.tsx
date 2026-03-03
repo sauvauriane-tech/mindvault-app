@@ -48,7 +48,7 @@ export default function TimelinePage() {
   return (
     <div className="min-h-screen bg-background pb-16">
       {/* Sticky header */}
-      <div className="sticky top-0 z-10 bg-background border-b border-border">
+      <div className="sticky top-0 z-20 bg-background border-b border-border">
         <div className="max-w-xl mx-auto px-4 py-3 flex items-center gap-3">
           <button
             onClick={() => navigate('/timelines')}
@@ -78,7 +78,7 @@ export default function TimelinePage() {
 
       {/* Timeline */}
       <div className="max-w-xl mx-auto px-4 pt-6 pb-8">
-        <div className="relative">
+        <div className="relative z-0">
           {/* Vertical line */}
           <div
             className="absolute left-5 top-0 bottom-0 w-0.5"
@@ -97,7 +97,7 @@ export default function TimelinePage() {
                 >
                   {/* Marker */}
                   <div
-                    className={`absolute left-[13px] top-3 w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all z-10 ${
+                    className={`absolute left-[13px] top-3 w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all z-[10] ${
                       isRead
                         ? 'bg-primary border-primary'
                         : 'bg-background border-primary group-hover:bg-primary/10'
@@ -109,7 +109,7 @@ export default function TimelinePage() {
                   {/* Card */}
                   <div className="bg-card border border-border rounded-2xl p-4 group-hover:border-primary/40 group-hover:shadow-sm transition-all">
                     <div className="flex items-start justify-between gap-2 mb-1">
-                      <span className="text-sm font-bold text-primary">{event.year}</span>
+                      <span className="text-year font-bold text-primary">{event.year}</span>
                       <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full shrink-0 capitalize ${periodClass}`}>
                         {event.period.replace('-', ' ')}
                       </span>
