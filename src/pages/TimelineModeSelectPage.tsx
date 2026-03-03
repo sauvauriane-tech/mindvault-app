@@ -20,7 +20,7 @@ export default function TimelineModeSelectPage() {
         <div className="absolute inset-0 bg-black/35" />
         <button
           onClick={() => navigate(-1)}
-          className="absolute top-4 left-4 w-9 h-9 rounded-full bg-white/90 flex items-center justify-center shadow z-10"
+          className="absolute top-4 left-4 w-9 h-9 rounded-full bg-white/90 flex items-center justify-center shadow z-20"
         >
           <ChevronLeft className="w-5 h-5 text-foreground" />
         </button>

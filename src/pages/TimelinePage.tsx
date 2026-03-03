@@ -95,27 +95,29 @@ export default function TimelinePage() {
                   onClick={() => setSelectedEvent(event)}
                   className="relative pl-14 text-left group"
                 >
-                  {/* Marker */}
+                  {/* Diamond marker — centered on the card */}
                   <div
-                    className={`absolute left-[13px] top-3 w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all z-[10] ${
-                      isRead
-                        ? 'bg-primary border-primary'
-                        : 'bg-background border-primary group-hover:bg-primary/10'
-                    }`}
+                    className="absolute left-[11px] top-1/2 -translate-y-1/2 w-6 h-6 flex items-center justify-center z-[10]"
                   >
-                    {isRead && <CheckCircle2 className="w-3 h-3 text-primary-foreground" />}
+                    <div
+                      className={`w-4 h-4 rotate-45 border-2 transition-all ${
+                        isRead
+                          ? 'bg-primary border-primary'
+                          : 'bg-background border-primary group-hover:bg-primary/20'
+                      }`}
+                    />
                   </div>
 
                   {/* Card */}
                   <div className="bg-card border border-border rounded-2xl p-4 group-hover:border-primary/40 group-hover:shadow-sm transition-all">
                     <div className="flex items-start justify-between gap-2 mb-1">
-                      <span className="text-year font-bold text-primary">{event.year}</span>
+                      <span className="text-base font-bold text-primary">{event.year}</span>
                       <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full shrink-0 capitalize ${periodClass}`}>
                         {event.period.replace('-', ' ')}
                       </span>
                     </div>
-                    <p className="font-semibold text-sm text-foreground leading-snug">{event.title}</p>
-                    <p className="text-xs text-muted-foreground mt-1 line-clamp-2">
+                    <p className="font-semibold text-base text-foreground leading-snug">{event.title}</p>
+                    <p className="text-sm text-muted-foreground mt-1 line-clamp-2">
                       {event.content.split('\n\n')[0]}
                     </p>
                   </div>

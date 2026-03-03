@@ -112,9 +112,9 @@ export default function TimelineEventDetail({ event, isRead, onMarkRead, onBack 
         ) : null}
 
         {/* Content */}
-        <div className="space-y-3 mb-6">
+        <div className="space-y-4 mb-6">
           {event.content.split('\n\n').map((para, i) => (
-            <p key={i} className="text-sm text-foreground leading-relaxed">
+            <p key={i} className="text-body text-foreground leading-relaxed">
               {para.trim()}
             </p>
           ))}
