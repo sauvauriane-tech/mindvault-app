@@ -48,7 +48,7 @@ export default function TimelinePage() {
   return (
     <div className="min-h-screen bg-background pb-16">
       {/* Sticky header */}
-      <div className="sticky top-0 z-10 bg-background border-b border-border">
+      <div className="sticky top-0 z-20 bg-background border-b border-border">
         <div className="max-w-xl mx-auto px-4 py-3 flex items-center gap-3">
           <button
             onClick={() => navigate('/timelines')}
