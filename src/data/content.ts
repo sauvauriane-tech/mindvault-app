@@ -211,12 +211,22 @@ export const courses: Course[] = [
         pages: [
           {
             title: 'The Man Who Knew Nothing',
-            imageUrl: 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&q=80',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/David_-_The_Death_of_Socrates.jpg/800px-David_-_The_Death_of_Socrates.jpg', caption: 'Jacques-Louis David — The Death of Socrates (1787). Metropolitan Museum of Art, New York. Socrates calmly reaches for the hemlock as his students grieve.' },
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Socrates_Louvre.jpg/600px-Socrates_Louvre.jpg', caption: 'Roman marble bust of Socrates (1st century CE, copy of Greek original). Louvre, Paris.' },
+            ],
             body: 'Socrates (470–399 BCE) is one of the most important figures in Western philosophy — and one of the most unusual. He wrote nothing. Everything we know about him comes from others, particularly his student Plato.\n\nSocrates claimed to know nothing — or rather, he claimed that his only wisdom was knowing that he knew nothing. When the Oracle at Delphi declared him the wisest man in Athens, he was puzzled.',
           },
           {
             title: 'The Socratic Method',
+            images: [
+              { url: '/paintings/school_of_athens.jpg', caption: 'Raphael — The School of Athens (1509–11). Apostolic Palace, Vatican. Socrates (left of centre, in green) engages students in dialogue.' },
+            ],
             body: 'Socrates developed a distinctive way of pursuing truth: through questions. Rather than lecturing, he would ask questions that exposed the contradictions and hidden assumptions in his interlocutor\'s beliefs.\n\nSocrates was eventually tried and executed by Athens for "corrupting the youth" and "impiety." He accepted the death sentence rather than flee or recant, arguing that an unexamined life is not worth living.',
+            extraImages: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Giambettino_Cignaroli_-_The_Death_of_Socrates_-_WGA04876.jpg/800px-Giambettino_Cignaroli_-_The_Death_of_Socrates_-_WGA04876.jpg', caption: 'Giambettino Cignaroli — The Death of Socrates (c. 1759). Museum of Fine Arts, Budapest.' },
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Socrate_al_Louvre.jpg/600px-Socrate_al_Louvre.jpg', caption: 'Socrates in contemplation — Roman copy after a Greek bronze (3rd century BCE). Louvre, Paris.' },
+            ],
           },
         ],
         quiz: [
