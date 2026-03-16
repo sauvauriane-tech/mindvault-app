@@ -1094,7 +1094,7 @@ export const courses: Course[] = [
   {
     id: 'democracy-origins',
     title: 'The Origins of Democracy',
-    imageUrl: 'https://images.unsplash.com/photo-1555848962-6e79363ec58f?w=800&q=80',
+    imageUrl: '/paintings/acropolis_daguerreotype.jpg',
     topicId: 'politics',
     rating: 4.8,
     estimatedMinutes: 12,
@@ -1102,15 +1102,21 @@ export const courses: Course[] = [
       {
         id: 'athens-democracy',
         title: 'Athens: The First Democracy',
-        imageUrl: 'https://images.unsplash.com/photo-1555848962-6e79363ec58f?w=800&q=80',
+        imageUrl: '/paintings/acropolis_daguerreotype.jpg',
         pages: [
           {
             title: 'The World\'s First Experiment',
-            imageUrl: 'https://images.unsplash.com/photo-1555848962-6e79363ec58f?w=800&q=80',
+            images: [
+              { url: '/paintings/acropolis_daguerreotype.jpg', caption: 'Daguerreotype of the Acropolis, Athens (c. 1842). The Parthenon looms over the city where democracy was born in 508 BCE.' },
+              { url: '/paintings/school_of_athens.jpg', caption: 'Raphael — The School of Athens (1509–11). The intellectual culture of Athens gave birth to philosophy and democracy simultaneously.' },
+            ],
             body: 'Around 508 BCE, the Athenian statesman Cleisthenes introduced a radical new system of government: demokratia — "rule by the people." For the first time in recorded history, ordinary citizens would have a direct voice in how their city was run.\n\nThe Athenian Assembly (Ekklesia) met regularly on a hillside called the Pnyx. Any adult male citizen could attend, speak, and vote. Decisions on war, treaties, laws, and finances were made by a show of hands. At its height, perhaps 6,000 citizens regularly participated.',
           },
           {
             title: 'The Limits and Legacies',
+            images: [
+              { url: '/paintings/greek_amphora.jpg', caption: 'Athenian black-figure amphora (c. 530 BCE). Everyday life depicted on pottery shows the vibrant civic culture that democracy both reflected and produced.' },
+            ],
             body: 'Athenian democracy had profound limitations. Women, slaves, and foreigners — the majority of Athens\'s population — were excluded. "The people" meant a privileged minority.\n\nYet the Athenian experiment planted ideas that would not die: that ordinary people could govern themselves, that rulers should be accountable, that free debate is the foundation of good decisions. These ideas resurfaced in the Roman Republic, the Magna Carta, the English Parliament, the American Revolution, and the French Revolution.',
           },
         ],
@@ -1122,15 +1128,21 @@ export const courses: Course[] = [
       {
         id: 'magna-carta',
         title: 'Magna Carta: The Law Above Kings',
-        imageUrl: 'https://images.unsplash.com/photo-1568819317551-f8b8b4e7c9f2?w=800&q=80',
+        imageUrl: '/paintings/feudal_europe.jpg',
         pages: [
           {
             title: 'A King Forced to Sign',
-            imageUrl: 'https://images.unsplash.com/photo-1568819317551-f8b8b4e7c9f2?w=800&q=80',
+            images: [
+              { url: '/paintings/feudal_europe.jpg', caption: 'Medieval manuscript illumination depicting feudal hierarchy. In 1215, English barons challenged royal authority — an act with world-historical consequences.' },
+              { url: '/paintings/charlemagne.jpg', caption: 'Albrecht Dürer — Charlemagne (1512). The feudal order that Charlemagne established made the barons\' revolt against King John possible.' },
+            ],
             body: 'In June 1215, English barons who had grown fed up with the arbitrary tyranny of King John forced him to a meadow at Runnymede, beside the River Thames, and made him set his seal on a document: the Magna Carta (Great Charter).\n\nFor the first time, an English monarch was forced to acknowledge that his power had limits. The King was subject to the law, not above it. Key clauses guaranteed that no free man could be imprisoned or punished except by the lawful judgment of his peers.',
           },
           {
             title: 'Why It Still Matters',
+            images: [
+              { url: '/paintings/congress_vienna.jpg', caption: 'Jean-Baptiste Isabey — Congress of Vienna (1819). Europe\'s post-Napoleonic statesmen invoked Magna Carta principles in crafting a new constitutional order.' },
+            ],
             body: 'Most of the Magna Carta\'s 63 clauses dealt with feudal grievances of little lasting importance. But a handful of principles proved immortal: due process, the rule of law, and the idea that government requires consent.\n\nThe document was reinterpreted in every subsequent era of constitutional struggle. When American colonists declared independence from Britain, they cited Magna Carta principles. The 1948 Universal Declaration of Human Rights echoes its spirit. Today it is considered the cornerstone of constitutional government in the English-speaking world.',
           },
         ],
@@ -1144,7 +1156,7 @@ export const courses: Course[] = [
   {
     id: 'revolutions-power',
     title: 'Revolutions & the Seizure of Power',
-    imageUrl: 'https://images.unsplash.com/photo-1609743522653-52354461eb27?w=800&q=80',
+    imageUrl: '/paintings/liberty_leading_people.jpg',
     topicId: 'politics',
     rating: 4.7,
     estimatedMinutes: 14,
@@ -1152,15 +1164,22 @@ export const courses: Course[] = [
       {
         id: 'french-revolution',
         title: 'The French Revolution',
-        imageUrl: 'https://images.unsplash.com/photo-1609743522653-52354461eb27?w=800&q=80',
+        imageUrl: '/paintings/liberty_leading_people.jpg',
         pages: [
           {
             title: 'Liberty, Equality, Fraternity — and Terror',
-            imageUrl: 'https://images.unsplash.com/photo-1609743522653-52354461eb27?w=800&q=80',
+            images: [
+              { url: '/paintings/prise_de_la_bastille.jpg', caption: 'Jean-Pierre Houël — The Storming of the Bastille (1789). Bibliothèque nationale de France. The symbolic act that launched the Revolution.' },
+              { url: '/paintings/liberty_leading_people.jpg', caption: 'Eugène Delacroix — Liberty Leading the People (1830). Louvre, Paris. The Revolution\'s enduring image: liberty as a force of nature.' },
+            ],
             body: 'The French Revolution (1789–1799) began with bread riots and a storming of the Bastille prison and ended with Napoleon seizing power. In between, it executed a king and queen, launched a Reign of Terror that killed tens of thousands, abolished feudalism, and proclaimed the rights of man.\n\nFrance in 1789 was a society on the edge. The state was bankrupt from wars. Harvests had failed. The nobility and clergy paid almost no taxes while ordinary people starved. When Louis XVI called the Estates-General, the Third Estate (commoners) refused to play by the old rules.',
           },
           {
             title: 'The Revolution Devours Its Own',
+            images: [
+              { url: '/paintings/marat_assassinated.jpg', caption: 'Jacques-Louis David — The Death of Marat (1793). Musées royaux des Beaux-Arts, Brussels. The revolutionary journalist Jean-Paul Marat, murdered in his bath.' },
+              { url: '/paintings/coronation_napoleon.jpg', caption: 'Jacques-Louis David — The Coronation of Napoleon (1807). Louvre, Paris. The Revolution ended with Napoleon crowning himself Emperor.' },
+            ],
             body: 'The Reign of Terror (1793–1794) showed how revolutions can turn monstrous. Maximilien Robespierre and the Committee of Public Safety guillotined not just aristocrats and priests but fellow revolutionaries — anyone suspected of insufficient zeal.\n\nRobespierre himself was eventually arrested and guillotined. The Revolution\'s ideals — liberty, equality, fraternity — survived in the long run, spreading across Europe and the Americas. But the path was soaked in blood.',
           },
         ],
@@ -1172,15 +1191,21 @@ export const courses: Course[] = [
       {
         id: 'propaganda-power',
         title: 'Propaganda: The Weapon of Regimes',
-        imageUrl: 'https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=800&q=80',
+        imageUrl: '/paintings/weimar_satire.jpg',
         pages: [
           {
             title: 'How Governments Shape Minds',
-            imageUrl: 'https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=800&q=80',
+            images: [
+              { url: '/paintings/weimar_satire.jpg', caption: 'George Grosz — Weimar-era political satire (1920s). The collapse of democratic norms and rise of propaganda in the Weimar Republic paved the way for fascism.' },
+              { url: '/paintings/fascist_italy.jpg', caption: 'Fascist Italy poster art (1930s). Mussolini\'s regime perfected the use of monumental imagery, mass rallies, and state-controlled media.' },
+            ],
             body: 'Propaganda is as old as politics. Roman emperors had their image stamped on every coin. Medieval kings used religious pageantry to project sacred authority. But the 20th century industrialised propaganda on a terrifying scale.\n\nJoseph Goebbels, Nazi Germany\'s Minister of Propaganda, understood that controlling information meant controlling reality. Radio, cinema, rallies, posters, textbooks — every medium was weaponised. The aim was not simply to inform but to overwhelm rational thought with emotional intensity.',
           },
           {
             title: 'Propaganda in the Modern World',
+            images: [
+              { url: '/paintings/wwii_holocaust.jpg', caption: 'The Holocaust — the ultimate consequence of unchallenged propaganda and dehumanisation. Propaganda did not cause it alone, but made it possible.' },
+            ],
             body: 'Soviet propaganda used heroic imagery — the selfless worker, the brave soldier — to project an idealised vision of communist society far removed from the reality of gulags and famines.\n\nModern propaganda has moved online. Social media algorithms amplify outrage and division. "Deepfake" technology can put words in anyone\'s mouth. The mechanisms are new but the goal is ancient: to make people see what power wants them to see, and to distrust what power wants them to doubt.',
           },
         ],
