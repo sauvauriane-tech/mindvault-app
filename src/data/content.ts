@@ -324,12 +324,21 @@ export const courses: Course[] = [
         pages: [
           {
             title: 'The Philosopher Who Never Left Königsberg',
-            imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Kant_gemaelde_3.jpg/500px-Kant_gemaelde_3.jpg', caption: 'Portrait of Immanuel Kant (c. 1790). Neighbours set their watches by his daily walks — yet his ideas detonated a revolution in philosophy.' },
+              { url: '/paintings/frederick_great_flute.jpg', caption: 'Adolph Menzel — Frederick the Great Playing the Flute (1852). Kant lived his entire life in Königsberg under Prussian rule.' },
+            ],
             body: 'Immanuel Kant (1724–1804) spent his entire life in the Prussian city of Königsberg and was so punctually routine that neighbours set their watches by his afternoon walks. Yet his ideas detonated a revolution in philosophy that we are still living through.\n\nKant\'s central ethical insight was this: the moral worth of an action does not depend on its consequences but on whether it was done from duty — from respect for the moral law. An action done for self-interest, even one that happens to help others, has no genuine moral worth.\n\nHis "Categorical Imperative" — his supreme principle of morality — states: "Act only according to that maxim by which you can at the same time will that it should become a universal law." In other words: only act in ways you would be happy for everyone, everywhere, to act.',
           },
           {
             title: 'Kant\'s Second Formula: Treating People as Ends',
+            images: [
+              { url: '/paintings/wanderer_fog.jpg', caption: 'Caspar David Friedrich — Wanderer above the Sea of Fog (c. 1818). Hamburger Kunsthalle. The Romantic sublime — the individual confronting the vast unknown — emerged partly in response to Kant\'s philosophy.' },
+            ],
             body: 'Kant offered a second formulation of his Categorical Imperative that many find even more intuitive: "Act so that you treat humanity, both in your own person and that of another, always as an end and never merely as a means."\n\nThis principle — that people must never be used merely as tools for someone else\'s purposes — underlies much of modern human rights thinking. Slavery, exploitation, manipulation, deception — all violate this principle by treating persons as instruments.\n\nKant believed these principles were accessible to any rational being through pure reason alone, without appeal to religion, culture, or consequences. Morality was universal precisely because it was rational.',
+            extraImages: [
+              { url: '/paintings/friedrich_two_men_moon.jpg', caption: 'Caspar David Friedrich — Two Men Contemplating the Moon (c. 1825–30). Galerie Neue Meister, Dresden. The Kantian invitation to reflect on the limits of human knowledge.' },
+            ],
           },
         ],
         quiz: [
