@@ -911,7 +911,7 @@ export const courses: Course[] = [
             title: 'The Deaf Composer Who Heard Everything',
             images: [
               {
-                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Joseph_Karl_Stieler_-_Beethoven_mit_dem_Manuskript_der_Missa_solemnis.jpg/600px-Joseph_Karl_Stieler_-_Beethoven_mit_dem_Manuskript_der_Missa_solemnis.jpg',
+                url: '/paintings/beethoven_portrait.jpg',
                 caption: 'Joseph Karl Stieler — Ludwig van Beethoven (1820). Beethoven-Haus, Bonn. The composer shown with the manuscript of his Missa Solemnis — already deaf.',
               },
               {
