@@ -451,7 +451,7 @@ export const courses: Course[] = [
       {
         id: 'descartes-doubt',
         title: 'Descartes: I Think, Therefore I Am',
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Frans_Hals_-_Portret_van_René_Descartes.jpg/500px-Frans_Hals_-_Portret_van_René_Descartes.jpg',
+        imageUrl: '/paintings/descartes_portrait.jpg',
         pages: [
           {
             title: 'The Method of Radical Doubt',
