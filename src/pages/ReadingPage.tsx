@@ -10,19 +10,49 @@ import { proxyImageUrl } from '@/lib/utils';
 // ── Inline carousel ──────────────────────────────────────────────────────────
 function ImageCarousel({ images }: { images: PageImage[] }) {
   const [idx, setIdx] = useState(0);
+  const [heights, setHeights] = useState<number[]>([]);
   if (!images.length) return null;
   const img = images[idx];
+  const containerHeight = heights.length === images.length ? Math.max(...heights) : undefined;
+
   return (
     <figure className="my-6 w-full">
-      <div className="relative rounded-xl overflow-hidden bg-muted" style={{ maxHeight: '56vw', minHeight: 180 }}>
+      <div
+        className="relative rounded-xl overflow-hidden bg-muted flex items-center justify-center"
+        style={{ height: containerHeight ? `${containerHeight}px` : 'auto', minHeight: 180 }}
+      >
+        {/* Preload all images invisibly to measure heights */}
+        {heights.length < images.length && images.map((im, i) => (
+          <img
+            key={`measure-${i}`}
+            src={proxyImageUrl(im.url)}
+            alt=""
+            referrerPolicy="no-referrer"
+            className="absolute opacity-0 pointer-events-none w-full"
+            style={{ display: 'block' }}
+            onLoad={e => {
+              const el = e.currentTarget;
+              const naturalRatio = el.naturalHeight / el.naturalWidth;
+              const renderedWidth = el.offsetWidth || el.parentElement?.offsetWidth || 400;
+              const h = Math.round(renderedWidth * naturalRatio);
+              setHeights(prev => {
+                const next = [...prev];
+                next[i] = h;
+                return next;
+              });
+            }}
+          />
+        ))}
+
         <img
           key={idx}
           src={proxyImageUrl(img.url)}
           alt={img.caption ?? ''}
           referrerPolicy="no-referrer"
-          className="w-full h-full object-cover transition-opacity duration-300"
-          style={{ maxHeight: '56vw', minHeight: 180, display: 'block' }}
+          className="w-full object-contain transition-opacity duration-300"
+          style={{ display: 'block', maxHeight: containerHeight ? `${containerHeight}px` : undefined }}
         />
+
         {images.length > 1 && (
           <>
             <button
@@ -39,7 +69,6 @@ function ImageCarousel({ images }: { images: PageImage[] }) {
             >
               <ChevronRight className="w-4 h-4" />
             </button>
-            {/* Dots */}
             <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
               {images.map((_, i) => (
                 <button
