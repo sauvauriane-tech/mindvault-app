@@ -361,7 +361,7 @@ export const courses: Course[] = [
           {
             title: 'The Philosopher Who Never Left Königsberg',
             images: [
-              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Kant_gemaelde_3.jpg/500px-Kant_gemaelde_3.jpg', caption: 'Portrait of Immanuel Kant (c. 1790). Neighbours set their watches by his daily walks — yet his ideas detonated a revolution in philosophy.' },
+              { url: '/paintings/kant_portrait.jpg', caption: 'Portrait of Immanuel Kant (c. 1790). Neighbours set their watches by his daily walks — yet his ideas detonated a revolution in philosophy.' },
               { url: '/paintings/frederick_great_flute.jpg', caption: 'Adolph Menzel — Frederick the Great Playing the Flute (1852). Kant lived his entire life in Königsberg under Prussian rule.' },
             ],
             body: 'Immanuel Kant (1724–1804) spent his entire life in the Prussian city of Königsberg and was so punctually routine that neighbours set their watches by his afternoon walks. Yet his ideas detonated a revolution in philosophy that we are still living through.\n\nKant\'s central ethical insight was this: the moral worth of an action does not depend on its consequences but on whether it was done from duty — from respect for the moral law. An action done for self-interest, even one that happens to help others, has no genuine moral worth.\n\nHis "Categorical Imperative" — his supreme principle of morality — states: "Act only according to that maxim by which you can at the same time will that it should become a universal law." In other words: only act in ways you would be happy for everyone, everywhere, to act.',
