@@ -353,11 +353,16 @@ export const courses: Course[] = [
         pages: [
           {
             title: 'Bentham and the Happiness Calculus',
-            imageUrl: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Jeremy_Bentham_by_Henry_William_Pickersgill_detail.jpg/500px-Jeremy_Bentham_by_Henry_William_Pickersgill_detail.jpg', caption: 'Henry William Pickersgill — Portrait of Jeremy Bentham (c. 1829). National Portrait Gallery, London. The founder of Utilitarianism.' },
+            ],
             body: 'Jeremy Bentham (1748–1832) proposed a beautifully simple principle for ethics: an action is right if it produces the greatest happiness for the greatest number. Pleasure is good; pain is bad. Morality is a calculation.\n\nBentham even sketched a "felicific calculus" — a mathematical procedure for measuring units of pleasure and pain to determine the right course of action. Every person\'s happiness counts equally. The king\'s pleasure counts no more than the beggar\'s.\n\nThis was radical. In a society of rigid hierarchy, the claim that every person\'s wellbeing counts equally had revolutionary implications for criminal justice, animal welfare, poverty relief, and political reform.',
           },
           {
             title: 'Mill and Higher Pleasures',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/John_Stuart_Mill_by_London_Stereoscopic_Company%2C_c1870.jpg/500px-John_Stuart_Mill_by_London_Stereoscopic_Company%2C_c1870.jpg', caption: 'John Stuart Mill (c. 1870). London Stereoscopic Company. Mill refined Utilitarianism and wrote the foundational liberal text "On Liberty."' },
+            ],
             body: 'John Stuart Mill (1806–1873) refined Bentham\'s utilitarianism to address an obvious objection: if only quantity of pleasure matters, is it better to be a satisfied pig than a dissatisfied philosopher?\n\nMill insisted on a distinction between "higher" and "lower" pleasures. The pleasures of the intellect, the moral sentiments, and the imagination are qualitatively superior to mere bodily satisfaction. "It is better to be Socrates dissatisfied than a fool satisfied."\n\nMill also wrote "On Liberty" (1859), arguing that the only legitimate reason to restrict anyone\'s freedom is to prevent harm to others. His "harm principle" remains a cornerstone of liberal political philosophy and continues to shape debates about free speech, drug legislation, and personal autonomy.',
           },
         ],
