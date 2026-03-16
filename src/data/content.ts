@@ -897,7 +897,7 @@ export const courses: Course[] = [
   {
     id: 'music-revolutions',
     title: 'How Music Shaped History',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Joseph_Karl_Stieler_-_Beethoven_mit_dem_Manuskript_der_Missa_solemnis.jpg/600px-Joseph_Karl_Stieler_-_Beethoven_mit_dem_Manuskript_der_Missa_solemnis.jpg',
+    imageUrl: '/paintings/beethoven_portrait.jpg',
     topicId: 'culture',
     rating: 4.6,
     estimatedMinutes: 16,
