@@ -348,7 +348,7 @@ export const courses: Course[] = [
   {
     id: 'ethics-morality',
     title: 'What Is Right? A History of Ethics',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Kant_gemaelde_3.jpg/500px-Kant_gemaelde_3.jpg',
+    imageUrl: '/paintings/kant_portrait.jpg',
     topicId: 'philosophy',
     rating: 4.8,
     estimatedMinutes: 18,
