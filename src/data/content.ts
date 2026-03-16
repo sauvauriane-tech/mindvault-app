@@ -593,11 +593,11 @@ export const courses: Course[] = [
             title: 'The Prince Who Renounced Everything',
             images: [
               {
-                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Gautama_Buddha_in_Sarnath_Museum_%28Dhammajak_Mutra%29.jpg/600px-Gautama_Buddha_in_Sarnath_Museum_%28Dhammajak_Mutra%29.jpg',
+                url: '/paintings/buddha_sarnath.jpg',
                 caption: 'Buddha\'s first sermon at Sarnath (5th–6th century CE). Sarnath Museum, India. The "Dharmachakra" hand gesture symbolises setting the wheel of dharma in motion.',
               },
               {
-                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Fo_Guang_Shan_Temple_Miri_Sarawak_Buddha.jpg/600px-Fo_Guang_Shan_Temple_Miri_Sarawak_Buddha.jpg',
+                url: '/paintings/moreau_oedipus.jpg',
                 caption: 'A gilded Buddha statue in serene meditation — the physical embodiment of inner stillness and awakening.',
               },
             ],
