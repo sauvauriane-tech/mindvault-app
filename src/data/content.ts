@@ -378,12 +378,22 @@ export const courses: Course[] = [
         pages: [
           {
             title: 'Existence Before Essence',
-            imageUrl: 'https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=800&q=80',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Edvard_Munch_-_The_Scream_-_Google_Art_Project.jpg/600px-Edvard_Munch_-_The_Scream_-_Google_Art_Project.jpg', caption: 'Edvard Munch — The Scream (1893). National Gallery, Oslo. Existential anxiety made visible — the modern self confronting an indifferent universe.' },
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Jean-Paul_Sartre_FP.jpg/500px-Jean-Paul_Sartre_FP.jpg', caption: 'Jean-Paul Sartre (1967). "We are condemned to be free" — the central existentialist declaration.' },
+            ],
             body: 'Existentialism emerged in the 19th and 20th centuries as a response to the collapse of traditional religious certainties and the horrors of modern war. Its central claim is disorienting: there is no pre-given human nature or purpose. Existence comes before essence.\n\nJean-Paul Sartre (1905–1980) put it starkly: "We are condemned to be free." There is no script, no nature, no God to dictate who you should be. You must create yourself through your choices — and you bear full responsibility for what you become.\n\nThis is liberating and terrifying in equal measure. The "existential anxiety" (Angst) that pervades the tradition is not a psychological disorder but a rational response to the vertigo of absolute freedom.',
           },
           {
             title: 'Camus and the Absurd',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Albert_Camus%2C_gagnant_de_prix_Nobel%2C_portrait_en_buste%2C_posé_au_bureau%2C_faisant_face_à_gauche%2C_cigarette_de_tabagisme.jpg/500px-Albert_Camus%2C_gagnant_de_prix_Nobel%2C_portrait_en_buste%2C_posé_au_bureau%2C_faisant_face_à_gauche%2C_cigarette_de_tabagisme.jpg', caption: 'Albert Camus (1957). Nobel Prize portrait. "One must imagine Sisyphus happy."' },
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Simone_de_Beauvoir2.png/500px-Simone_de_Beauvoir2.png', caption: 'Simone de Beauvoir (1967). "One is not born, but becomes, a woman" — the founding claim of modern feminist philosophy.' },
+            ],
             body: 'Albert Camus (1913–1960) is often grouped with existentialists, though he rejected the label. His concept of the "absurd" captures something existentialists shared: the collision between the human hunger for meaning and the universe\'s total silence on the matter.\n\nCamus\'s response was neither despair nor false comfort but rebellion: we must imagine Sisyphus — condemned to roll his boulder up a hill forever — as happy. To embrace life fully, without illusions, in the face of its absurdity, is the authentic human response.\n\nSimone de Beauvoir extended existentialism into feminism. In "The Second Sex" (1949) she argued that women have been defined as "Other" — as the deviation from a male norm — rather than as free subjects. "One is not born, but rather becomes, a woman." Social existence, not biology, determines gender roles.',
+            extraImages: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Titian_-_Sisyphus_-_Prado.jpg/600px-Titian_-_Sisyphus_-_Prado.jpg', caption: 'Titian — Sisyphus (1548–49). Prado, Madrid. Camus transformed this mythic punishment into a parable of human dignity.' },
+            ],
           },
         ],
         quiz: [
