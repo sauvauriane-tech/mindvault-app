@@ -728,7 +728,7 @@ export const courses: Course[] = [
   {
     id: 'art-movements',
     title: 'Impressionism: Painting the Moment',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Claude_Monet%2C_Impression%2C_soleil_levant.jpg/800px-Claude_Monet%2C_Impression%2C_soleil_levant.jpg',
+    imageUrl: '/paintings/monet_impression_sunrise.jpg',
     topicId: 'culture',
     rating: 4.8,
     estimatedMinutes: 20,
