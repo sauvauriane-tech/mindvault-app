@@ -288,7 +288,7 @@ export const courses: Course[] = [
           {
             title: 'The Philosophy That Conquered Rome',
             images: [
-              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Stoa_of_Attalos_at_the_Ancient_Agora_of_Athens_3.jpg/800px-Stoa_of_Attalos_at_the_Ancient_Agora_of_Athens_3.jpg', caption: 'The Stoa of Attalos, Athens (reconstructed). Zeno of Citium taught beneath a painted stoa like this — giving Stoicism its name.' },
+              { url: '/paintings/marcus_aurelius_bust.jpg', caption: 'The Stoa of Attalos, Athens (reconstructed). Zeno of Citium taught beneath a painted stoa like this — giving Stoicism its name.' },
             ],
             body: 'Stoicism was founded in Athens around 300 BCE by Zeno of Citium, who taught beneath a painted porch — a "stoa" — which gave the school its name. It became the dominant philosophy of the Roman Empire, embraced by slaves and emperors alike.\n\nThe Stoics held a radical idea: your emotions are not caused by events, but by your judgments about events. A storm is neither good nor bad — it is your interpretation that creates suffering. Change your interpretation and you change your experience of reality.\n\nThis is not passive resignation. The Stoics made a sharp distinction between what is "up to us" (our thoughts, desires, values) and what is "not up to us" (wealth, reputation, other people\'s actions, even death). Wisdom consists in focusing entirely on the former and accepting the latter with equanimity.',
           },
