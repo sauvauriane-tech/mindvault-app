@@ -443,7 +443,7 @@ export const courses: Course[] = [
   {
     id: 'mind-reality',
     title: 'Mind, Knowledge & Reality',
-    imageUrl: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Frans_Hals_-_Portret_van_René_Descartes.jpg/500px-Frans_Hals_-_Portret_van_René_Descartes.jpg',
     topicId: 'philosophy',
     rating: 4.6,
     estimatedMinutes: 14,
@@ -451,7 +451,7 @@ export const courses: Course[] = [
       {
         id: 'descartes-doubt',
         title: 'Descartes: I Think, Therefore I Am',
-        imageUrl: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Frans_Hals_-_Portret_van_René_Descartes.jpg/500px-Frans_Hals_-_Portret_van_René_Descartes.jpg',
         pages: [
           {
             title: 'The Method of Radical Doubt',
