@@ -1007,7 +1007,7 @@ export const courses: Course[] = [
       {
         id: 'greek-mythology',
         title: 'Greek Myths: Gods, Heroes & Monsters',
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Ingres_Jupiter_and_Thetis.jpg/700px-Ingres_Jupiter_and_Thetis.jpg',
+        imageUrl: '/paintings/ingres_jupiter_thetis.jpg',
         pages: [
           {
             title: 'Why the Greeks Needed Their Gods',
