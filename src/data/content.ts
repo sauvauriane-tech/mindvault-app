@@ -12,9 +12,18 @@ export interface QuizQuestion {
   explanation: string;
 }
 
+export interface PageImage {
+  url: string;
+  caption?: string;
+}
+
 export interface LessonPage {
   title: string;
   imageUrl?: string;
+  /** Images shown as a carousel, interspersed with paragraphs (one image per paragraph break) */
+  images?: PageImage[];
+  /** Extra images shown as a standalone gallery strip below the body text */
+  extraImages?: PageImage[];
   body: string;
 }
 
