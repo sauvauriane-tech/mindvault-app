@@ -419,11 +419,16 @@ export const courses: Course[] = [
         pages: [
           {
             title: 'The Method of Radical Doubt',
-            imageUrl: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Frans_Hals_-_Portret_van_René_Descartes.jpg/500px-Frans_Hals_-_Portret_van_René_Descartes.jpg', caption: 'Frans Hals — Portrait of René Descartes (c. 1649–1700). Louvre, Paris. "Cogito ergo sum" — the bedrock of modern philosophy.' },
+            ],
             body: 'René Descartes (1596–1650) set out to find a foundation for knowledge that was utterly certain — immune to any possible doubt. His method was radical: doubt everything that can possibly be doubted, and see what survives.\n\nDescartes doubted his senses (they sometimes deceive us). He doubted the external world (perhaps he was dreaming). He even entertained the hypothesis of a supremely powerful "evil demon" who might be deceiving him about everything — including mathematics.\n\nAnd yet one thing survived. The very act of doubting required a doubter. Even if he was being deceived about everything, the deception required that he existed to be deceived. "Cogito ergo sum" — I think, therefore I am — became the bedrock of his philosophy.',
           },
           {
             title: 'The Mind-Body Problem',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Rembrandt_-_The_Anatomy_Lesson_of_Dr_Nicolaes_Tulp.jpg/800px-Rembrandt_-_The_Anatomy_Lesson_of_Dr_Nicolaes_Tulp.jpg', caption: 'Rembrandt — The Anatomy Lesson of Dr. Nicolaes Tulp (1632). Mauritshuis, The Hague. The 17th-century fascination with the body-as-machine directly informed Descartes\'s dualism.' },
+            ],
             body: 'Having established the certainty of his own existence as a thinking thing, Descartes faced a new problem. He conceived of mind and body as entirely different substances: mind is unextended and immaterial; body is extended and material. But if they are so different, how do they interact?\n\nHow does a thought — a purely mental event — cause your arm to move? How does a physical injury cause a felt pain? This "mind-body problem" remains one of philosophy\'s most contested puzzles. Neuroscientists can describe every firing neuron, yet the subjective "what it\'s like" — consciousness itself — seems to escape physical explanation.\n\nDescartes\'s framing of this problem has shaped philosophy, psychology, and neuroscience ever since. "Cartesian dualism" remains the folk psychological view of most people, even those who have never heard of Descartes.',
           },
         ],
@@ -439,12 +444,21 @@ export const courses: Course[] = [
         pages: [
           {
             title: 'The Cave and the Shadow World',
-            imageUrl: 'https://images.unsplash.com/photo-1555990793-da11153b2473?w=800&q=80',
+            images: [
+              { url: '/paintings/school_of_athens.jpg', caption: 'Raphael — The School of Athens (1509–11). Apostolic Palace, Vatican. Plato (centre left, pointing upward) and Aristotle (centre right, gesturing outward) define the two poles of Western philosophy.' },
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Silanion_Plato_Glyptothek_Munich_548.jpg/500px-Silanion_Plato_Glyptothek_Munich_548.jpg', caption: 'Roman copy of Silanion\'s portrait of Plato (c. 370 BCE). Glyptothek, Munich.' },
+            ],
             body: 'Plato (428–348 BCE) believed the world we see is not the real world. In his famous "Allegory of the Cave," he describes prisoners chained in a cave, seeing only shadows on the wall — and mistaking those shadows for reality.\n\nPhilosophy, for Plato, was the process of turning away from the shadows and emerging into the sunlight — from appearance to reality, from opinion to knowledge. But most people are so comfortable with their shadows that they resist this liberation, and may even kill those who attempt it (as Athens killed Socrates).\n\nBehind the visible world, Plato argued, lies a realm of perfect, eternal "Forms" — abstract templates of which physical things are mere imperfect copies. There is a perfect Form of Beauty, of Justice, of the Good. Individual beautiful things are beautiful only by participating in the Form of Beauty.',
           },
           {
             title: 'Philosophy as a Way of Life',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Plato%27s_Academy_mosaic_from_Pompeii.jpg/800px-Plato%27s_Academy_mosaic_from_Pompeii.jpg', caption: 'Mosaic from Pompeii depicting Plato\'s Academy (1st century CE). Museo Archeologico Nazionale, Naples.' },
+            ],
             body: 'Plato founded the Academy in Athens — perhaps the first institution of higher education in the Western world. It operated for over 900 years, until the Emperor Justinian closed it in 529 CE.\n\nPlato\'s "Republic" is one of the most ambitious and controversial books in the Western tradition. It asks: what is justice? What is the ideal state? Plato\'s answer was philosopher-kings — those who have escaped the cave and seen reality should rule, whether they want to or not.\n\nThe philosopher Alfred North Whitehead called all of Western philosophy "footnotes to Plato." This is an exaggeration — but it captures something true. Almost every major philosophical question — the nature of knowledge, reality, justice, beauty, love — was first systematically explored by Plato, and almost every subsequent philosopher has had to take a position relative to his answers.',
+            extraImages: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg/800px-%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg', caption: 'Raphael — The School of Athens (detail, 1509–11). The full fresco shows Plato and Aristotle surrounded by the greatest thinkers of antiquity.' },
+            ],
           },
         ],
         quiz: [
