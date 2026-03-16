@@ -283,7 +283,7 @@ export const courses: Course[] = [
       {
         id: 'stoicism',
         title: 'Stoicism: Mastering the Inner World',
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/MSR-ra-61-b-1-DSC00164.jpg/600px-MSR-ra-61-b-1-DSC00164.jpg',
+        imageUrl: '/paintings/marcus_aurelius_bust.jpg',
         pages: [
           {
             title: 'The Philosophy That Conquered Rome',
