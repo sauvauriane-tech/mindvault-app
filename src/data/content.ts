@@ -736,7 +736,7 @@ export const courses: Course[] = [
       {
         id: 'impressionism',
         title: 'Impressionism: The Scandal That Changed Art',
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Claude_Monet%2C_Impression%2C_soleil_levant.jpg/800px-Claude_Monet%2C_Impression%2C_soleil_levant.jpg',
+        imageUrl: '/paintings/monet_impression_sunrise.jpg',
         pages: [
           {
             title: 'A Scandal in Paris',
