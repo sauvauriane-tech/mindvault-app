@@ -17,7 +17,7 @@ function ImageCarousel({ images }: { images: PageImage[] }) {
       <div className="relative rounded-xl overflow-hidden bg-muted" style={{ maxHeight: '56vw', minHeight: 180 }}>
         <img
           key={idx}
-          src={img.url}
+          src={proxyImageUrl(img.url)}
           alt={img.caption ?? ''}
           referrerPolicy="no-referrer"
           className="w-full h-full object-cover transition-opacity duration-300"
