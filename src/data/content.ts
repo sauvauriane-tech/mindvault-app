@@ -443,7 +443,7 @@ export const courses: Course[] = [
   {
     id: 'mind-reality',
     title: 'Mind, Knowledge & Reality',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Frans_Hals_-_Portret_van_René_Descartes.jpg/500px-Frans_Hals_-_Portret_van_René_Descartes.jpg',
+    imageUrl: '/paintings/descartes_portrait.jpg',
     topicId: 'philosophy',
     rating: 4.6,
     estimatedMinutes: 14,
