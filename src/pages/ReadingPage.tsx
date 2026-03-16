@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { getLesson, PageImage } from '@/data/content';
 import { useProgress } from '@/context/ProgressContext';
 import Navbar from '@/components/Navbar';
+import { proxyImageUrl } from '@/lib/utils';
 
 // ── Inline carousel ──────────────────────────────────────────────────────────
 function ImageCarousel({ images }: { images: PageImage[] }) {
