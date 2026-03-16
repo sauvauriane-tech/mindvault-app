@@ -507,7 +507,7 @@ export const courses: Course[] = [
   {
     id: 'cold-war-politics',
     title: 'The Cold War Explained',
-    imageUrl: 'https://images.unsplash.com/photo-1584824486509-112e4181ff6b?w=800&q=80',
+    imageUrl: '/paintings/berlin_wall.jpg',
     topicId: 'politics',
     rating: 4.6,
     estimatedMinutes: 10,
@@ -515,15 +515,21 @@ export const courses: Course[] = [
       {
         id: 'iron-curtain',
         title: 'Behind the Iron Curtain',
-        imageUrl: 'https://images.unsplash.com/photo-1584824486509-112e4181ff6b?w=800&q=80',
+        imageUrl: '/paintings/berlin_wall.jpg',
         pages: [
           {
             title: 'A World Divided',
-            imageUrl: 'https://images.unsplash.com/photo-1584824486509-112e4181ff6b?w=800&q=80',
+            images: [
+              { url: '/paintings/berlin_wall.jpg', caption: 'The Berlin Wall — the Iron Curtain made concrete. For 28 years it divided East and West Berlin, and symbolised the Cold War division of the entire world.' },
+              { url: '/paintings/german_reunification.jpg', caption: 'German Reunification, 1990. The end of the Cold War began with the fall of the Wall on 9 November 1989.' },
+            ],
             body: 'The Cold War (1947–1991) was not a traditional war fought with armies on battlefields. It was a prolonged geopolitical, ideological, and economic struggle between two superpowers: the United States and the Soviet Union.\n\nThe term "Iron Curtain" was popularized by Winston Churchill in a 1946 speech. It described the division of Europe into Western liberal democracies and Eastern Soviet-dominated communist states.',
           },
           {
             title: 'Ideology and Proxy Wars',
+            images: [
+              { url: '/paintings/berlin_wall_fall.jpg', caption: 'The fall of the Berlin Wall, November 1989 — the moment the Cold War ended. The crowd tears down the symbol of four decades of division.' },
+            ],
             body: 'The Cold War was fundamentally a battle of ideas: American capitalism and liberal democracy versus Soviet communism. Both sides believed their system was the natural destiny of humanity.\n\nBecause direct war between nuclear-armed superpowers would risk mutual annihilation, the conflict played out through proxy wars in Korea, Vietnam, Angola, Afghanistan, and dozens of other countries.',
           },
         ],
@@ -537,7 +543,7 @@ export const courses: Course[] = [
   {
     id: 'world-cultures',
     title: 'Lost Civilizations',
-    imageUrl: 'https://images.unsplash.com/photo-1518638150340-f706e86654de?w=800&q=80',
+    imageUrl: '/paintings/greek_amphora.jpg',
     topicId: 'culture',
     rating: 4.8,
     estimatedMinutes: 10,
@@ -545,15 +551,21 @@ export const courses: Course[] = [
       {
         id: 'maya-civilization',
         title: 'The Maya: Masters of Time',
-        imageUrl: 'https://images.unsplash.com/photo-1518638150340-f706e86654de?w=800&q=80',
+        imageUrl: '/paintings/greek_amphora.jpg',
         pages: [
           {
             title: 'A Civilization of Genius',
-            imageUrl: 'https://images.unsplash.com/photo-1518638150340-f706e86654de?w=800&q=80',
+            images: [
+              { url: '/paintings/greek_amphora.jpg', caption: 'Greek amphora with mythological scenes (c. 530 BCE). Ancient civilisations across the world independently developed complex art, writing, and astronomy.' },
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Chichen_Itza_3.jpg/800px-Chichen_Itza_3.jpg', caption: 'El Castillo (Temple of Kukulcán), Chichen Itza, Mexico (c. 9th–12th century CE). A testament to Maya astronomical and architectural precision.' },
+            ],
             body: 'The Maya civilization flourished for over two thousand years in Mesoamerica. At their height (roughly 250–900 CE), the Maya built some of the most sophisticated cities in the ancient world.\n\nMayan cities like Tikal, Palenque, and Chichen Itza featured towering pyramids, elaborate palaces, astronomic observatories, and complex water management systems. Tikal at its peak had a population of perhaps 100,000 people.',
           },
           {
             title: 'Mathematics, Astronomy & Collapse',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Maya_maize_god_-_The_Walters_Art_Museum.jpg/500px-Maya_maize_god_-_The_Walters_Art_Museum.jpg', caption: 'Maya maize god sculpture (c. 715 CE). The Walters Art Museum. The Maya developed one of the most sophisticated cosmologies of the ancient world.' },
+            ],
             body: 'The Maya made extraordinary advances in mathematics and astronomy. They independently developed the concept of zero — one of history\'s most important mathematical innovations. Their calendar system was so precise it rivals our own.\n\nThe "Classic Maya Collapse" between 800 and 1000 CE saw the abandonment of major southern lowland cities. But the Maya did not disappear — millions of Maya people live in Mexico and Central America today.',
           },
         ],
