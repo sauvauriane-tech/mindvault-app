@@ -59,7 +59,7 @@ export const courses: Course[] = [
   {
     id: 'medieval-europe',
     title: 'Medieval Europe: Myths & Realities',
-    imageUrl: 'https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=800&q=80',
+    imageUrl: '/paintings/feudal_europe.jpg',
     topicId: 'history',
     rating: 4.8,
     estimatedMinutes: 20,
@@ -67,15 +67,21 @@ export const courses: Course[] = [
       {
         id: 'real-middle-ages',
         title: 'The Real Middle Ages',
-        imageUrl: 'https://images.unsplash.com/photo-1564415315949-7a0c4c73aab4?w=800&q=80',
+        imageUrl: '/paintings/feudal_europe.jpg',
         pages: [
           {
             title: 'Not as Dark as You Think',
-            imageUrl: 'https://images.unsplash.com/photo-1564415315949-7a0c4c73aab4?w=800&q=80',
+            images: [
+              { url: '/paintings/feudal_europe.jpg', caption: 'Illuminated manuscript — feudal Europe (c. 13th century). Medieval society was far more structured and literate than the "Dark Ages" myth suggests.' },
+              { url: '/paintings/netherlandish_rosary.jpg', caption: 'Master of the Rosary — Netherlandish devotional panel (c. 1500). The Catholic Church was the great patron of medieval art and scholarship.' },
+            ],
             body: 'The Middle Ages are often called the "Dark Ages," but this label is deeply misleading. Between roughly 500 and 1500 CE, Europe was a place of remarkable creativity, scholarship, and innovation.\n\nDespite the popular image of ignorant, superstitious peasants stumbling through filthy villages, medieval people built soaring cathedrals, wrote sophisticated philosophy, and established the first universities. Places like Bologna (founded 1088), Oxford (circa 1096), and Paris (circa 1150) were thriving centers of learning.\n\nMedieval scholars preserved and expanded upon classical knowledge. Far from rejecting ancient Greek and Roman texts, they translated them, debated them, and built on them. Figures like Thomas Aquinas synthesized Aristotelian philosophy with Christian theology in ways that shaped Western thought for centuries.',
           },
           {
             title: 'Inventions & Innovations',
+            images: [
+              { url: '/paintings/medieval_armet.jpg', caption: 'Medieval armet helmet (c. 15th century). Medieval metallurgy and engineering produced innovations that shaped Europe for centuries.' },
+            ],
             body: 'The medieval period gave us inventions we still use today. The mechanical clock, eyeglasses, the printing press (late medieval), the heavy plow that transformed European agriculture — all emerged in this era.\n\nWater mills and windmills harnessed natural energy to grind grain and power workshops. The horse collar, invented around the 9th century, allowed horses to pull heavy loads without choking, revolutionizing farming and transport.\n\nGothic architecture, with its pointed arches and flying buttresses, solved engineering problems that had stumped builders for centuries — allowing churches to soar to previously impossible heights while flooding interiors with light through stained glass windows.',
           },
         ],
@@ -87,15 +93,21 @@ export const courses: Course[] = [
       {
         id: 'peasant-life',
         title: 'Peasant Life: Harder Than You Know',
-        imageUrl: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80',
+        imageUrl: '/paintings/feudal_europe.jpg',
         pages: [
           {
             title: 'The Village World',
-            imageUrl: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80',
+            images: [
+              { url: '/paintings/feudal_europe.jpg', caption: 'Medieval manuscript illumination depicting peasant life. About 90% of Europeans worked the land in the Middle Ages.' },
+              { url: '/paintings/black_death.jpg', caption: 'The Black Death (c. 1347–53) — a miniature from the Toggenburg Bible (1411). The plague killed up to half of Europe\'s population, transforming peasant labour markets.' },
+            ],
             body: 'About 90% of medieval Europeans were peasants — farmers tied to the land and the rhythms of the agricultural calendar. Life was hard, but it was not quite the miserable squalor of popular imagination.\n\nMost peasants lived in small villages of perhaps 50 to 150 people, in timber-framed houses with thatched roofs. Families slept together in one or two rooms, often sharing space with their most valuable animals during cold months.\n\nThe peasant diet, while limited, was not as poor as often depicted. Bread was the staple — dark, dense loaves of rye or barley. Peas, beans, onions, and cabbages were common. Ale (safer than water, which was often contaminated) was drunk by men, women, and children alike.',
           },
           {
             title: 'Work, Rest & Feasts',
+            images: [
+              { url: '/paintings/charlemagne.jpg', caption: 'Albrecht Dürer — Charlemagne (1512). Germanisches Nationalmuseum, Nuremberg. The feudal system Charlemagne consolidated shaped European peasant life for centuries.' },
+            ],
             body: 'Peasants worked hard, but they also had considerable time off. Medieval Christianity mandated rest on Sundays and on saints\' days — and there were dozens of saints\' days throughout the year. By some estimates, peasants worked fewer total hours per year than modern office workers.\n\nThe agricultural year had its own rhythm. Spring meant plowing and planting. Summer brought haymaking and tending crops. Autumn was harvest time — the most critical and busiest period. Winter allowed for rest, maintenance of tools, and various craft activities.',
           },
         ],
@@ -107,15 +119,21 @@ export const courses: Course[] = [
       {
         id: 'monks-knowledge',
         title: 'How Monks Saved Knowledge',
-        imageUrl: 'https://images.unsplash.com/photo-1568667256549-094345857637?w=800&q=80',
+        imageUrl: '/paintings/netherlandish_rosary.jpg',
         pages: [
           {
             title: 'Scriptoria: The Knowledge Factories',
-            imageUrl: 'https://images.unsplash.com/photo-1568667256549-094345857637?w=800&q=80',
+            images: [
+              { url: '/paintings/netherlandish_rosary.jpg', caption: 'Master of the Rosary — Netherlandish devotional panel (c. 1500). Monasteries produced devotional art alongside manuscripts preserving ancient knowledge.' },
+              { url: '/paintings/signorelli_madonna.jpg', caption: 'Luca Signorelli — Madonna and Child (c. 1490). Monasteries were patrons of Renaissance painting — the bridge between medieval scholarship and the new humanism.' },
+            ],
             body: 'When the Western Roman Empire collapsed in the 5th century, vast amounts of knowledge were at risk of being lost forever. It was largely Christian monasteries that preserved the intellectual heritage of the ancient world.\n\nEvery major monastery had a scriptorium — a room dedicated to copying manuscripts. Monks worked for hours each day, painstakingly transcribing ancient texts by hand. They copied not just religious works but classical literature, philosophy, science, and medicine.\n\nWithout the monks of Ireland, England, France, Germany, and Italy, we might never have heard of Cicero, Virgil, or Plato.',
           },
           {
             title: 'Monasteries as Centers of Learning',
+            images: [
+              { url: '/paintings/martin_luther.jpg', caption: 'Lucas Cranach the Elder — Martin Luther (1529). Luther\'s Reformation began as a scholarly dispute — a product of the very monastic tradition he challenged.' },
+            ],
             body: 'Monasteries were far more than just places of prayer. They ran hospitals for the sick, hospices for travelers, schools for local children, and agricultural estates that pioneered new farming techniques.\n\nBenedictine monks, following the Rule of Saint Benedict, divided their day between prayer, work, and study. This balance between intellectual and physical labor made monasteries unusually productive institutions.',
           },
         ],
@@ -127,15 +145,21 @@ export const courses: Course[] = [
       {
         id: 'flat-earth-myth',
         title: 'The Flat Earth Myth',
-        imageUrl: 'https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=800&q=80',
+        imageUrl: '/paintings/roman_empire.jpg',
         pages: [
           {
             title: 'Did Medieval People Think Earth Was Flat?',
-            imageUrl: 'https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=800&q=80',
+            images: [
+              { url: '/paintings/roman_augustus_cameo.jpg', caption: 'The Gemma Augustea — Roman cameo (c. 9 CE). Kunsthistorisches Museum, Vienna. Roman and Greek scholars knew the Earth was spherical centuries before the Middle Ages.' },
+              { url: '/paintings/roman_empire.jpg', caption: 'Map of the Roman Empire at its height. The Romans inherited Greek geographical knowledge — including the Earth\'s spherical shape.' },
+            ],
             body: 'One of the most persistent myths about the Middle Ages is that people believed the Earth was flat. This is almost entirely false. Educated medieval people — and even most ordinary people — knew perfectly well that the Earth was round.\n\nThe ancient Greeks had established the Earth\'s spherical shape through careful observation and reasoning. By around 240 BCE, Eratosthenes had even calculated the Earth\'s circumference with remarkable accuracy.',
           },
           {
             title: 'Where Did the Myth Come From?',
+            images: [
+              { url: '/paintings/columbus_americas.jpg', caption: 'John Vanderlyn — Columbus\'s Landing at Guanahani (1847). Rotunda of the Capitol, Washington D.C. Columbus\'s contemporaries knew the Earth was round — they just disagreed about its size.' },
+            ],
             body: 'The myth that medieval people believed in a flat Earth was largely invented in the 19th century — particularly by Washington Irving in his 1828 fictionalized biography of Christopher Columbus.\n\nColumbus\'s contemporaries did not think he would fall off the edge of the world. They thought (correctly) that he was underestimating the distance to Asia.',
           },
         ],
@@ -149,7 +173,7 @@ export const courses: Course[] = [
   {
     id: 'ancient-egypt',
     title: 'Mysteries of Ancient Egypt',
-    imageUrl: 'https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=800&q=80',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Obelisk_of_Thutmose_I%2C_Karnak.jpg/600px-Obelisk_of_Thutmose_I%2C_Karnak.jpg',
     topicId: 'history',
     rating: 4.9,
     estimatedMinutes: 12,
@@ -157,15 +181,21 @@ export const courses: Course[] = [
       {
         id: 'pyramid-builders',
         title: 'Who Really Built the Pyramids?',
-        imageUrl: 'https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=800&q=80',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Khufu%27s_Pyramid_Sides_South_face.jpg/800px-Khufu%27s_Pyramid_Sides_South_face.jpg',
         pages: [
           {
             title: 'Not Slaves — Skilled Workers',
-            imageUrl: 'https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=800&q=80',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Khufu%27s_Pyramid_Sides_South_face.jpg/800px-Khufu%27s_Pyramid_Sides_South_face.jpg', caption: 'The Great Pyramid of Khufu at Giza (c. 2560 BCE). Built not by slaves but by skilled, organised Egyptian workers who were housed, fed, and treated medically.' },
+              { url: '/paintings/roman_augustus_cameo.jpg', caption: 'Egyptian workers were part of a sophisticated state system — not so different from Roman imperial organisation centuries later.' },
+            ],
             body: 'The popular image of thousands of slaves being whipped as they drag massive stones under the Egyptian sun is wrong. Archaeological evidence discovered since the 1990s paints a very different picture.\n\nThe pyramid builders were skilled Egyptian workers — craftsmen, engineers, and laborers who were paid in food, beer, and medical care. Their village has been excavated near Giza: a well-planned settlement with bakeries, breweries, and even a hospital.',
           },
           {
             title: 'How Was It Done?',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Egypt.KomOmbo.03.jpg/800px-Egypt.KomOmbo.03.jpg', caption: 'Kom Ombo temple reliefs depicting ancient Egyptian craftsmen and workers. Egyptian art extensively documented practical working life.' },
+            ],
             body: 'The logistics of building the Great Pyramid of Giza are staggering. About 2.3 million stone blocks, averaging 2.5 tons each, were quarried, transported, and precisely placed.\n\nModern experiments and computer modeling have shown that relatively small teams could move the stones using wooden sledges, water-lubricated sand, and ramps. A workforce of around 20,000–30,000 workers could have built the Great Pyramid over 20 years.',
           },
         ],
@@ -177,15 +207,21 @@ export const courses: Course[] = [
       {
         id: 'cleopatra',
         title: 'Cleopatra: Beyond the Myth',
-        imageUrl: 'https://images.unsplash.com/photo-1569949381669-ecf31ae8e613?w=800&q=80',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Kleopatra-VII.-Altes-Museum-Berlin1.jpg/600px-Kleopatra-VII.-Altes-Museum-Berlin1.jpg',
         pages: [
           {
             title: 'The Real Cleopatra',
-            imageUrl: 'https://images.unsplash.com/photo-1569949381669-ecf31ae8e613?w=800&q=80',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Kleopatra-VII.-Altes-Museum-Berlin1.jpg/600px-Kleopatra-VII.-Altes-Museum-Berlin1.jpg', caption: 'Marble portrait of Cleopatra VII (c. 50–30 BCE). Altes Museum, Berlin. The "Berlin Cleopatra" — one of the few surviving portraits thought to genuinely resemble her.' },
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Lawrence_Alma-Tadema_-_The_Meeting_of_Antony_and_Cleopatra%2C_41_BC.jpg/800px-Lawrence_Alma-Tadema_-_The_Meeting_of_Antony_and_Cleopatra%2C_41_BC.jpg', caption: 'Lawrence Alma-Tadema — The Meeting of Antony and Cleopatra, 41 BC (1883). Private collection. The alliance was calculated politics as much as romance.' },
+            ],
             body: 'Cleopatra VII was far more remarkable than Hollywood suggests. She was not primarily known for her looks but for her extraordinary intelligence and political skill.\n\nCleopatra was the first ruler of her dynasty to actually learn the Egyptian language. She spoke nine languages in total. Previous Ptolemaic rulers had ruled Egypt for nearly 300 years without learning Egyptian.',
           },
           {
             title: 'A Political Mastermind',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Jean-Leon-Gerome_Pollice_Verso.jpg/800px-Jean-Leon-Gerome_Pollice_Verso.jpg', caption: 'Jean-Léon Gérôme — Pollice Verso (1872). Phoenix Art Museum. Rome\'s power — which Cleopatra spent her life navigating — was ultimately backed by military force.' },
+            ],
             body: 'Cleopatra\'s relationships with Julius Caesar and Mark Antony were calculated political alliances to protect Egypt\'s independence from the growing Roman Republic.\n\nAfter Caesar\'s assassination, she allied with Mark Antony. Together they tried to create an Eastern empire. When their forces were defeated at the Battle of Actium in 31 BCE, Cleopatra chose death over the humiliation of being paraded through Rome as a captive.',
           },
         ],
