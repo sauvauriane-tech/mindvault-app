@@ -321,7 +321,7 @@ export const courses: Course[] = [
       {
         id: 'epicureanism',
         title: 'Epicureanism: Pleasure, Friendship & Death',
-        imageUrl: 'https://images.unsplash.com/photo-1474552226712-ac0f0961a954?w=800&q=80',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Epikouros_BM_1843.jpg/500px-Epikouros_BM_1843.jpg',
         pages: [
           {
             title: 'The Most Misunderstood Philosophy',
