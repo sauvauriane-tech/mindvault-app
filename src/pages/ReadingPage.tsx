@@ -72,7 +72,7 @@ function ExtraImagesGallery({ images }: { images: PageImage[] }) {
           <figure key={i} className="group">
             <div className="rounded-lg overflow-hidden bg-muted aspect-[4/3]">
               <img
-                src={img.url}
+                src={proxyImageUrl(img.url)}
                 alt={img.caption ?? ''}
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
