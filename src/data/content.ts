@@ -235,7 +235,7 @@ export const courses: Course[] = [
   {
     id: 'ancient-philosophy',
     title: 'Great Thinkers of Antiquity',
-    imageUrl: 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&q=80',
+    imageUrl: '/paintings/socrates_bust.jpg',
     topicId: 'philosophy',
     rating: 4.7,
     estimatedMinutes: 10,
