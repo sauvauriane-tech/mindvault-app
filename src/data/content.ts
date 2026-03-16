@@ -235,7 +235,7 @@ export const courses: Course[] = [
   {
     id: 'ancient-philosophy',
     title: 'Great Thinkers of Antiquity',
-    imageUrl: 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&q=80',
+    imageUrl: '/paintings/socrates_bust.jpg',
     topicId: 'philosophy',
     rating: 4.7,
     estimatedMinutes: 10,
@@ -243,13 +243,13 @@ export const courses: Course[] = [
       {
         id: 'socrates-method',
         title: 'Socrates and the Art of Questions',
-        imageUrl: 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&q=80',
+        imageUrl: '/paintings/socrates_bust.jpg',
         pages: [
           {
             title: 'The Man Who Knew Nothing',
             images: [
               { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/David_-_The_Death_of_Socrates.jpg/800px-David_-_The_Death_of_Socrates.jpg', caption: 'Jacques-Louis David — The Death of Socrates (1787). Metropolitan Museum of Art, New York. Socrates calmly reaches for the hemlock as his students grieve.' },
-              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Socrates_Louvre.jpg/600px-Socrates_Louvre.jpg', caption: 'Roman marble bust of Socrates (1st century CE, copy of Greek original). Louvre, Paris.' },
+              { url: '/paintings/socrates_bust.jpg', caption: 'Roman marble bust of Socrates (1st century CE, copy of Greek original). Louvre, Paris.' },
             ],
             body: 'Socrates (470–399 BCE) is one of the most important figures in Western philosophy — and one of the most unusual. He wrote nothing. Everything we know about him comes from others, particularly his student Plato.\n\nSocrates claimed to know nothing — or rather, he claimed that his only wisdom was knowing that he knew nothing. When the Oracle at Delphi declared him the wisest man in Athens, he was puzzled.',
           },
@@ -275,7 +275,7 @@ export const courses: Course[] = [
   {
     id: 'stoicism-epicureanism',
     title: 'Stoics vs. Epicureans: The Art of Living',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/MSR-ra-61-b-1-DSC00164.jpg/600px-MSR-ra-61-b-1-DSC00164.jpg',
+    imageUrl: '/paintings/marcus_aurelius_bust.jpg',
     topicId: 'philosophy',
     rating: 4.9,
     estimatedMinutes: 16,
@@ -283,12 +283,12 @@ export const courses: Course[] = [
       {
         id: 'stoicism',
         title: 'Stoicism: Mastering the Inner World',
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/MSR-ra-61-b-1-DSC00164.jpg/600px-MSR-ra-61-b-1-DSC00164.jpg',
+        imageUrl: '/paintings/marcus_aurelius_bust.jpg',
         pages: [
           {
             title: 'The Philosophy That Conquered Rome',
             images: [
-              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Stoa_of_Attalos_at_the_Ancient_Agora_of_Athens_3.jpg/800px-Stoa_of_Attalos_at_the_Ancient_Agora_of_Athens_3.jpg', caption: 'The Stoa of Attalos, Athens (reconstructed). Zeno of Citium taught beneath a painted stoa like this — giving Stoicism its name.' },
+              { url: '/paintings/marcus_aurelius_bust.jpg', caption: 'The Stoa of Attalos, Athens (reconstructed). Zeno of Citium taught beneath a painted stoa like this — giving Stoicism its name.' },
             ],
             body: 'Stoicism was founded in Athens around 300 BCE by Zeno of Citium, who taught beneath a painted porch — a "stoa" — which gave the school its name. It became the dominant philosophy of the Roman Empire, embraced by slaves and emperors alike.\n\nThe Stoics held a radical idea: your emotions are not caused by events, but by your judgments about events. A storm is neither good nor bad — it is your interpretation that creates suffering. Change your interpretation and you change your experience of reality.\n\nThis is not passive resignation. The Stoics made a sharp distinction between what is "up to us" (our thoughts, desires, values) and what is "not up to us" (wealth, reputation, other people\'s actions, even death). Wisdom consists in focusing entirely on the former and accepting the latter with equanimity.',
           },
@@ -348,7 +348,7 @@ export const courses: Course[] = [
   {
     id: 'ethics-morality',
     title: 'What Is Right? A History of Ethics',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Kant_gemaelde_3.jpg/500px-Kant_gemaelde_3.jpg',
+    imageUrl: '/paintings/kant_portrait.jpg',
     topicId: 'philosophy',
     rating: 4.8,
     estimatedMinutes: 18,
@@ -356,12 +356,12 @@ export const courses: Course[] = [
       {
         id: 'kant-ethics',
         title: 'Kant: The Moral Law Within',
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Kant_gemaelde_3.jpg/500px-Kant_gemaelde_3.jpg',
+        imageUrl: '/paintings/kant_portrait.jpg',
         pages: [
           {
             title: 'The Philosopher Who Never Left Königsberg',
             images: [
-              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Kant_gemaelde_3.jpg/500px-Kant_gemaelde_3.jpg', caption: 'Portrait of Immanuel Kant (c. 1790). Neighbours set their watches by his daily walks — yet his ideas detonated a revolution in philosophy.' },
+              { url: '/paintings/kant_portrait.jpg', caption: 'Portrait of Immanuel Kant (c. 1790). Neighbours set their watches by his daily walks — yet his ideas detonated a revolution in philosophy.' },
               { url: '/paintings/frederick_great_flute.jpg', caption: 'Adolph Menzel — Frederick the Great Playing the Flute (1852). Kant lived his entire life in Königsberg under Prussian rule.' },
             ],
             body: 'Immanuel Kant (1724–1804) spent his entire life in the Prussian city of Königsberg and was so punctually routine that neighbours set their watches by his afternoon walks. Yet his ideas detonated a revolution in philosophy that we are still living through.\n\nKant\'s central ethical insight was this: the moral worth of an action does not depend on its consequences but on whether it was done from duty — from respect for the moral law. An action done for self-interest, even one that happens to help others, has no genuine moral worth.\n\nHis "Categorical Imperative" — his supreme principle of morality — states: "Act only according to that maxim by which you can at the same time will that it should become a universal law." In other words: only act in ways you would be happy for everyone, everywhere, to act.',
@@ -443,7 +443,7 @@ export const courses: Course[] = [
   {
     id: 'mind-reality',
     title: 'Mind, Knowledge & Reality',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Frans_Hals_-_Portret_van_René_Descartes.jpg/500px-Frans_Hals_-_Portret_van_René_Descartes.jpg',
+    imageUrl: '/paintings/descartes_portrait.jpg',
     topicId: 'philosophy',
     rating: 4.6,
     estimatedMinutes: 14,
@@ -451,12 +451,12 @@ export const courses: Course[] = [
       {
         id: 'descartes-doubt',
         title: 'Descartes: I Think, Therefore I Am',
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Frans_Hals_-_Portret_van_René_Descartes.jpg/500px-Frans_Hals_-_Portret_van_René_Descartes.jpg',
+        imageUrl: '/paintings/descartes_portrait.jpg',
         pages: [
           {
             title: 'The Method of Radical Doubt',
             images: [
-              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Frans_Hals_-_Portret_van_René_Descartes.jpg/500px-Frans_Hals_-_Portret_van_René_Descartes.jpg', caption: 'Frans Hals — Portrait of René Descartes (c. 1649–1700). Louvre, Paris. "Cogito ergo sum" — the bedrock of modern philosophy.' },
+              { url: '/paintings/descartes_portrait.jpg', caption: 'Frans Hals — Portrait of René Descartes (c. 1649–1700). Louvre, Paris. "Cogito ergo sum" — the bedrock of modern philosophy.' },
             ],
             body: 'René Descartes (1596–1650) set out to find a foundation for knowledge that was utterly certain — immune to any possible doubt. His method was radical: doubt everything that can possibly be doubted, and see what survives.\n\nDescartes doubted his senses (they sometimes deceive us). He doubted the external world (perhaps he was dreaming). He even entertained the hypothesis of a supremely powerful "evil demon" who might be deceiving him about everything — including mathematics.\n\nAnd yet one thing survived. The very act of doubting required a doubter. Even if he was being deceived about everything, the deception required that he existed to be deceived. "Cogito ergo sum" — I think, therefore I am — became the bedrock of his philosophy.',
           },
@@ -579,7 +579,7 @@ export const courses: Course[] = [
   {
     id: 'eastern-philosophy',
     title: 'Eastern Philosophy: The Art of Being',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Gautama_Buddha_in_Sarnath_Museum_%28Dhammajak_Mutra%29.jpg/600px-Gautama_Buddha_in_Sarnath_Museum_%28Dhammajak_Mutra%29.jpg',
+    imageUrl: '/paintings/buddha_sarnath.jpg',
     topicId: 'philosophy',
     rating: 4.9,
     estimatedMinutes: 22,
@@ -587,17 +587,17 @@ export const courses: Course[] = [
       {
         id: 'buddhism',
         title: 'Buddhism: The End of Suffering',
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Gautama_Buddha_in_Sarnath_Museum_%28Dhammajak_Mutra%29.jpg/600px-Gautama_Buddha_in_Sarnath_Museum_%28Dhammajak_Mutra%29.jpg',
+        imageUrl: '/paintings/buddha_sarnath.jpg',
         pages: [
           {
             title: 'The Prince Who Renounced Everything',
             images: [
               {
-                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Gautama_Buddha_in_Sarnath_Museum_%28Dhammajak_Mutra%29.jpg/600px-Gautama_Buddha_in_Sarnath_Museum_%28Dhammajak_Mutra%29.jpg',
+                url: '/paintings/buddha_sarnath.jpg',
                 caption: 'Buddha\'s first sermon at Sarnath (5th–6th century CE). Sarnath Museum, India. The "Dharmachakra" hand gesture symbolises setting the wheel of dharma in motion.',
               },
               {
-                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Fo_Guang_Shan_Temple_Miri_Sarawak_Buddha.jpg/600px-Fo_Guang_Shan_Temple_Miri_Sarawak_Buddha.jpg',
+                url: '/paintings/moreau_oedipus.jpg',
                 caption: 'A gilded Buddha statue in serene meditation — the physical embodiment of inner stillness and awakening.',
               },
             ],
@@ -728,7 +728,7 @@ export const courses: Course[] = [
   {
     id: 'art-movements',
     title: 'Impressionism: Painting the Moment',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Claude_Monet%2C_Impression%2C_soleil_levant.jpg/800px-Claude_Monet%2C_Impression%2C_soleil_levant.jpg',
+    imageUrl: '/paintings/monet_impression_sunrise.jpg',
     topicId: 'culture',
     rating: 4.8,
     estimatedMinutes: 20,
@@ -736,13 +736,13 @@ export const courses: Course[] = [
       {
         id: 'impressionism',
         title: 'Impressionism: The Scandal That Changed Art',
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Claude_Monet%2C_Impression%2C_soleil_levant.jpg/800px-Claude_Monet%2C_Impression%2C_soleil_levant.jpg',
+        imageUrl: '/paintings/monet_impression_sunrise.jpg',
         pages: [
           {
             title: 'A Scandal in Paris',
             images: [
               {
-                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Claude_Monet%2C_Impression%2C_soleil_levant.jpg/800px-Claude_Monet%2C_Impression%2C_soleil_levant.jpg',
+                url: '/paintings/monet_impression_sunrise.jpg',
                 caption: 'Claude Monet — Impression, Sunrise (1872). Musée Marmottan Monet, Paris. The painting that accidentally named an entire movement.',
               },
               {
@@ -897,7 +897,7 @@ export const courses: Course[] = [
   {
     id: 'music-revolutions',
     title: 'How Music Shaped History',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Joseph_Karl_Stieler_-_Beethoven_mit_dem_Manuskript_der_Missa_solemnis.jpg/600px-Joseph_Karl_Stieler_-_Beethoven_mit_dem_Manuskript_der_Missa_solemnis.jpg',
+    imageUrl: '/paintings/beethoven_portrait.jpg',
     topicId: 'culture',
     rating: 4.6,
     estimatedMinutes: 16,
@@ -905,13 +905,13 @@ export const courses: Course[] = [
       {
         id: 'beethoven-revolution',
         title: 'Beethoven and the Heroic Style',
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Joseph_Karl_Stieler_-_Beethoven_mit_dem_Manuskript_der_Missa_solemnis.jpg/600px-Joseph_Karl_Stieler_-_Beethoven_mit_dem_Manuskript_der_Missa_solemnis.jpg',
+        imageUrl: '/paintings/beethoven_portrait.jpg',
         pages: [
           {
             title: 'The Deaf Composer Who Heard Everything',
             images: [
               {
-                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Joseph_Karl_Stieler_-_Beethoven_mit_dem_Manuskript_der_Missa_solemnis.jpg/600px-Joseph_Karl_Stieler_-_Beethoven_mit_dem_Manuskript_der_Missa_solemnis.jpg',
+                url: '/paintings/beethoven_portrait.jpg',
                 caption: 'Joseph Karl Stieler — Ludwig van Beethoven (1820). Beethoven-Haus, Bonn. The composer shown with the manuscript of his Missa Solemnis — already deaf.',
               },
               {
@@ -999,7 +999,7 @@ export const courses: Course[] = [
   {
     id: 'world-mythology',
     title: 'Myths That Made the World',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Ingres_Jupiter_and_Thetis.jpg/700px-Ingres_Jupiter_and_Thetis.jpg',
+    imageUrl: '/paintings/ingres_jupiter_thetis.jpg',
     topicId: 'culture',
     rating: 4.9,
     estimatedMinutes: 18,
@@ -1007,13 +1007,13 @@ export const courses: Course[] = [
       {
         id: 'greek-mythology',
         title: 'Greek Myths: Gods, Heroes & Monsters',
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Ingres_Jupiter_and_Thetis.jpg/700px-Ingres_Jupiter_and_Thetis.jpg',
+        imageUrl: '/paintings/ingres_jupiter_thetis.jpg',
         pages: [
           {
             title: 'Why the Greeks Needed Their Gods',
             images: [
               {
-                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Ingres_Jupiter_and_Thetis.jpg/700px-Ingres_Jupiter_and_Thetis.jpg',
+                url: '/paintings/ingres_jupiter_thetis.jpg',
                 caption: 'Jean-Auguste-Dominique Ingres — Jupiter and Thetis (1811). Musée Granet, Aix-en-Provence. The king of the gods embodying divine power.',
               },
               {
