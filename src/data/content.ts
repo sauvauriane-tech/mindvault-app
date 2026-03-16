@@ -243,7 +243,7 @@ export const courses: Course[] = [
       {
         id: 'socrates-method',
         title: 'Socrates and the Art of Questions',
-        imageUrl: 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&q=80',
+        imageUrl: '/paintings/socrates_bust.jpg',
         pages: [
           {
             title: 'The Man Who Knew Nothing',
