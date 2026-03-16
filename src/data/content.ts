@@ -476,7 +476,7 @@ export const courses: Course[] = [
       {
         id: 'plato-reality',
         title: 'Plato: The World of Forms',
-        imageUrl: 'https://images.unsplash.com/photo-1555990793-da11153b2473?w=800&q=80',
+        imageUrl: '/paintings/school_of_athens.jpg',
         pages: [
           {
             title: 'The Cave and the Shadow World',
