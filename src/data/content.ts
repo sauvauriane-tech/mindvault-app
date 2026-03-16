@@ -348,7 +348,7 @@ export const courses: Course[] = [
   {
     id: 'ethics-morality',
     title: 'What Is Right? A History of Ethics',
-    imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Kant_gemaelde_3.jpg/500px-Kant_gemaelde_3.jpg',
     topicId: 'philosophy',
     rating: 4.8,
     estimatedMinutes: 18,
@@ -356,7 +356,7 @@ export const courses: Course[] = [
       {
         id: 'kant-ethics',
         title: 'Kant: The Moral Law Within',
-        imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Kant_gemaelde_3.jpg/500px-Kant_gemaelde_3.jpg',
         pages: [
           {
             title: 'The Philosopher Who Never Left Königsberg',
