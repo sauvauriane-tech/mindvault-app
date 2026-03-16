@@ -18,6 +18,7 @@ function ImageCarousel({ images }: { images: PageImage[] }) {
           key={idx}
           src={img.url}
           alt={img.caption ?? ''}
+          referrerPolicy="no-referrer"
           className="w-full h-full object-cover transition-opacity duration-300"
           style={{ maxHeight: '56vw', minHeight: 180, display: 'block' }}
         />
