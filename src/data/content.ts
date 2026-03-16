@@ -462,6 +462,154 @@ export const courses: Course[] = [
       },
     ],
   },
+  {
+    id: 'eastern-philosophy',
+    title: 'Eastern Philosophy: The Art of Being',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Gautama_Buddha_in_Sarnath_Museum_%28Dhammajak_Mutra%29.jpg/600px-Gautama_Buddha_in_Sarnath_Museum_%28Dhammajak_Mutra%29.jpg',
+    topicId: 'philosophy',
+    rating: 4.9,
+    estimatedMinutes: 22,
+    lessons: [
+      {
+        id: 'buddhism',
+        title: 'Buddhism: The End of Suffering',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Gautama_Buddha_in_Sarnath_Museum_%28Dhammajak_Mutra%29.jpg/600px-Gautama_Buddha_in_Sarnath_Museum_%28Dhammajak_Mutra%29.jpg',
+        pages: [
+          {
+            title: 'The Prince Who Renounced Everything',
+            images: [
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Gautama_Buddha_in_Sarnath_Museum_%28Dhammajak_Mutra%29.jpg/600px-Gautama_Buddha_in_Sarnath_Museum_%28Dhammajak_Mutra%29.jpg',
+                caption: 'Buddha\'s first sermon at Sarnath (5th–6th century CE). Sarnath Museum, India. The "Dharmachakra" hand gesture symbolises setting the wheel of dharma in motion.',
+              },
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Fo_Guang_Shan_Temple_Miri_Sarawak_Buddha.jpg/600px-Fo_Guang_Shan_Temple_Miri_Sarawak_Buddha.jpg',
+                caption: 'A gilded Buddha statue in serene meditation — the physical embodiment of inner stillness and awakening.',
+              },
+            ],
+            body: 'Around 500 BCE in northern India, a prince named Siddhartha Gautama left his palace, his wife, and his infant son to understand why human beings suffer. He had seen, for the first time, old age, sickness, and death — and could not reconcile this suffering with the luxurious life he had been raised in.\n\nAfter years of extreme asceticism that nearly killed him, he found a middle path: neither indulgence nor self-mortification. Sitting beneath a Bodhi tree at Bodh Gaya, he meditated until he attained enlightenment — a direct, unmediated understanding of the nature of reality. He became the Buddha: "the awakened one."\n\nHis first teaching after enlightenment set out the Four Noble Truths — the philosophical foundation of all subsequent Buddhist thought. The first truth is simply: suffering (dukkha) is inherent in existence. The second: suffering arises from craving and attachment. The third: suffering can end. The fourth: there is a path to that ending.',
+          },
+          {
+            title: 'The Noble Eightfold Path and the Nature of Self',
+            images: [
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Zen_garden_ryoanji.jpg/800px-Zen_garden_ryoanji.jpg',
+                caption: 'Ryōan-ji Zen garden, Kyoto (c. 15th century). The rock garden embodies the Buddhist value of simplicity, impermanence, and focused attention.',
+              },
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Meditating_in_Cambodian_temple.jpg/700px-Meditating_in_Cambodian_temple.jpg',
+                caption: 'A monk in meditation. Mindfulness — the practice of sustained, non-judgmental attention to present experience — is the living core of Buddhist practice.',
+              },
+            ],
+            body: 'The Noble Eightfold Path prescribes eight dimensions of right living: right understanding, right intention, right speech, right action, right livelihood, right effort, right mindfulness, and right concentration. Together they constitute a complete ethical and contemplative programme.\n\nBuddhism\'s most radical philosophical claim is anātman — no-self. There is no permanent, unchanging "I" at the centre of your experience. What we call the self is a constantly shifting process — a river of sensations, thoughts, and perceptions with no fixed essence. Clinging to the illusion of a permanent self is a root cause of suffering.\n\nImpermanence (anicca) is everywhere: every moment arises and passes away. The teaching of interdependence (pratītyasamutpāda) holds that nothing exists independently — everything arises in relation to everything else. This understanding, fully realised, is the beginning of liberation.\n\nBuddhism spread from India across Asia, transforming as it went: Theravāda in Sri Lanka and Southeast Asia, Mahāyāna in China, Korea, and Japan, Vajrayāna in Tibet. Today it is practised by half a billion people — and mindfulness meditation, secularised, has spread far beyond Buddhist communities.',
+            extraImages: [
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Leshan_Buddha_Statue.jpg/600px-Leshan_Buddha_Statue.jpg',
+                caption: 'The Leshan Giant Buddha, Sichuan, China (713–803 CE). At 71 metres, the largest pre-modern stone-carved sculpture in the world — testifying to the spread and depth of devotion Buddhism inspired.',
+              },
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Borobudur_ship.jpg/800px-Borobudur_ship.jpg',
+                caption: 'Borobudur, Java, Indonesia (8th–9th century CE). The world\'s largest Buddhist temple — a mandala in stone representing the Buddhist cosmos.',
+              },
+            ],
+          },
+        ],
+        quiz: [
+          { id: 'q1', question: 'What are the Four Noble Truths\' core diagnosis?', options: ['Life is joyful; joy comes from virtue; virtue is achievable; follow the commandments', 'Suffering is real; it arises from craving; it can end; there is a path to its end', 'The self is immortal; the body is a prison; liberation means escape; nirvana is heaven', 'God created suffering; prayer removes it; temples are sacred; monks are mediators'], correctIndex: 1, explanation: 'The Four Noble Truths: suffering exists, it arises from craving and attachment, it can cease, and the Eightfold Path leads to its cessation.' },
+          { id: 'q2', question: 'What is the Buddhist teaching of anātman?', options: ['The soul is immortal and divine', 'There is no permanent, unchanging self', 'Animals have no soul', 'The mind and body are one substance'], correctIndex: 1, explanation: 'Anātman (no-self) teaches that the "self" is not a fixed essence but a constantly shifting process — clinging to a permanent self is a root of suffering.' },
+          { id: 'q3', question: 'What is the term for the Buddhist insight that everything arises in relation to everything else?', options: ['Anātman', 'Anicca', 'Pratītyasamutpāda', 'Nirvāṇa'], correctIndex: 2, explanation: 'Pratītyasamutpāda — interdependence or dependent origination — holds that no phenomenon exists independently; everything arises in relation to everything else.' },
+        ],
+      },
+      {
+        id: 'confucianism',
+        title: 'Confucius: The Art of Right Relationships',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Konfuzius-1770.jpg/600px-Konfuzius-1770.jpg',
+        pages: [
+          {
+            title: 'A Man Who Failed — and Changed Civilisation',
+            images: [
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Konfuzius-1770.jpg/600px-Konfuzius-1770.jpg',
+                caption: 'Portrait of Confucius (18th-century reproduction of a Song-era original). The most influential teacher in Chinese history — and one of the most influential in the world.',
+              },
+            ],
+            body: 'Confucius (551–479 BCE) lived in a time of fragmentation and violence — the "Spring and Autumn Period" when the Zhou dynasty had collapsed into warring states. He devoted his life to a single question: how should human beings live together in an ordered and humane society?\n\nHis answer was not religious revelation but careful observation of human relationships. Society, he argued, is held together by the proper cultivation of five key relationships: ruler and subject, parent and child, husband and wife, elder and younger sibling, and friend and friend. Each relationship has reciprocal duties.\n\nConfucius spent decades travelling between courts, hoping to find a ruler who would implement his ideas. He largely failed in this political ambition. But his teachings, collected by his students in the Analects, became the foundation of Chinese civilisation for over two thousand years — and still shape East Asian societies today.',
+          },
+          {
+            title: 'Rén, Lǐ, and the Cultivation of Virtue',
+            images: [
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Confucian_Temple_in_Nanjing.jpg/800px-Confucian_Temple_in_Nanjing.jpg',
+                caption: 'Temple of Confucius, Nanjing (originally built 1034 CE). For two millennia, the Confucian examination system determined who governed China.',
+              },
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Zhao_Mengfu-_Autumn_Colors.jpg/800px-Zhao_Mengfu-_Autumn_Colors.jpg',
+                caption: 'Zhao Mengfu — Autumn Colors (1296). National Palace Museum, Taipei. Chinese literati painting embodied the Confucian ideal of the cultivated scholar-gentleman.',
+              },
+            ],
+            body: 'The central Confucian virtue is rén — often translated as benevolence, humaneness, or love. Rén is not a feeling but a practice: the disciplined cultivation of genuine care for others, beginning with family and extending outward to all of humanity.\n\nLǐ — ritual propriety — is the external expression of rén. Every relationship, every social role, every ceremony has its proper form. Performing these forms with sincerity and attention is not mere conformity but the way the inner life is cultivated and expressed. "Virtue is returning to propriety through self-mastery," Confucius says.\n\nThe junzǐ — the "exemplary person" or "gentleman" — is Confucianism\'s ideal human type. Not a warrior or a saint but a cultivated person: learned, self-disciplined, honest, and fully present in their relationships and duties. For Confucius, the transformation of society begins with the transformation of the individual.\n\nFor over two millennia, the Chinese imperial system was run by mandarins — scholar-officials selected through gruelling Confucian examinations. Every candidate had to master the Analects, the Book of Rites, and the other Confucian classics. The examination system was one of history\'s first meritocracies.',
+            extraImages: [
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mencius.jpg/600px-Mencius.jpg',
+                caption: 'Portrait of Mencius (372–289 BCE). The "Second Sage" of Confucianism argued that human nature is inherently good — virtue is cultivating what is already within us.',
+              },
+            ],
+          },
+        ],
+        quiz: [
+          { id: 'q1', question: 'What are the five key relationships at the centre of Confucian social philosophy?', options: ['Emperor, general, priest, merchant, farmer', 'Ruler–subject, parent–child, husband–wife, elder–younger sibling, friend–friend', 'Heaven, Earth, Man, Animal, Spirit', 'Wisdom, courage, justice, temperance, piety'], correctIndex: 1, explanation: 'Confucius identified five relationships whose proper cultivation — with reciprocal duties on both sides — holds society together.' },
+          { id: 'q2', question: 'What is rén?', options: ['A ritual ceremony performed at New Year', 'The Confucian concept of benevolence and humaneness — care for others', 'The Chinese emperor\'s divine mandate to rule', 'A form of meditation practised in Confucian temples'], correctIndex: 1, explanation: 'Rén is the central Confucian virtue — benevolence, humaneness, genuine care for others — cultivated through practice beginning with one\'s family.' },
+          { id: 'q3', question: 'What was the Chinese imperial examination system based on?', options: ['Military prowess and loyalty to the emperor', 'Mastery of Confucian classics and philosophy', 'Knowledge of Buddhist scripture', 'Skill in calligraphy alone'], correctIndex: 1, explanation: 'The Chinese imperial examination system, which ran for over 1,300 years, required mastery of the Confucian classics — creating one of history\'s first meritocracies.' },
+        ],
+      },
+      {
+        id: 'taoism',
+        title: 'Taoism: The Way of Water',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Yin_yang.svg/600px-Yin_yang.svg.png',
+        pages: [
+          {
+            title: 'The Tao That Cannot Be Named',
+            images: [
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Wuyishan_-_Jade_Girl_Peak_%28jade_girl_peak%29.jpg/800px-Wuyishan_-_Jade_Girl_Peak_%28jade_girl_peak%29.jpg',
+                caption: 'Mount Wuyi, Fujian, China. The Chinese landscape tradition — rivers, mist, mountains — embodies the Taoist sense of the natural world as a living, self-organising Whole.',
+              },
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/WI_-_Katsushika_Hokusai_-_The_Great_Wave_off_Kanagawa.jpg/800px-WI_-_Katsushika_Hokusai_-_The_Great_Wave_off_Kanagawa.jpg',
+                caption: 'Hokusai — The Great Wave off Kanagawa (c. 1831). The wave embodies the Taoist and Zen appreciation of natural power, impermanence, and the yielding quality of water.',
+              },
+            ],
+            body: 'The Tao Te Ching — the foundational Taoist text attributed to the sage Laozi — opens with a paradox: "The Tao that can be named is not the eternal Tao." Whatever the Tao (the Way) ultimately is, it exceeds all concepts and all language.\n\nYet Taoism is not mystical vagueness. The Tao is observable: it is the natural pattern of the universe, the way rivers flow to the sea, the way seasons cycle, the way all living things grow and decay. The Tao Te Ching has only 81 short chapters and about 5,000 characters — yet it is the most translated book in history after the Bible.\n\nWater is the Tao\'s supreme symbol. Water is soft, yielding, without fixed form — yet over time it carves canyons through solid rock. The highest virtue, Laozi teaches, is like water: it benefits all things without striving, and settles in the lowest places that others disdain.',
+          },
+          {
+            title: 'Wu Wei: The Power of Non-Action',
+            images: [
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Zhuangzi_-_Butterfly_Dream.jpg/700px-Zhuangzi_-_Butterfly_Dream.jpg',
+                caption: 'Lu Zhi — Zhuangzi dreaming of a butterfly (Ming dynasty). Zhuangzi woke unsure: was he a man who had dreamed he was a butterfly, or a butterfly now dreaming he is a man?',
+              },
+            ],
+            body: 'The central Taoist concept is wu wei — often translated as "non-action" or "effortless action." This does not mean passivity or laziness. It means acting in perfect alignment with the natural flow of things, without forcing or straining.\n\nThe master craftsman who splits wood with a single blow is not stronger than the wood — he has found its natural grain. The great ruler who governs without being felt. The musician who plays without effort. Wu wei is the action that is so perfectly attuned to circumstances that it requires no force.\n\nZhuangzi, the great Taoist storyteller (4th century BCE), pushed these ideas in playful, subversive directions. His Zhuangzi is full of parables: a cook whose knife never dulls because he follows the natural spaces in the ox; a dreamer who cannot tell if he is a man dreaming of a butterfly or a butterfly dreaming of a man. Certainty, hierarchy, and conventional wisdom are all gently dissolved.\n\nTaoism profoundly shaped Chinese aesthetics — landscape painting, poetry, calligraphy, martial arts (tai chi\'s flowing movements are pure wu wei), and traditional medicine. When Taoism met Buddhism in China, Zen (Chan) Buddhism was born — one of the most vital philosophical and artistic traditions the world has produced.',
+            extraImages: [
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Xu_Daoning_-_Fishermen_in_a_Mountain_Stream%2C_detail%2C_c._1049%2C_51.5_x_209.8_cm%2C_Nelson-Atkins_Museum_%28cropped%29.jpg/800px-Xu_Daoning_-_Fishermen_in_a_Mountain_Stream%2C_detail%2C_c._1049%2C_51.5_x_209.8_cm%2C_Nelson-Atkins_Museum_%28cropped%29.jpg',
+                caption: 'Xu Daoning — Fishermen in a Mountain Stream (c. 1049). Nelson-Atkins Museum, Kansas City. Song dynasty landscape painting: the Taoist vision of the individual as a small figure within an immense, self-organising natural world.',
+              },
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Yin_yang.svg/600px-Yin_yang.svg.png',
+                caption: 'The Taijitu (yin-yang symbol). Yin and yang are not opposites at war — they are complementary, interdependent phases of a single continuous cycle.',
+              },
+            ],
+          },
+        ],
+        quiz: [
+          { id: 'q1', question: 'What does the Taoist concept of wu wei mean?', options: ['Complete inactivity and withdrawal from the world', 'Effortless action in perfect alignment with the natural flow of things', 'Strict obedience to ritual and social convention', 'The elimination of all desire through meditation'], correctIndex: 1, explanation: 'Wu wei — "non-action" — means acting in perfect accord with the natural grain of things, without striving or forcing; like water carving rock not through hardness but through yielding persistence.' },
+          { id: 'q2', question: 'What is the most translated book in history after the Bible?', options: ['The Analects of Confucius', 'The Bhagavad Gita', 'The Tao Te Ching', 'The Upanishads'], correctIndex: 2, explanation: 'The Tao Te Ching, with only about 5,000 characters, is the most translated book in history after the Bible — a testament to its universal resonance.' },
+          { id: 'q3', question: 'Which philosophical tradition emerged when Taoism merged with Buddhism in China?', options: ['Confucianism', 'Shinto', 'Zen (Chan) Buddhism', 'Neo-Platonism'], correctIndex: 2, explanation: 'When Taoist ideas about nature, spontaneity, and wu wei merged with Buddhist meditation in China, Zen (Chan) Buddhism was born — one of the most distinctive spiritual traditions in the world.' },
+        ],
+      },
+    ],
+  },
   // ── CULTURE ──────────────────────────────────────────────────────────────
   {
     id: 'art-movements',
