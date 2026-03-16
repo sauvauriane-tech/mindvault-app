@@ -742,7 +742,7 @@ export const courses: Course[] = [
             title: 'A Scandal in Paris',
             images: [
               {
-                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Claude_Monet%2C_Impression%2C_soleil_levant.jpg/800px-Claude_Monet%2C_Impression%2C_soleil_levant.jpg',
+                url: '/paintings/monet_impression_sunrise.jpg',
                 caption: 'Claude Monet — Impression, Sunrise (1872). Musée Marmottan Monet, Paris. The painting that accidentally named an entire movement.',
               },
               {
