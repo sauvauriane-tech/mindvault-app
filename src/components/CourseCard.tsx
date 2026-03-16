@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Star, Clock, Headphones } from 'lucide-react';
 import { Course } from '@/data/content';
+import { proxyImageUrl } from '@/lib/utils';
 
 interface CourseCardProps {
   course: Course;

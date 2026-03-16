@@ -3,6 +3,7 @@ import { X, BookOpen, HelpCircle, Clock, ChevronRight, Play, Trophy } from 'luci
 import { getLesson } from '@/data/content';
 import { useProgress } from '@/context/ProgressContext';
 import Navbar from '@/components/Navbar';
+import { proxyImageUrl } from '@/lib/utils';
 
 export default function LessonPreviewPage() {
   const { courseId, lessonId } = useParams<{ courseId: string; lessonId: string }>();
