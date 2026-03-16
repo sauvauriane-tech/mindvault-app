@@ -66,31 +66,31 @@ export default function LessonPreviewPage() {
             {/* Learn mode */}
             <button
               onClick={() => navigate(`/read/${courseId}/${lessonId}`)}
-              className="flex items-center gap-4 p-4 rounded-2xl border border-border bg-card hover:shadow-sm transition-all text-left"
+              className="w-full flex items-center gap-4 px-4 py-3 rounded-lg border border-border bg-primary text-primary-foreground hover:bg-primary/90 transition-colors text-left shadow-sm"
             >
-              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                <BookOpen className="w-5 h-5 text-primary" />
+              <div className="w-11 h-11 rounded-lg bg-primary-foreground/20 flex items-center justify-center shrink-0">
+                <BookOpen className="w-5 h-5 text-primary-foreground" />
               </div>
               <div className="flex-1">
-                <p className="font-semibold text-sm">Learn Mode</p>
-                <p className="text-xs text-muted-foreground">Read through the lesson pages</p>
+                <p className="font-semibold text-primary-foreground">Learn Mode</p>
+                <p className="text-sm text-primary-foreground/70">Read through the lesson pages</p>
               </div>
-              <ChevronRight className="w-4 h-4 text-muted-foreground" />
+              <ChevronRight className="w-5 h-5 text-primary-foreground/60 shrink-0" />
             </button>
 
             {/* Quiz mode */}
             <button
               onClick={() => navigate(`/quiz/${courseId}/${lessonId}`)}
-              className="flex items-center gap-4 p-4 rounded-2xl border border-border bg-indigo-50 hover:shadow-sm transition-all text-left"
+              className="w-full flex items-center gap-4 px-4 py-3 rounded-lg border border-border bg-primary text-primary-foreground hover:bg-primary/90 transition-colors text-left shadow-sm"
             >
-              <div className="w-10 h-10 rounded-xl bg-indigo-100 flex items-center justify-center shrink-0">
-                <HelpCircle className="w-5 h-5 text-indigo-600" />
+              <div className="w-11 h-11 rounded-lg bg-primary-foreground/20 flex items-center justify-center shrink-0">
+                <HelpCircle className="w-5 h-5 text-primary-foreground" />
               </div>
               <div className="flex-1">
-                <p className="font-semibold text-sm">Quiz Mode</p>
-                <p className="text-xs text-muted-foreground">Test your knowledge directly</p>
+                <p className="font-semibold text-primary-foreground">Quiz Mode</p>
+                <p className="text-sm text-primary-foreground/70">Test your knowledge directly</p>
               </div>
-              <ChevronRight className="w-4 h-4 text-muted-foreground" />
+              <ChevronRight className="w-5 h-5 text-primary-foreground/60 shrink-0" />
             </button>
           </div>
 
