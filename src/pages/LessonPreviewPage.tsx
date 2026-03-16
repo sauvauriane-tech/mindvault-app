@@ -3,6 +3,7 @@ import { X, BookOpen, HelpCircle, Clock, ChevronRight, Play, Trophy } from 'luci
 import { getLesson } from '@/data/content';
 import { useProgress } from '@/context/ProgressContext';
 import Navbar from '@/components/Navbar';
+import { proxyImageUrl } from '@/lib/utils';
 
 export default function LessonPreviewPage() {
   const { courseId, lessonId } = useParams<{ courseId: string; lessonId: string }>();
@@ -24,7 +25,7 @@ export default function LessonPreviewPage() {
       <div className="pt-14">
         {/* Hero */}
         <div className="relative h-[280px]">
-          <img src={lesson.imageUrl} alt={lesson.title} className="w-full h-full object-cover" />
+          <img src={proxyImageUrl(lesson.imageUrl)} alt={lesson.title} referrerPolicy="no-referrer" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/20" />
           <button
             onClick={() => navigate(-1)}

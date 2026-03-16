@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { getLesson, PageImage } from '@/data/content';
 import { useProgress } from '@/context/ProgressContext';
 import Navbar from '@/components/Navbar';
+import { proxyImageUrl } from '@/lib/utils';
 
 // ── Inline carousel ──────────────────────────────────────────────────────────
 function ImageCarousel({ images }: { images: PageImage[] }) {
@@ -16,8 +17,9 @@ function ImageCarousel({ images }: { images: PageImage[] }) {
       <div className="relative rounded-xl overflow-hidden bg-muted" style={{ maxHeight: '56vw', minHeight: 180 }}>
         <img
           key={idx}
-          src={img.url}
+          src={proxyImageUrl(img.url)}
           alt={img.caption ?? ''}
+          referrerPolicy="no-referrer"
           className="w-full h-full object-cover transition-opacity duration-300"
           style={{ maxHeight: '56vw', minHeight: 180, display: 'block' }}
         />
@@ -70,8 +72,9 @@ function ExtraImagesGallery({ images }: { images: PageImage[] }) {
           <figure key={i} className="group">
             <div className="rounded-lg overflow-hidden bg-muted aspect-[4/3]">
               <img
-                src={img.url}
+                src={proxyImageUrl(img.url)}
                 alt={img.caption ?? ''}
+                referrerPolicy="no-referrer"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
             </div>
