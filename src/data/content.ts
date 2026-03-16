@@ -211,12 +211,22 @@ export const courses: Course[] = [
         pages: [
           {
             title: 'The Man Who Knew Nothing',
-            imageUrl: 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&q=80',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/David_-_The_Death_of_Socrates.jpg/800px-David_-_The_Death_of_Socrates.jpg', caption: 'Jacques-Louis David — The Death of Socrates (1787). Metropolitan Museum of Art, New York. Socrates calmly reaches for the hemlock as his students grieve.' },
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Socrates_Louvre.jpg/600px-Socrates_Louvre.jpg', caption: 'Roman marble bust of Socrates (1st century CE, copy of Greek original). Louvre, Paris.' },
+            ],
             body: 'Socrates (470–399 BCE) is one of the most important figures in Western philosophy — and one of the most unusual. He wrote nothing. Everything we know about him comes from others, particularly his student Plato.\n\nSocrates claimed to know nothing — or rather, he claimed that his only wisdom was knowing that he knew nothing. When the Oracle at Delphi declared him the wisest man in Athens, he was puzzled.',
           },
           {
             title: 'The Socratic Method',
+            images: [
+              { url: '/paintings/school_of_athens.jpg', caption: 'Raphael — The School of Athens (1509–11). Apostolic Palace, Vatican. Socrates (left of centre, in green) engages students in dialogue.' },
+            ],
             body: 'Socrates developed a distinctive way of pursuing truth: through questions. Rather than lecturing, he would ask questions that exposed the contradictions and hidden assumptions in his interlocutor\'s beliefs.\n\nSocrates was eventually tried and executed by Athens for "corrupting the youth" and "impiety." He accepted the death sentence rather than flee or recant, arguing that an unexamined life is not worth living.',
+            extraImages: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Giambettino_Cignaroli_-_The_Death_of_Socrates_-_WGA04876.jpg/800px-Giambettino_Cignaroli_-_The_Death_of_Socrates_-_WGA04876.jpg', caption: 'Giambettino Cignaroli — The Death of Socrates (c. 1759). Museum of Fine Arts, Budapest.' },
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Socrate_al_Louvre.jpg/600px-Socrate_al_Louvre.jpg', caption: 'Socrates in contemplation — Roman copy after a Greek bronze (3rd century BCE). Louvre, Paris.' },
+            ],
           },
         ],
         quiz: [
@@ -241,15 +251,28 @@ export const courses: Course[] = [
         pages: [
           {
             title: 'The Philosophy That Conquered Rome',
-            imageUrl: 'https://images.unsplash.com/photo-1456081101716-74e616ab23d8?w=800&q=80',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Stoa_of_Attalos_at_the_Ancient_Agora_of_Athens_3.jpg/800px-Stoa_of_Attalos_at_the_Ancient_Agora_of_Athens_3.jpg', caption: 'The Stoa of Attalos, Athens (reconstructed). Zeno of Citium taught beneath a painted stoa like this — giving Stoicism its name.' },
+            ],
             body: 'Stoicism was founded in Athens around 300 BCE by Zeno of Citium, who taught beneath a painted porch — a "stoa" — which gave the school its name. It became the dominant philosophy of the Roman Empire, embraced by slaves and emperors alike.\n\nThe Stoics held a radical idea: your emotions are not caused by events, but by your judgments about events. A storm is neither good nor bad — it is your interpretation that creates suffering. Change your interpretation and you change your experience of reality.\n\nThis is not passive resignation. The Stoics made a sharp distinction between what is "up to us" (our thoughts, desires, values) and what is "not up to us" (wealth, reputation, other people\'s actions, even death). Wisdom consists in focusing entirely on the former and accepting the latter with equanimity.',
           },
           {
             title: 'Marcus Aurelius: The Philosopher Emperor',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/MSR-ra-61-b-1-DSC00164.jpg/600px-MSR-ra-61-b-1-DSC00164.jpg', caption: 'Bust of Marcus Aurelius (2nd century CE). Saint-Raymond Museum, Toulouse. The philosopher-emperor who governed an empire while examining his own soul.' },
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Epictetus.jpg/500px-Epictetus.jpg', caption: 'Epictetus — born a slave, became one of the most influential Stoic teachers. Engraving after an imagined portrait.' },
+            ],
             body: 'Marcus Aurelius (121–180 CE) ruled the Roman Empire at its height — and spent his evenings writing philosophical notes to himself. These private meditations, never intended for publication, became the "Meditations," one of the most widely read philosophical texts in history.\n\n"You have power over your mind, not outside events. Realise this, and you will find strength." That sentence captures the Stoic project: transforming the inner world when the outer world is beyond your control.\n\nMarcus governed an empire beset by plague, barbarian invasions, and treachery — yet returned each evening to examine his own conduct, his impatience, his failures to live up to his ideals. The Meditations are the record of that relentless self-examination.\n\nEpictetus, born a slave, taught Stoicism with fierce clarity: "Seek not that the things which happen should happen as you wish; but wish the things which happen to be as they are, and you will have a tranquil flow of life." Freedom was not a legal status but a state of mind.',
+            extraImages: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Equestrian_statue_Marcus_Aurelius_Musei_Capitolini_MC3247.jpg/600px-Equestrian_statue_Marcus_Aurelius_Musei_Capitolini_MC3247.jpg', caption: 'Equestrian statue of Marcus Aurelius (c. 175 CE). Capitoline Museums, Rome. One of the few surviving ancient bronze equestrian statues.' },
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Seneca-berlinantikensammlung-1.jpg/500px-Seneca-berlinantikensammlung-1.jpg', caption: 'Pseudo-Seneca bust (1st–2nd century CE). Altes Museum, Berlin. Long identified with the Stoic philosopher Seneca.' },
+            ],
           },
           {
             title: 'Stoicism Today',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Eugène_Delacroix_-_La_liberté_guidant_le_peuple.jpg/800px-Eugène_Delacroix_-_La_liberté_guidant_le_peuple.jpg', caption: 'Delacroix — Liberty Leading the People (1830). Louvre. The Stoic impulse: act with conviction even when the outcome is uncertain.' },
+            ],
             body: 'Stoicism has experienced a remarkable modern revival. Its principles underpin Cognitive Behavioural Therapy (CBT), the most widely used form of psychotherapy in the world. CBT\'s central insight — that distorted thoughts cause emotional distress — is essentially Stoic.\n\nContemporary Stoics practice "negative visualisation": deliberately imagining worst-case scenarios not to induce fear but to appreciate what you have and prepare for adversity. They practice the "view from above" — imagining your problems from a cosmic perspective to diminish their apparent importance.\n\nThe appeal is obvious. In a world of social media anxiety, information overload, and perpetual outrage, the Stoic invitation to focus on what you can control and release what you cannot feels urgently relevant.',
           },
         ],
@@ -266,11 +289,16 @@ export const courses: Course[] = [
         pages: [
           {
             title: 'The Most Misunderstood Philosophy',
-            imageUrl: 'https://images.unsplash.com/photo-1474552226712-ac0f0961a954?w=800&q=80',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Epikouros_BM_1843.jpg/500px-Epikouros_BM_1843.jpg', caption: 'Marble bust of Epicurus (Roman copy of a Greek original, 3rd century BCE). British Museum, London.' },
+            ],
             body: 'Epicurus (341–270 BCE) taught that the goal of life is pleasure — which sounds like a recipe for hedonism. It is not. Epicurus\'s conception of pleasure was subtle and demanding: the highest pleasure is ataraxia, a serene, undisturbed tranquillity of mind.\n\nLuxury, ambition, and passion were, for Epicurus, sources not of pleasure but of anxiety. The truly pleasurable life required simple food, close friendships, philosophical conversation, and freedom from fear — especially fear of death and fear of the gods.\n\nEpicurus founded a community called the Garden outside Athens. Unusually for antiquity, women and slaves were admitted as equals. The community lived simply, ate bread and olives, and devoted themselves to philosophical inquiry and friendship.',
           },
           {
             title: 'On the Fear of Death',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Salvator_Rosa_-_Democritus_in_Meditation.jpg/600px-Salvator_Rosa_-_Democritus_in_Meditation.jpg', caption: 'Salvator Rosa — Democritus in Meditation (c. 1650). Statens Museum for Kunst, Copenhagen. Democritus, the "laughing philosopher," whose atomism directly inspired Epicurean physics.' },
+            ],
             body: 'Epicurus\'s most famous argument addresses the fear of death with disarming logic: "Death is nothing to us. When we exist, death is not yet present. When death is present, then we do not exist."\n\nThis is not mere wordplay. It is a serious philosophical argument. Death cannot be experienced. You will never experience being dead — for experience requires a subject, and death eliminates the subject. Therefore death can cause no suffering, and should cause no fear.\n\nLucretius, the Roman Epicurean poet, extended this argument: you were non-existent for billions of years before your birth, and it caused you no distress. Death is simply a return to that prior non-existence.\n\nThe Epicurean project was therapeutic: philosophy as medicine for the soul. Its four remedies — the "tetrapharmakos" — were: do not fear god, do not fear death, what is good is easy to get, what is terrible is easy to endure.',
           },
         ],
@@ -296,12 +324,21 @@ export const courses: Course[] = [
         pages: [
           {
             title: 'The Philosopher Who Never Left Königsberg',
-            imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Kant_gemaelde_3.jpg/500px-Kant_gemaelde_3.jpg', caption: 'Portrait of Immanuel Kant (c. 1790). Neighbours set their watches by his daily walks — yet his ideas detonated a revolution in philosophy.' },
+              { url: '/paintings/frederick_great_flute.jpg', caption: 'Adolph Menzel — Frederick the Great Playing the Flute (1852). Kant lived his entire life in Königsberg under Prussian rule.' },
+            ],
             body: 'Immanuel Kant (1724–1804) spent his entire life in the Prussian city of Königsberg and was so punctually routine that neighbours set their watches by his afternoon walks. Yet his ideas detonated a revolution in philosophy that we are still living through.\n\nKant\'s central ethical insight was this: the moral worth of an action does not depend on its consequences but on whether it was done from duty — from respect for the moral law. An action done for self-interest, even one that happens to help others, has no genuine moral worth.\n\nHis "Categorical Imperative" — his supreme principle of morality — states: "Act only according to that maxim by which you can at the same time will that it should become a universal law." In other words: only act in ways you would be happy for everyone, everywhere, to act.',
           },
           {
             title: 'Kant\'s Second Formula: Treating People as Ends',
+            images: [
+              { url: '/paintings/wanderer_fog.jpg', caption: 'Caspar David Friedrich — Wanderer above the Sea of Fog (c. 1818). Hamburger Kunsthalle. The Romantic sublime — the individual confronting the vast unknown — emerged partly in response to Kant\'s philosophy.' },
+            ],
             body: 'Kant offered a second formulation of his Categorical Imperative that many find even more intuitive: "Act so that you treat humanity, both in your own person and that of another, always as an end and never merely as a means."\n\nThis principle — that people must never be used merely as tools for someone else\'s purposes — underlies much of modern human rights thinking. Slavery, exploitation, manipulation, deception — all violate this principle by treating persons as instruments.\n\nKant believed these principles were accessible to any rational being through pure reason alone, without appeal to religion, culture, or consequences. Morality was universal precisely because it was rational.',
+            extraImages: [
+              { url: '/paintings/friedrich_two_men_moon.jpg', caption: 'Caspar David Friedrich — Two Men Contemplating the Moon (c. 1825–30). Galerie Neue Meister, Dresden. The Kantian invitation to reflect on the limits of human knowledge.' },
+            ],
           },
         ],
         quiz: [
@@ -316,11 +353,16 @@ export const courses: Course[] = [
         pages: [
           {
             title: 'Bentham and the Happiness Calculus',
-            imageUrl: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Jeremy_Bentham_by_Henry_William_Pickersgill_detail.jpg/500px-Jeremy_Bentham_by_Henry_William_Pickersgill_detail.jpg', caption: 'Henry William Pickersgill — Portrait of Jeremy Bentham (c. 1829). National Portrait Gallery, London. The founder of Utilitarianism.' },
+            ],
             body: 'Jeremy Bentham (1748–1832) proposed a beautifully simple principle for ethics: an action is right if it produces the greatest happiness for the greatest number. Pleasure is good; pain is bad. Morality is a calculation.\n\nBentham even sketched a "felicific calculus" — a mathematical procedure for measuring units of pleasure and pain to determine the right course of action. Every person\'s happiness counts equally. The king\'s pleasure counts no more than the beggar\'s.\n\nThis was radical. In a society of rigid hierarchy, the claim that every person\'s wellbeing counts equally had revolutionary implications for criminal justice, animal welfare, poverty relief, and political reform.',
           },
           {
             title: 'Mill and Higher Pleasures',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/John_Stuart_Mill_by_London_Stereoscopic_Company%2C_c1870.jpg/500px-John_Stuart_Mill_by_London_Stereoscopic_Company%2C_c1870.jpg', caption: 'John Stuart Mill (c. 1870). London Stereoscopic Company. Mill refined Utilitarianism and wrote the foundational liberal text "On Liberty."' },
+            ],
             body: 'John Stuart Mill (1806–1873) refined Bentham\'s utilitarianism to address an obvious objection: if only quantity of pleasure matters, is it better to be a satisfied pig than a dissatisfied philosopher?\n\nMill insisted on a distinction between "higher" and "lower" pleasures. The pleasures of the intellect, the moral sentiments, and the imagination are qualitatively superior to mere bodily satisfaction. "It is better to be Socrates dissatisfied than a fool satisfied."\n\nMill also wrote "On Liberty" (1859), arguing that the only legitimate reason to restrict anyone\'s freedom is to prevent harm to others. His "harm principle" remains a cornerstone of liberal political philosophy and continues to shape debates about free speech, drug legislation, and personal autonomy.',
           },
         ],
@@ -336,12 +378,22 @@ export const courses: Course[] = [
         pages: [
           {
             title: 'Existence Before Essence',
-            imageUrl: 'https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=800&q=80',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Edvard_Munch_-_The_Scream_-_Google_Art_Project.jpg/600px-Edvard_Munch_-_The_Scream_-_Google_Art_Project.jpg', caption: 'Edvard Munch — The Scream (1893). National Gallery, Oslo. Existential anxiety made visible — the modern self confronting an indifferent universe.' },
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Jean-Paul_Sartre_FP.jpg/500px-Jean-Paul_Sartre_FP.jpg', caption: 'Jean-Paul Sartre (1967). "We are condemned to be free" — the central existentialist declaration.' },
+            ],
             body: 'Existentialism emerged in the 19th and 20th centuries as a response to the collapse of traditional religious certainties and the horrors of modern war. Its central claim is disorienting: there is no pre-given human nature or purpose. Existence comes before essence.\n\nJean-Paul Sartre (1905–1980) put it starkly: "We are condemned to be free." There is no script, no nature, no God to dictate who you should be. You must create yourself through your choices — and you bear full responsibility for what you become.\n\nThis is liberating and terrifying in equal measure. The "existential anxiety" (Angst) that pervades the tradition is not a psychological disorder but a rational response to the vertigo of absolute freedom.',
           },
           {
             title: 'Camus and the Absurd',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Albert_Camus%2C_gagnant_de_prix_Nobel%2C_portrait_en_buste%2C_posé_au_bureau%2C_faisant_face_à_gauche%2C_cigarette_de_tabagisme.jpg/500px-Albert_Camus%2C_gagnant_de_prix_Nobel%2C_portrait_en_buste%2C_posé_au_bureau%2C_faisant_face_à_gauche%2C_cigarette_de_tabagisme.jpg', caption: 'Albert Camus (1957). Nobel Prize portrait. "One must imagine Sisyphus happy."' },
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Simone_de_Beauvoir2.png/500px-Simone_de_Beauvoir2.png', caption: 'Simone de Beauvoir (1967). "One is not born, but becomes, a woman" — the founding claim of modern feminist philosophy.' },
+            ],
             body: 'Albert Camus (1913–1960) is often grouped with existentialists, though he rejected the label. His concept of the "absurd" captures something existentialists shared: the collision between the human hunger for meaning and the universe\'s total silence on the matter.\n\nCamus\'s response was neither despair nor false comfort but rebellion: we must imagine Sisyphus — condemned to roll his boulder up a hill forever — as happy. To embrace life fully, without illusions, in the face of its absurdity, is the authentic human response.\n\nSimone de Beauvoir extended existentialism into feminism. In "The Second Sex" (1949) she argued that women have been defined as "Other" — as the deviation from a male norm — rather than as free subjects. "One is not born, but rather becomes, a woman." Social existence, not biology, determines gender roles.',
+            extraImages: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Titian_-_Sisyphus_-_Prado.jpg/600px-Titian_-_Sisyphus_-_Prado.jpg', caption: 'Titian — Sisyphus (1548–49). Prado, Madrid. Camus transformed this mythic punishment into a parable of human dignity.' },
+            ],
           },
         ],
         quiz: [
@@ -367,11 +419,16 @@ export const courses: Course[] = [
         pages: [
           {
             title: 'The Method of Radical Doubt',
-            imageUrl: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Frans_Hals_-_Portret_van_René_Descartes.jpg/500px-Frans_Hals_-_Portret_van_René_Descartes.jpg', caption: 'Frans Hals — Portrait of René Descartes (c. 1649–1700). Louvre, Paris. "Cogito ergo sum" — the bedrock of modern philosophy.' },
+            ],
             body: 'René Descartes (1596–1650) set out to find a foundation for knowledge that was utterly certain — immune to any possible doubt. His method was radical: doubt everything that can possibly be doubted, and see what survives.\n\nDescartes doubted his senses (they sometimes deceive us). He doubted the external world (perhaps he was dreaming). He even entertained the hypothesis of a supremely powerful "evil demon" who might be deceiving him about everything — including mathematics.\n\nAnd yet one thing survived. The very act of doubting required a doubter. Even if he was being deceived about everything, the deception required that he existed to be deceived. "Cogito ergo sum" — I think, therefore I am — became the bedrock of his philosophy.',
           },
           {
             title: 'The Mind-Body Problem',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Rembrandt_-_The_Anatomy_Lesson_of_Dr_Nicolaes_Tulp.jpg/800px-Rembrandt_-_The_Anatomy_Lesson_of_Dr_Nicolaes_Tulp.jpg', caption: 'Rembrandt — The Anatomy Lesson of Dr. Nicolaes Tulp (1632). Mauritshuis, The Hague. The 17th-century fascination with the body-as-machine directly informed Descartes\'s dualism.' },
+            ],
             body: 'Having established the certainty of his own existence as a thinking thing, Descartes faced a new problem. He conceived of mind and body as entirely different substances: mind is unextended and immaterial; body is extended and material. But if they are so different, how do they interact?\n\nHow does a thought — a purely mental event — cause your arm to move? How does a physical injury cause a felt pain? This "mind-body problem" remains one of philosophy\'s most contested puzzles. Neuroscientists can describe every firing neuron, yet the subjective "what it\'s like" — consciousness itself — seems to escape physical explanation.\n\nDescartes\'s framing of this problem has shaped philosophy, psychology, and neuroscience ever since. "Cartesian dualism" remains the folk psychological view of most people, even those who have never heard of Descartes.',
           },
         ],
@@ -387,12 +444,21 @@ export const courses: Course[] = [
         pages: [
           {
             title: 'The Cave and the Shadow World',
-            imageUrl: 'https://images.unsplash.com/photo-1555990793-da11153b2473?w=800&q=80',
+            images: [
+              { url: '/paintings/school_of_athens.jpg', caption: 'Raphael — The School of Athens (1509–11). Apostolic Palace, Vatican. Plato (centre left, pointing upward) and Aristotle (centre right, gesturing outward) define the two poles of Western philosophy.' },
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Silanion_Plato_Glyptothek_Munich_548.jpg/500px-Silanion_Plato_Glyptothek_Munich_548.jpg', caption: 'Roman copy of Silanion\'s portrait of Plato (c. 370 BCE). Glyptothek, Munich.' },
+            ],
             body: 'Plato (428–348 BCE) believed the world we see is not the real world. In his famous "Allegory of the Cave," he describes prisoners chained in a cave, seeing only shadows on the wall — and mistaking those shadows for reality.\n\nPhilosophy, for Plato, was the process of turning away from the shadows and emerging into the sunlight — from appearance to reality, from opinion to knowledge. But most people are so comfortable with their shadows that they resist this liberation, and may even kill those who attempt it (as Athens killed Socrates).\n\nBehind the visible world, Plato argued, lies a realm of perfect, eternal "Forms" — abstract templates of which physical things are mere imperfect copies. There is a perfect Form of Beauty, of Justice, of the Good. Individual beautiful things are beautiful only by participating in the Form of Beauty.',
           },
           {
             title: 'Philosophy as a Way of Life',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Plato%27s_Academy_mosaic_from_Pompeii.jpg/800px-Plato%27s_Academy_mosaic_from_Pompeii.jpg', caption: 'Mosaic from Pompeii depicting Plato\'s Academy (1st century CE). Museo Archeologico Nazionale, Naples.' },
+            ],
             body: 'Plato founded the Academy in Athens — perhaps the first institution of higher education in the Western world. It operated for over 900 years, until the Emperor Justinian closed it in 529 CE.\n\nPlato\'s "Republic" is one of the most ambitious and controversial books in the Western tradition. It asks: what is justice? What is the ideal state? Plato\'s answer was philosopher-kings — those who have escaped the cave and seen reality should rule, whether they want to or not.\n\nThe philosopher Alfred North Whitehead called all of Western philosophy "footnotes to Plato." This is an exaggeration — but it captures something true. Almost every major philosophical question — the nature of knowledge, reality, justice, beauty, love — was first systematically explored by Plato, and almost every subsequent philosopher has had to take a position relative to his answers.',
+            extraImages: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg/800px-%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg', caption: 'Raphael — The School of Athens (detail, 1509–11). The full fresco shows Plato and Aristotle surrounded by the greatest thinkers of antiquity.' },
+            ],
           },
         ],
         quiz: [
