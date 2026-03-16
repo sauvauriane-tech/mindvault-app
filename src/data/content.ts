@@ -249,7 +249,7 @@ export const courses: Course[] = [
             title: 'The Man Who Knew Nothing',
             images: [
               { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/David_-_The_Death_of_Socrates.jpg/800px-David_-_The_Death_of_Socrates.jpg', caption: 'Jacques-Louis David — The Death of Socrates (1787). Metropolitan Museum of Art, New York. Socrates calmly reaches for the hemlock as his students grieve.' },
-              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Socrates_Louvre.jpg/600px-Socrates_Louvre.jpg', caption: 'Roman marble bust of Socrates (1st century CE, copy of Greek original). Louvre, Paris.' },
+              { url: '/paintings/socrates_bust.jpg', caption: 'Roman marble bust of Socrates (1st century CE, copy of Greek original). Louvre, Paris.' },
             ],
             body: 'Socrates (470–399 BCE) is one of the most important figures in Western philosophy — and one of the most unusual. He wrote nothing. Everything we know about him comes from others, particularly his student Plato.\n\nSocrates claimed to know nothing — or rather, he claimed that his only wisdom was knowing that he knew nothing. When the Oracle at Delphi declared him the wisest man in Athens, he was puzzled.',
           },
