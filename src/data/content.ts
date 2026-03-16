@@ -678,6 +678,175 @@ export const courses: Course[] = [
   },
   // ── CULTURE ──────────────────────────────────────────────────────────────
   {
+    id: 'art-movements',
+    title: 'Impressionism: Painting the Moment',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Claude_Monet%2C_Impression%2C_soleil_levant.jpg/800px-Claude_Monet%2C_Impression%2C_soleil_levant.jpg',
+    topicId: 'culture',
+    rating: 4.8,
+    estimatedMinutes: 20,
+    lessons: [
+      {
+        id: 'impressionism',
+        title: 'Impressionism: The Scandal That Changed Art',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Claude_Monet%2C_Impression%2C_soleil_levant.jpg/800px-Claude_Monet%2C_Impression%2C_soleil_levant.jpg',
+        pages: [
+          {
+            title: 'A Scandal in Paris',
+            images: [
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Claude_Monet%2C_Impression%2C_soleil_levant.jpg/800px-Claude_Monet%2C_Impression%2C_soleil_levant.jpg',
+                caption: 'Claude Monet — Impression, Sunrise (1872). Musée Marmottan Monet, Paris. The painting that accidentally named an entire movement.',
+              },
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Monet_-_Haystacks%2C_White_Frost_Effect.jpg/800px-Monet_-_Haystacks%2C_White_Frost_Effect.jpg',
+                caption: 'Claude Monet — Haystacks, White Frost Effect (1891). National Galleries of Scotland, Edinburgh. Monet painted the same haystacks across seasons to capture changing light.',
+              },
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/VanGogh-starry_night_ballance1.jpg/800px-VanGogh-starry_night_ballance1.jpg',
+                caption: 'Vincent van Gogh — The Starry Night (1889). MoMA, New York. Post-Impressionism: emotion supersedes observation.',
+              },
+            ],
+            body: 'In 1874, a group of French painters held their own exhibition after being repeatedly rejected by the official Paris Salon. Critics mocked them. One reviewer sarcastically named the movement after Monet\'s painting "Impression, Sunrise" — and the label stuck.\n\nImpressionism broke every rule of academic painting. Instead of smooth, invisible brushstrokes, Impressionists left visible dabs of paint. Instead of studio-lit scenes, they painted outdoors (en plein air) to capture fleeting light. Instead of mythological subjects, they painted cafés, railway stations, and dancers.\n\nThe 1874 exhibition featured 165 works by thirty artists. Entrance cost one franc. Though mocked by critics, the show drew 3,500 visitors. Most importantly, it announced that art need not ask permission from the academy — a principle every modern artist has inherited.',
+          },
+          {
+            title: 'Monet: The Painter of Light',
+            images: [
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Claude_Monet_-_Water_Lilies_-_1906%2C_Ryerson.jpg/800px-Claude_Monet_-_Water_Lilies_-_1906%2C_Ryerson.jpg',
+                caption: 'Claude Monet — Water Lilies (1906). Art Institute of Chicago. One of 250 water lily paintings Monet made as his sight failed in his final decades.',
+              },
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Monet_-_The_Magpie.jpg/800px-Monet_-_The_Magpie.jpg',
+                caption: 'Claude Monet — The Magpie (1868–69). Musée d\'Orsay, Paris. Light on snow rendered through hundreds of separate blue and white dabs of paint.',
+              },
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Monet_-_Rouen_Cathedral%2C_West_Facade%2C_Sunlight.jpg/600px-Monet_-_Rouen_Cathedral%2C_West_Facade%2C_Sunlight.jpg',
+                caption: 'Claude Monet — Rouen Cathedral, West Façade, Sunlight (1894). National Gallery of Art, Washington D.C. Monet painted the same cathedral façade 30 times at different hours.',
+              },
+            ],
+            body: 'Claude Monet (1840–1926) is the central figure of Impressionism — and the artist who took its core principle furthest. He was obsessed not with objects but with light: the way it falls, shifts, dissolves, and transforms everything it touches.\n\nMonet developed the practice of painting "series" — returning to the same subject across different seasons, times of day, and atmospheric conditions. His haystacks, Rouen Cathedral, and Thames views all show the same conviction: the object is merely a pretext for studying light.\n\nHis final years at Giverny, in the water garden he designed himself, produced the monumental Water Lilies canvases. He worked on them even as glaucoma destroyed his vision — painting increasingly by instinct and memory. The paintings became increasingly abstract, almost colour-field in their luminous dissolution of form.\n\nMonet was 86 when he died, still painting. The final Water Lilies cycle — eight vast canvases installed in the Orangerie, Paris — was his bequest to France.',
+            extraImages: [
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Camille_Monet_on_a_Garden_Bench.jpg/800px-Camille_Monet_on_a_Garden_Bench.jpg',
+                caption: 'Claude Monet — Camille Monet on a Garden Bench (1873). Metropolitan Museum of Art. Monet\'s wife Camille was his most frequent early model.',
+              },
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Monet-Haystacks.jpg/800px-Monet-Haystacks.jpg',
+                caption: 'Claude Monet — Haystacks (1891). Art Institute of Chicago. One of the series that established his mature method of painting the same subject at different times.',
+              },
+            ],
+          },
+          {
+            title: 'Renoir, Degas & the World They Painted',
+            images: [
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Auguste_Renoir_-_Bal_du_moulin_de_la_Galette.jpg/800px-Auguste_Renoir_-_Bal_du_moulin_de_la_Galette.jpg',
+                caption: 'Pierre-Auguste Renoir — Ball at the Moulin de la Galette (1876). Musée d\'Orsay, Paris. Sunlight dapples a Sunday afternoon dance hall in Montmartre.',
+              },
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Edgar_Degas_-_Dancers_in_Blue%2C_1890.jpg/800px-Edgar_Degas_-_Dancers_in_Blue%2C_1890.jpg',
+                caption: 'Edgar Degas — Dancers in Blue (c. 1890). Musée d\'Orsay, Paris. Degas captured rehearsal-room motion with the intimacy of a hidden observer.',
+              },
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Degas_-_The_Dance_Class%2C_1874.jpg/800px-Degas_-_The_Dance_Class%2C_1874.jpg',
+                caption: 'Edgar Degas — The Dance Class (1874). Metropolitan Museum of Art, New York. Jules Perrot, the legendary choreographer, instructs the Paris Opéra Ballet.',
+              },
+            ],
+            body: 'Pierre-Auguste Renoir (1841–1919) brought warmth and sensuous pleasure to Impressionism. Where Monet studied light in landscapes, Renoir found it in people — their skin, their laughter, the shimmer of fabric and lamplight. His "Ball at the Moulin de la Galette" is perhaps the happiest large painting in Western art.\n\nEdgar Degas (1834–1917) is often grouped with the Impressionists but stood apart. He preferred interior spaces — opera houses, cafés, racetracks — and worked as much from memory and imagination as from direct observation. His hundreds of ballet paintings are not celebrations of beauty but analytical studies of labour: the endless rehearsals, aching muscles, and hard work behind the illusion of effortless grace.\n\nBerthe Morisot (1841–1895) was the only woman in the core Impressionist group and exhibited in seven of the eight Impressionist exhibitions. Her gaze was intimate and psychologically precise — domestic interiors, mothers and children, women reading — painted with a brushwork of remarkable speed and freedom.',
+            extraImages: [
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Berthe_Morisot%2C_The_Cradle.jpg/600px-Berthe_Morisot%2C_The_Cradle.jpg',
+                caption: 'Berthe Morisot — The Cradle (1872). Musée d\'Orsay, Paris. Morisot\'s intimate observation of domestic life was largely overlooked in her lifetime.',
+              },
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Pierre-Auguste_Renoir%2C_French_-_The_Large_Bathers_-_Google_Art_Project.jpg/800px-Pierre-Auguste_Renoir%2C_French_-_The_Large_Bathers_-_Google_Art_Project.jpg',
+                caption: 'Pierre-Auguste Renoir — The Large Bathers (1884–87). Philadelphia Museum of Art. Renoir\'s most ambitious figure composition.',
+              },
+            ],
+          },
+          {
+            title: 'Post-Impressionism: Beyond the Movement',
+            images: [
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Georges_Seurat_-_A_Sunday_on_La_Grande_Jatte_--_1884_-_Google_Art_Project.jpg/800px-Georges_Seurat_-_A_Sunday_on_La_Grande_Jatte_--_1884_-_Google_Art_Project.jpg',
+                caption: 'Georges Seurat — A Sunday Afternoon on the Island of La Grande Jatte (1884–86). Art Institute of Chicago. Pointillism: millions of colour dots that blend in the eye.',
+              },
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Vincent_van_Gogh_-_The_Bedroom_-_Google_Art_Project.jpg/800px-Vincent_van_Gogh_-_The_Bedroom_-_Google_Art_Project.jpg',
+                caption: 'Vincent van Gogh — The Bedroom (1888). Art Institute of Chicago. Van Gogh intended the flat colours and bold outlines to convey absolute repose.',
+              },
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Paul_Gauguin_-_D%27ou_venons-nous.jpg/800px-Paul_Gauguin_-_D%27ou_venons-nous.jpg',
+                caption: 'Paul Gauguin — Where Do We Come From? What Are We? Where Are We Going? (1897–98). Museum of Fine Arts, Boston. Gauguin\'s supreme synthesis of colour, myth, and symbol.',
+              },
+            ],
+            body: 'Impressionism gave rise to a generation of artists who absorbed its lessons but pushed beyond them. These "Post-Impressionists" were united by dissatisfaction with fleeting sensation — they wanted painting to carry deeper emotional or intellectual content.\n\nGeorges Seurat (1859–1891) developed Pointillism, reducing paint to tiny dots of pure unmixed colour that blend only in the viewer\'s eye. His "La Grande Jatte" took two years to complete — a scientific rigour that was the opposite of Impressionist spontaneity.\n\nVincent van Gogh (1853–1890) absorbed Impressionist colour but used it for emotional autobiography. His swirling, tormented brushwork transforms every subject — a bedroom, a wheat field, a night café — into a vehicle for psychological intensity. He sold only one painting in his lifetime.\n\nPaul Gauguin (1848–1903) rejected European civilisation and fled to Tahiti, seeking a primal intensity he could not find in Paris. His flat colour, bold outlines, and symbolically charged images pointed toward Fauvism and 20th-century abstraction. Without Impressionism, none of what followed is imaginable.',
+          },
+        ],
+        quiz: [
+          { id: 'q1', question: 'Where did the name "Impressionism" come from?', options: ['A government arts decree', 'A mocking critic reviewing Monet\'s painting', 'Monet chose it himself', 'It was the gallery\'s official name'], correctIndex: 1, explanation: 'A critic mockingly used "Impressionism" after Monet\'s "Impression, Sunrise" — the artists adopted it defiantly.' },
+          { id: 'q2', question: 'What does "en plein air" mean?', options: ['In the studio', 'At night', 'Outdoors', 'By artificial light'], correctIndex: 2, explanation: '"En plein air" means painting outdoors to capture natural, changing light — a key Impressionist practice.' },
+          { id: 'q3', question: 'Who was the only woman in the core Impressionist group?', options: ['Mary Cassatt', 'Rosa Bonheur', 'Berthe Morisot', 'Camille Claudel'], correctIndex: 2, explanation: 'Berthe Morisot was the only woman in the original Impressionist group, exhibiting in seven of the eight Impressionist shows.' },
+          { id: 'q4', question: 'What technique did Seurat invent as an extension of Impressionist colour theory?', options: ['Chiaroscuro', 'Sfumato', 'Pointillism', 'Tenebrism'], correctIndex: 2, explanation: 'Seurat\'s Pointillism placed tiny dots of pure unmixed colour on the canvas, relying on the viewer\'s eye to blend them — a scientific development of Impressionist colour ideas.' },
+        ],
+      },
+      {
+        id: 'renaissance-art',
+        title: 'The Renaissance: Rebirth of Beauty',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg/800px-Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg',
+        pages: [
+          {
+            title: 'Florence and the Birth of a New Vision',
+            images: [
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg/800px-Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg',
+                caption: 'Sandro Botticelli — The Birth of Venus (c. 1484–86). Uffizi Gallery, Florence. A touchstone of Renaissance idealism and the revival of classical mythology.',
+              },
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Sandro_Botticelli_-_La_primavera_-_Google_Art_Project.jpg/800px-Sandro_Botticelli_-_La_primavera_-_Google_Art_Project.jpg',
+                caption: 'Sandro Botticelli — Primavera (c. 1477–82). Uffizi Gallery, Florence. Mercury, the Three Graces, Venus, Flora — allegory as opulent colour.',
+              },
+            ],
+            body: 'The Renaissance ("rebirth") began in 14th-century Florence and spread across Europe over the next two centuries. It was a revolution in how Europeans understood themselves, the world, and beauty.\n\nRenaissance artists rediscovered the art and philosophy of ancient Greece and Rome. They developed linear perspective — the mathematical system for depicting three-dimensional space on a flat surface — which fundamentally changed painting forever.\n\nThe Medici family of Florence, bankers who became the most powerful patrons in Europe, funded an explosion of artistic production. Botticelli, Brunelleschi, Donatello, and Leonardo all worked in their orbit. Florence became the cradle of a new world.',
+          },
+          {
+            title: 'Leonardo, Michelangelo & Raphael',
+            images: [
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/600px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg',
+                caption: 'Leonardo da Vinci — Mona Lisa (1503–19). Louvre, Paris. The most visited, most written-about painting in history.',
+              },
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Michelangelo_-_Creation_of_Adam_%28cropped%29.jpg/800px-Michelangelo_-_Creation_of_Adam_%28cropped%29.jpg',
+                caption: 'Michelangelo — Creation of Adam (1508–12). Sistine Chapel, Vatican. The most reproduced religious painting in history.',
+              },
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg/800px-%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg',
+                caption: 'Raphael — The School of Athens (1509–11). Apostolic Palace, Vatican. Plato and Aristotle surrounded by the greatest minds of antiquity.',
+              },
+            ],
+            body: 'Leonardo da Vinci (1452–1519) was the ultimate "Renaissance man" — painter, sculptor, architect, scientist, and engineer. His notebooks contain thousands of pages of drawings: flying machines, hydraulic pumps, anatomical studies from dissected corpses, geological observations.\n\nMichelangelo (1475–1564) spent four back-breaking years painting the Sistine Chapel ceiling (1508–1512), working alone on scaffolding 60 feet above the floor, creating over 300 figures. The ceiling — and his sculptural Pietà, carved aged just 24 — remain unmatched in the Western tradition.\n\nRaphael (1483–1520) brought to Rome a harmony of colour, composition, and humanity that set the standard for classical painting for four centuries. He died at 37, and Rome reportedly mourned in the streets.',
+            extraImages: [
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Michelangelo%27s_Pieta_5450_cropncleaned_edit.jpg/600px-Michelangelo%27s_Pieta_5450_cropncleaned_edit.jpg',
+                caption: 'Michelangelo — Pietà (1498–99). St. Peter\'s Basilica, Vatican City. Carved when Michelangelo was 24.',
+              },
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Leonardo_da_Vinci_-_The_Last_Supper_high_res.jpg/800px-Leonardo_da_Vinci_-_The_Last_Supper_high_res.jpg',
+                caption: 'Leonardo da Vinci — The Last Supper (c. 1495–98). Santa Maria delle Grazie, Milan. Painted in experimental fresco — and already deteriorating within years of completion.',
+              },
+            ],
+          },
+        ],
+        quiz: [
+          { id: 'q1', question: 'What mathematical innovation did Renaissance artists develop for painting?', options: ['Colour theory', 'Linear perspective', 'The golden ratio', 'Chiaroscuro'], correctIndex: 1, explanation: 'Linear perspective let artists depict 3D space convincingly on a flat surface, transforming Western painting.' },
+          { id: 'q2', question: 'How many years did Michelangelo spend painting the Sistine Chapel ceiling?', options: ['One year', 'Two years', 'Four years', 'Ten years'], correctIndex: 2, explanation: 'Michelangelo painted the Sistine Chapel ceiling from 1508 to 1512 — approximately four years.' },
+          { id: 'q3', question: 'Which family bankrolled the Florentine Renaissance?', options: ['The Borgias', 'The Sforzas', 'The Medicis', 'The Gonzagas'], correctIndex: 2, explanation: 'The Medici banking dynasty were the dominant patrons of Renaissance Florence, funding Botticelli, Leonardo, and Michelangelo.' },
+        ],
+      },
+    ],
+  },
+  {
     id: 'music-revolutions',
     title: 'How Music Shaped History',
     imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Joseph_Karl_Stieler_-_Beethoven_mit_dem_Manuskript_der_Missa_solemnis.jpg/600px-Joseph_Karl_Stieler_-_Beethoven_mit_dem_Manuskript_der_Missa_solemnis.jpg',
