@@ -385,7 +385,7 @@ export const courses: Course[] = [
       {
         id: 'utilitarianism',
         title: 'Utilitarianism: The Greatest Happiness',
-        imageUrl: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Jeremy_Bentham_by_Henry_William_Pickersgill_detail.jpg/500px-Jeremy_Bentham_by_Henry_William_Pickersgill_detail.jpg',
         pages: [
           {
             title: 'Bentham and the Happiness Calculus',
