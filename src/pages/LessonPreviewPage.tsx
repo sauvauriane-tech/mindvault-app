@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import { X, BookOpen, HelpCircle, Clock, ChevronRight, Play, Trophy } from 'lucide-react';
+import { X, BookOpen, HelpCircle, Clock, ChevronRight, Trophy } from 'lucide-react';
 import { getLesson } from '@/data/content';
 import { useProgress } from '@/context/ProgressContext';
 import Navbar from '@/components/Navbar';
