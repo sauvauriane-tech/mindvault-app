@@ -277,6 +277,208 @@ export const courses: Course[] = [
       },
     ],
   },
+  // ── CULTURE ──────────────────────────────────────────────────────────────
+  {
+    id: 'art-movements',
+    title: 'Art That Changed the World',
+    imageUrl: 'https://images.unsplash.com/photo-1541367777708-7905fe3296c0?w=800&q=80',
+    topicId: 'culture',
+    rating: 4.7,
+    estimatedMinutes: 14,
+    lessons: [
+      {
+        id: 'impressionism',
+        title: 'Impressionism: Painting Light',
+        imageUrl: 'https://images.unsplash.com/photo-1541367777708-7905fe3296c0?w=800&q=80',
+        pages: [
+          {
+            title: 'A Scandal in Paris',
+            imageUrl: 'https://images.unsplash.com/photo-1541367777708-7905fe3296c0?w=800&q=80',
+            body: 'In 1874, a group of French painters held their own exhibition after being repeatedly rejected by the official Paris Salon. Critics mocked them. One reviewer sarcastically named the movement after Monet\'s painting "Impression, Sunrise" — and the label stuck.\n\nImpressionism broke every rule of academic painting. Instead of smooth, invisible brushstrokes, Impressionists left visible dabs of paint. Instead of studio-lit scenes, they painted outdoors (en plein air) to capture fleeting light. Instead of mythological subjects, they painted cafés, railway stations, and dancers.',
+          },
+          {
+            title: 'The Artists Who Changed Everything',
+            body: 'Claude Monet obsessively painted the same subjects — haystacks, Rouen Cathedral, water lilies — at different times of day to study how light transformed them. Edgar Degas brought an almost photographic dynamism to ballet rehearsals and racetrack scenes. Pierre-Auguste Renoir captured the warmth and pleasure of bourgeois leisure.\n\nImpressionism opened the door for every modern art movement that followed. Without Impressionism, there is no Post-Impressionism, no Cubism, no abstraction. The "failed" 1874 exhibition was one of the most consequential events in cultural history.',
+          },
+        ],
+        quiz: [
+          { id: 'q1', question: 'Where did the name "Impressionism" come from?', options: ['A government arts decree', 'A mocking critic reviewing Monet\'s painting', 'Monet chose it himself', 'It was the gallery\'s official name'], correctIndex: 1, explanation: 'A critic mockingly used "Impressionism" after Monet\'s "Impression, Sunrise" — the artists adopted it defiantly.' },
+          { id: 'q2', question: 'What does "en plein air" mean?', options: ['In the studio', 'At night', 'Outdoors', 'By artificial light'], correctIndex: 2, explanation: '"En plein air" means painting outdoors to capture natural, changing light — a key Impressionist practice.' },
+        ],
+      },
+      {
+        id: 'renaissance-art',
+        title: 'The Renaissance: Rebirth of Beauty',
+        imageUrl: 'https://images.unsplash.com/photo-1534349762230-e0cadf78f5da?w=800&q=80',
+        pages: [
+          {
+            title: 'Florence and the Birth of a New Vision',
+            imageUrl: 'https://images.unsplash.com/photo-1534349762230-e0cadf78f5da?w=800&q=80',
+            body: 'The Renaissance ("rebirth") began in 14th-century Florence and spread across Europe over the next two centuries. It was a revolution in how Europeans understood themselves, the world, and beauty.\n\nRenaissance artists rediscovered the art and philosophy of ancient Greece and Rome. They developed linear perspective — the mathematical system for depicting three-dimensional space on a flat surface — which fundamentally changed painting forever.',
+          },
+          {
+            title: 'The Giants of the Renaissance',
+            body: 'Leonardo da Vinci was the ultimate "Renaissance man" — painter, sculptor, architect, scientist, and engineer. His notebooks are filled with designs for flying machines, anatomical studies, and hydraulic systems centuries ahead of their time.\n\nMichelangelo spent four back-breaking years painting the Sistine Chapel ceiling (1508–1512), creating one of humanity\'s greatest artistic achievements. Raphael\'s "School of Athens" depicted ancient philosophers in a harmonious composition that became a template for classical grandeur.',
+          },
+        ],
+        quiz: [
+          { id: 'q1', question: 'What mathematical innovation did Renaissance artists develop for painting?', options: ['Colour theory', 'Linear perspective', 'The golden ratio', 'Chiaroscuro'], correctIndex: 1, explanation: 'Linear perspective let artists depict 3D space convincingly on a flat surface, transforming Western painting.' },
+          { id: 'q2', question: 'How many years did Michelangelo spend painting the Sistine Chapel ceiling?', options: ['One year', 'Two years', 'Four years', 'Ten years'], correctIndex: 2, explanation: 'Michelangelo painted the Sistine Chapel ceiling from 1508 to 1512 — approximately four years.' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'music-revolutions',
+    title: 'How Music Shaped History',
+    imageUrl: 'https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=800&q=80',
+    topicId: 'culture',
+    rating: 4.6,
+    estimatedMinutes: 12,
+    lessons: [
+      {
+        id: 'beethoven-revolution',
+        title: 'Beethoven and the Heroic Style',
+        imageUrl: 'https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=800&q=80',
+        pages: [
+          {
+            title: 'The Deaf Composer Who Heard Everything',
+            imageUrl: 'https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=800&q=80',
+            body: 'Ludwig van Beethoven (1770–1827) bridged the Classical and Romantic eras — and in doing so, redefined what music could express. By his late twenties, he was going deaf. By his forties, he was completely deaf.\n\nYet he continued to compose. His Ninth Symphony — its finale featuring the "Ode to Joy" — was premiered when Beethoven could hear nothing. Legend has it he had to be turned around to see the audience\'s applause.',
+          },
+          {
+            title: 'Music as Revolution',
+            body: 'Beethoven\'s "Eroica" Symphony (No. 3, 1803) was originally dedicated to Napoleon. When Napoleon declared himself Emperor, Beethoven furiously scratched out the dedication — he had believed in the revolutionary ideals, not the man.\n\nBeethoven\'s music was unprecedented in its emotional range and dramatic intensity. He turned the symphony into a vehicle for grand philosophical statements. Every major Romantic composer who followed — Brahms, Wagner, Mahler — worked in his shadow.',
+          },
+        ],
+        quiz: [
+          { id: 'q1', question: 'What happened to Beethoven\'s hearing by his forties?', options: ['It improved', 'It was mildly affected', 'He became completely deaf', 'He had selective hearing loss'], correctIndex: 2, explanation: 'Beethoven became completely deaf by his mid-forties, yet continued composing masterworks including the Ninth Symphony.' },
+          { id: 'q2', question: 'Who was Beethoven\'s "Eroica" symphony originally dedicated to?', options: ['The King of Austria', 'Napoleon Bonaparte', 'Friedrich Schiller', 'Franz Joseph Haydn'], correctIndex: 1, explanation: 'Beethoven dedicated the "Eroica" to Napoleon, then angrily withdrew the dedication when Napoleon crowned himself Emperor.' },
+        ],
+      },
+      {
+        id: 'jazz-culture',
+        title: 'Jazz: America\'s Classical Music',
+        imageUrl: 'https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=800&q=80',
+        pages: [
+          {
+            title: 'Born in New Orleans',
+            imageUrl: 'https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=800&q=80',
+            body: 'Jazz emerged in New Orleans around the turn of the 20th century, blending African American musical traditions — blues, ragtime, gospel — with European harmonies. It was the sound of a city that was uniquely cosmopolitan: French, Spanish, African, Creole cultures mixing in ways found nowhere else in America.\n\nWhat made jazz revolutionary was improvisation. Within a shared structure, musicians invented new melodies in real time. It was composition and performance merged into one spontaneous act.',
+          },
+          {
+            title: 'Jazz Goes Global',
+            body: 'The 1920s became the "Jazz Age." Jazz spread from New Orleans to Chicago to New York — and then to Paris, London, and beyond. For Europeans, jazz felt thrillingly modern and subversive.\n\nLouis Armstrong transformed jazz from a collective ensemble art into a soloist\'s medium. Miles Davis reinvented it multiple times — cool jazz, modal jazz, fusion — across a career spanning five decades. Jazz became a lens through which the 20th century\'s anxieties and aspirations were expressed.',
+          },
+        ],
+        quiz: [
+          { id: 'q1', question: 'What city is considered the birthplace of jazz?', options: ['Chicago', 'New York', 'New Orleans', 'Memphis'], correctIndex: 2, explanation: 'Jazz was born in New Orleans around 1900, shaped by the city\'s unique cultural mix of African, French, Spanish and Creole influences.' },
+          { id: 'q2', question: 'What musical innovation made jazz revolutionary?', options: ['The use of electric instruments', 'Real-time improvisation', 'Orchestral arrangements', 'Written musical scores'], correctIndex: 1, explanation: 'Improvisation — composing melodies spontaneously during performance within a shared structure — was jazz\'s defining innovation.' },
+        ],
+      },
+    ],
+  },
+  // ── POLITICS ─────────────────────────────────────────────────────────────
+  {
+    id: 'democracy-origins',
+    title: 'The Origins of Democracy',
+    imageUrl: 'https://images.unsplash.com/photo-1555848962-6e79363ec58f?w=800&q=80',
+    topicId: 'politics',
+    rating: 4.8,
+    estimatedMinutes: 12,
+    lessons: [
+      {
+        id: 'athens-democracy',
+        title: 'Athens: The First Democracy',
+        imageUrl: 'https://images.unsplash.com/photo-1555848962-6e79363ec58f?w=800&q=80',
+        pages: [
+          {
+            title: 'The World\'s First Experiment',
+            imageUrl: 'https://images.unsplash.com/photo-1555848962-6e79363ec58f?w=800&q=80',
+            body: 'Around 508 BCE, the Athenian statesman Cleisthenes introduced a radical new system of government: demokratia — "rule by the people." For the first time in recorded history, ordinary citizens would have a direct voice in how their city was run.\n\nThe Athenian Assembly (Ekklesia) met regularly on a hillside called the Pnyx. Any adult male citizen could attend, speak, and vote. Decisions on war, treaties, laws, and finances were made by a show of hands. At its height, perhaps 6,000 citizens regularly participated.',
+          },
+          {
+            title: 'The Limits and Legacies',
+            body: 'Athenian democracy had profound limitations. Women, slaves, and foreigners — the majority of Athens\'s population — were excluded. "The people" meant a privileged minority.\n\nYet the Athenian experiment planted ideas that would not die: that ordinary people could govern themselves, that rulers should be accountable, that free debate is the foundation of good decisions. These ideas resurfaced in the Roman Republic, the Magna Carta, the English Parliament, the American Revolution, and the French Revolution.',
+          },
+        ],
+        quiz: [
+          { id: 'q1', question: 'What does "demokratia" mean?', options: ['Rule by the wise', 'Rule by the people', 'Rule by the wealthy', 'Rule by the strongest'], correctIndex: 1, explanation: '"Demokratia" combines "demos" (people) and "kratos" (power/rule) — literally "rule by the people."' },
+          { id: 'q2', question: 'Who introduced democracy to Athens around 508 BCE?', options: ['Pericles', 'Solon', 'Cleisthenes', 'Themistocles'], correctIndex: 2, explanation: 'Cleisthenes introduced democratic reforms around 508 BCE, earning the title "Father of Athenian Democracy."' },
+        ],
+      },
+      {
+        id: 'magna-carta',
+        title: 'Magna Carta: The Law Above Kings',
+        imageUrl: 'https://images.unsplash.com/photo-1568819317551-f8b8b4e7c9f2?w=800&q=80',
+        pages: [
+          {
+            title: 'A King Forced to Sign',
+            imageUrl: 'https://images.unsplash.com/photo-1568819317551-f8b8b4e7c9f2?w=800&q=80',
+            body: 'In June 1215, English barons who had grown fed up with the arbitrary tyranny of King John forced him to a meadow at Runnymede, beside the River Thames, and made him set his seal on a document: the Magna Carta (Great Charter).\n\nFor the first time, an English monarch was forced to acknowledge that his power had limits. The King was subject to the law, not above it. Key clauses guaranteed that no free man could be imprisoned or punished except by the lawful judgment of his peers.',
+          },
+          {
+            title: 'Why It Still Matters',
+            body: 'Most of the Magna Carta\'s 63 clauses dealt with feudal grievances of little lasting importance. But a handful of principles proved immortal: due process, the rule of law, and the idea that government requires consent.\n\nThe document was reinterpreted in every subsequent era of constitutional struggle. When American colonists declared independence from Britain, they cited Magna Carta principles. The 1948 Universal Declaration of Human Rights echoes its spirit. Today it is considered the cornerstone of constitutional government in the English-speaking world.',
+          },
+        ],
+        quiz: [
+          { id: 'q1', question: 'Where was the Magna Carta signed?', options: ['Westminster Abbey', 'The Tower of London', 'Runnymede meadow', 'Canterbury Cathedral'], correctIndex: 2, explanation: 'King John sealed the Magna Carta at Runnymede, a meadow beside the Thames, in June 1215.' },
+          { id: 'q2', question: 'What was the Magna Carta\'s most enduring political principle?', options: ['Kings have divine rights', 'The rule of law applies even to the King', 'Parliament controls taxation', 'Bishops have veto power'], correctIndex: 1, explanation: 'The Magna Carta established that the King is subject to the law — a cornerstone of constitutional government.' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'revolutions-power',
+    title: 'Revolutions & the Seizure of Power',
+    imageUrl: 'https://images.unsplash.com/photo-1609743522653-52354461eb27?w=800&q=80',
+    topicId: 'politics',
+    rating: 4.7,
+    estimatedMinutes: 14,
+    lessons: [
+      {
+        id: 'french-revolution',
+        title: 'The French Revolution',
+        imageUrl: 'https://images.unsplash.com/photo-1609743522653-52354461eb27?w=800&q=80',
+        pages: [
+          {
+            title: 'Liberty, Equality, Fraternity — and Terror',
+            imageUrl: 'https://images.unsplash.com/photo-1609743522653-52354461eb27?w=800&q=80',
+            body: 'The French Revolution (1789–1799) began with bread riots and a storming of the Bastille prison and ended with Napoleon seizing power. In between, it executed a king and queen, launched a Reign of Terror that killed tens of thousands, abolished feudalism, and proclaimed the rights of man.\n\nFrance in 1789 was a society on the edge. The state was bankrupt from wars. Harvests had failed. The nobility and clergy paid almost no taxes while ordinary people starved. When Louis XVI called the Estates-General, the Third Estate (commoners) refused to play by the old rules.',
+          },
+          {
+            title: 'The Revolution Devours Its Own',
+            body: 'The Reign of Terror (1793–1794) showed how revolutions can turn monstrous. Maximilien Robespierre and the Committee of Public Safety guillotined not just aristocrats and priests but fellow revolutionaries — anyone suspected of insufficient zeal.\n\nRobespierre himself was eventually arrested and guillotined. The Revolution\'s ideals — liberty, equality, fraternity — survived in the long run, spreading across Europe and the Americas. But the path was soaked in blood.',
+          },
+        ],
+        quiz: [
+          { id: 'q1', question: 'What was the Bastille before it was stormed in 1789?', options: ['A royal palace', 'A prison and fortress', 'A cathedral', 'A tax collection office'], correctIndex: 1, explanation: 'The Bastille was a fortress and prison — a symbol of royal tyranny. Its storming on 14 July 1789 became the defining moment of the Revolution.' },
+          { id: 'q2', question: 'Who led the Reign of Terror?', options: ['Napoleon Bonaparte', 'Louis XVI', 'Maximilien Robespierre', 'Marie Antoinette'], correctIndex: 2, explanation: 'Robespierre and the Committee of Public Safety directed the Terror, executing thousands before Robespierre himself was guillotined in 1794.' },
+        ],
+      },
+      {
+        id: 'propaganda-power',
+        title: 'Propaganda: The Weapon of Regimes',
+        imageUrl: 'https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=800&q=80',
+        pages: [
+          {
+            title: 'How Governments Shape Minds',
+            imageUrl: 'https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=800&q=80',
+            body: 'Propaganda is as old as politics. Roman emperors had their image stamped on every coin. Medieval kings used religious pageantry to project sacred authority. But the 20th century industrialised propaganda on a terrifying scale.\n\nJoseph Goebbels, Nazi Germany\'s Minister of Propaganda, understood that controlling information meant controlling reality. Radio, cinema, rallies, posters, textbooks — every medium was weaponised. The aim was not simply to inform but to overwhelm rational thought with emotional intensity.',
+          },
+          {
+            title: 'Propaganda in the Modern World',
+            body: 'Soviet propaganda used heroic imagery — the selfless worker, the brave soldier — to project an idealised vision of communist society far removed from the reality of gulags and famines.\n\nModern propaganda has moved online. Social media algorithms amplify outrage and division. "Deepfake" technology can put words in anyone\'s mouth. The mechanisms are new but the goal is ancient: to make people see what power wants them to see, and to distrust what power wants them to doubt.',
+          },
+        ],
+        quiz: [
+          { id: 'q1', question: 'Who was Nazi Germany\'s Minister of Propaganda?', options: ['Heinrich Himmler', 'Herman Göring', 'Joseph Goebbels', 'Rudolf Hess'], correctIndex: 2, explanation: 'Joseph Goebbels served as Nazi Germany\'s Minister of Propaganda from 1933 to 1945.' },
+          { id: 'q2', question: 'What ancient medium did Roman emperors use for propaganda?', options: ['Scrolls distributed to citizens', 'Their image on coins', 'State-run theatres', 'Public speeches only'], correctIndex: 1, explanation: 'Roman emperors stamped their likeness and titles on coins — an omnipresent propaganda tool reaching every corner of the empire.' },
+        ],
+      },
+    ],
+  },
 ];
 
 export function getCourse(id: string): Course | undefined {
