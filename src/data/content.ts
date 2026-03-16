@@ -251,15 +251,28 @@ export const courses: Course[] = [
         pages: [
           {
             title: 'The Philosophy That Conquered Rome',
-            imageUrl: 'https://images.unsplash.com/photo-1456081101716-74e616ab23d8?w=800&q=80',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Stoa_of_Attalos_at_the_Ancient_Agora_of_Athens_3.jpg/800px-Stoa_of_Attalos_at_the_Ancient_Agora_of_Athens_3.jpg', caption: 'The Stoa of Attalos, Athens (reconstructed). Zeno of Citium taught beneath a painted stoa like this — giving Stoicism its name.' },
+            ],
             body: 'Stoicism was founded in Athens around 300 BCE by Zeno of Citium, who taught beneath a painted porch — a "stoa" — which gave the school its name. It became the dominant philosophy of the Roman Empire, embraced by slaves and emperors alike.\n\nThe Stoics held a radical idea: your emotions are not caused by events, but by your judgments about events. A storm is neither good nor bad — it is your interpretation that creates suffering. Change your interpretation and you change your experience of reality.\n\nThis is not passive resignation. The Stoics made a sharp distinction between what is "up to us" (our thoughts, desires, values) and what is "not up to us" (wealth, reputation, other people\'s actions, even death). Wisdom consists in focusing entirely on the former and accepting the latter with equanimity.',
           },
           {
             title: 'Marcus Aurelius: The Philosopher Emperor',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/MSR-ra-61-b-1-DSC00164.jpg/600px-MSR-ra-61-b-1-DSC00164.jpg', caption: 'Bust of Marcus Aurelius (2nd century CE). Saint-Raymond Museum, Toulouse. The philosopher-emperor who governed an empire while examining his own soul.' },
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Epictetus.jpg/500px-Epictetus.jpg', caption: 'Epictetus — born a slave, became one of the most influential Stoic teachers. Engraving after an imagined portrait.' },
+            ],
             body: 'Marcus Aurelius (121–180 CE) ruled the Roman Empire at its height — and spent his evenings writing philosophical notes to himself. These private meditations, never intended for publication, became the "Meditations," one of the most widely read philosophical texts in history.\n\n"You have power over your mind, not outside events. Realise this, and you will find strength." That sentence captures the Stoic project: transforming the inner world when the outer world is beyond your control.\n\nMarcus governed an empire beset by plague, barbarian invasions, and treachery — yet returned each evening to examine his own conduct, his impatience, his failures to live up to his ideals. The Meditations are the record of that relentless self-examination.\n\nEpictetus, born a slave, taught Stoicism with fierce clarity: "Seek not that the things which happen should happen as you wish; but wish the things which happen to be as they are, and you will have a tranquil flow of life." Freedom was not a legal status but a state of mind.',
+            extraImages: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Equestrian_statue_Marcus_Aurelius_Musei_Capitolini_MC3247.jpg/600px-Equestrian_statue_Marcus_Aurelius_Musei_Capitolini_MC3247.jpg', caption: 'Equestrian statue of Marcus Aurelius (c. 175 CE). Capitoline Museums, Rome. One of the few surviving ancient bronze equestrian statues.' },
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Seneca-berlinantikensammlung-1.jpg/500px-Seneca-berlinantikensammlung-1.jpg', caption: 'Pseudo-Seneca bust (1st–2nd century CE). Altes Museum, Berlin. Long identified with the Stoic philosopher Seneca.' },
+            ],
           },
           {
             title: 'Stoicism Today',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Eugène_Delacroix_-_La_liberté_guidant_le_peuple.jpg/800px-Eugène_Delacroix_-_La_liberté_guidant_le_peuple.jpg', caption: 'Delacroix — Liberty Leading the People (1830). Louvre. The Stoic impulse: act with conviction even when the outcome is uncertain.' },
+            ],
             body: 'Stoicism has experienced a remarkable modern revival. Its principles underpin Cognitive Behavioural Therapy (CBT), the most widely used form of psychotherapy in the world. CBT\'s central insight — that distorted thoughts cause emotional distress — is essentially Stoic.\n\nContemporary Stoics practice "negative visualisation": deliberately imagining worst-case scenarios not to induce fear but to appreciate what you have and prepare for adversity. They practice the "view from above" — imagining your problems from a cosmic perspective to diminish their apparent importance.\n\nThe appeal is obvious. In a world of social media anxiety, information overload, and perpetual outrage, the Stoic invitation to focus on what you can control and release what you cannot feels urgently relevant.',
           },
         ],
