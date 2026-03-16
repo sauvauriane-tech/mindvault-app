@@ -275,7 +275,7 @@ export const courses: Course[] = [
   {
     id: 'stoicism-epicureanism',
     title: 'Stoics vs. Epicureans: The Art of Living',
-    imageUrl: 'https://images.unsplash.com/photo-1456081101716-74e616ab23d8?w=800&q=80',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/MSR-ra-61-b-1-DSC00164.jpg/600px-MSR-ra-61-b-1-DSC00164.jpg',
     topicId: 'philosophy',
     rating: 4.9,
     estimatedMinutes: 16,
