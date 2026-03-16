@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import { X, BookOpen, HelpCircle, Clock, ChevronRight, Play, Trophy } from 'lucide-react';
+import { X, BookOpen, HelpCircle, Clock, ChevronRight, Trophy } from 'lucide-react';
 import { getLesson } from '@/data/content';
 import { useProgress } from '@/context/ProgressContext';
 import Navbar from '@/components/Navbar';
@@ -104,23 +104,6 @@ export default function LessonPreviewPage() {
         </div>
       </div>
 
-      {/* Fixed bottom action bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 bg-card border-t border-border px-4 py-3 pb-6">
-        <div className="max-w-xl mx-auto flex gap-3">
-          <button
-            onClick={() => navigate(`/read/${courseId}/${lessonId}`)}
-            className="flex-1 flex items-center justify-center gap-2 h-12 rounded-xl border-2 border-primary bg-transparent text-primary font-semibold text-sm hover:bg-primary/5 transition-colors"
-          >
-            <BookOpen className="w-4 h-4" /> Read
-          </button>
-          <button
-            onClick={() => navigate(`/quiz/${courseId}/${lessonId}`)}
-            className="flex-1 flex items-center justify-center gap-2 h-12 rounded-xl bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-colors"
-          >
-            <Play className="w-4 h-4" /> Play
-          </button>
-        </div>
-      </div>
     </div>
   );
 }
