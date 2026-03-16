@@ -289,11 +289,16 @@ export const courses: Course[] = [
         pages: [
           {
             title: 'The Most Misunderstood Philosophy',
-            imageUrl: 'https://images.unsplash.com/photo-1474552226712-ac0f0961a954?w=800&q=80',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Epikouros_BM_1843.jpg/500px-Epikouros_BM_1843.jpg', caption: 'Marble bust of Epicurus (Roman copy of a Greek original, 3rd century BCE). British Museum, London.' },
+            ],
             body: 'Epicurus (341–270 BCE) taught that the goal of life is pleasure — which sounds like a recipe for hedonism. It is not. Epicurus\'s conception of pleasure was subtle and demanding: the highest pleasure is ataraxia, a serene, undisturbed tranquillity of mind.\n\nLuxury, ambition, and passion were, for Epicurus, sources not of pleasure but of anxiety. The truly pleasurable life required simple food, close friendships, philosophical conversation, and freedom from fear — especially fear of death and fear of the gods.\n\nEpicurus founded a community called the Garden outside Athens. Unusually for antiquity, women and slaves were admitted as equals. The community lived simply, ate bread and olives, and devoted themselves to philosophical inquiry and friendship.',
           },
           {
             title: 'On the Fear of Death',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Salvator_Rosa_-_Democritus_in_Meditation.jpg/600px-Salvator_Rosa_-_Democritus_in_Meditation.jpg', caption: 'Salvator Rosa — Democritus in Meditation (c. 1650). Statens Museum for Kunst, Copenhagen. Democritus, the "laughing philosopher," whose atomism directly inspired Epicurean physics.' },
+            ],
             body: 'Epicurus\'s most famous argument addresses the fear of death with disarming logic: "Death is nothing to us. When we exist, death is not yet present. When death is present, then we do not exist."\n\nThis is not mere wordplay. It is a serious philosophical argument. Death cannot be experienced. You will never experience being dead — for experience requires a subject, and death eliminates the subject. Therefore death can cause no suffering, and should cause no fear.\n\nLucretius, the Roman Epicurean poet, extended this argument: you were non-existent for billions of years before your birth, and it caused you no distress. Death is simply a return to that prior non-existence.\n\nThe Epicurean project was therapeutic: philosophy as medicine for the soul. Its four remedies — the "tetrapharmakos" — were: do not fear god, do not fear death, what is good is easy to get, what is terrible is easy to endure.',
           },
         ],
