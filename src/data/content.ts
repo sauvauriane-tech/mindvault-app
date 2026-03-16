@@ -218,6 +218,182 @@ export const courses: Course[] = [
     ],
   },
   {
+    id: 'stoicism-epicureanism',
+    title: 'Stoics vs. Epicureans: The Art of Living',
+    imageUrl: 'https://images.unsplash.com/photo-1456081101716-74e616ab23d8?w=800&q=80',
+    topicId: 'philosophy',
+    rating: 4.9,
+    estimatedMinutes: 16,
+    lessons: [
+      {
+        id: 'stoicism',
+        title: 'Stoicism: Mastering the Inner World',
+        imageUrl: 'https://images.unsplash.com/photo-1456081101716-74e616ab23d8?w=800&q=80',
+        pages: [
+          {
+            title: 'The Philosophy That Conquered Rome',
+            imageUrl: 'https://images.unsplash.com/photo-1456081101716-74e616ab23d8?w=800&q=80',
+            body: 'Stoicism was founded in Athens around 300 BCE by Zeno of Citium, who taught beneath a painted porch — a "stoa" — which gave the school its name. It became the dominant philosophy of the Roman Empire, embraced by slaves and emperors alike.\n\nThe Stoics held a radical idea: your emotions are not caused by events, but by your judgments about events. A storm is neither good nor bad — it is your interpretation that creates suffering. Change your interpretation and you change your experience of reality.\n\nThis is not passive resignation. The Stoics made a sharp distinction between what is "up to us" (our thoughts, desires, values) and what is "not up to us" (wealth, reputation, other people\'s actions, even death). Wisdom consists in focusing entirely on the former and accepting the latter with equanimity.',
+          },
+          {
+            title: 'Marcus Aurelius: The Philosopher Emperor',
+            body: 'Marcus Aurelius (121–180 CE) ruled the Roman Empire at its height — and spent his evenings writing philosophical notes to himself. These private meditations, never intended for publication, became the "Meditations," one of the most widely read philosophical texts in history.\n\n"You have power over your mind, not outside events. Realise this, and you will find strength." That sentence captures the Stoic project: transforming the inner world when the outer world is beyond your control.\n\nMarcus governed an empire beset by plague, barbarian invasions, and treachery — yet returned each evening to examine his own conduct, his impatience, his failures to live up to his ideals. The Meditations are the record of that relentless self-examination.\n\nEpictetus, born a slave, taught Stoicism with fierce clarity: "Seek not that the things which happen should happen as you wish; but wish the things which happen to be as they are, and you will have a tranquil flow of life." Freedom was not a legal status but a state of mind.',
+          },
+          {
+            title: 'Stoicism Today',
+            body: 'Stoicism has experienced a remarkable modern revival. Its principles underpin Cognitive Behavioural Therapy (CBT), the most widely used form of psychotherapy in the world. CBT\'s central insight — that distorted thoughts cause emotional distress — is essentially Stoic.\n\nContemporary Stoics practice "negative visualisation": deliberately imagining worst-case scenarios not to induce fear but to appreciate what you have and prepare for adversity. They practice the "view from above" — imagining your problems from a cosmic perspective to diminish their apparent importance.\n\nThe appeal is obvious. In a world of social media anxiety, information overload, and perpetual outrage, the Stoic invitation to focus on what you can control and release what you cannot feels urgently relevant.',
+          },
+        ],
+        quiz: [
+          { id: 'q1', question: 'What does the Stoic distinction between "up to us" and "not up to us" mean?', options: ['Rich and poor people have different duties', 'We control our thoughts but not external events', 'Some laws apply to citizens, others to slaves', 'Gods control fate, humans control nothing'], correctIndex: 1, explanation: 'Stoics held that our judgments and responses are "up to us" while external events, reputation, and even death are not — wisdom lies in focusing only on what we can control.' },
+          { id: 'q2', question: 'Which modern therapy is most closely rooted in Stoic principles?', options: ['Psychoanalysis', 'Gestalt therapy', 'Cognitive Behavioural Therapy (CBT)', 'Humanistic therapy'], correctIndex: 2, explanation: 'CBT\'s core idea — that distorted thoughts, not events, cause emotional distress — directly mirrors Stoic philosophy.' },
+          { id: 'q3', question: 'Who was Marcus Aurelius?', options: ['A Greek philosopher who founded Stoicism', 'A Roman emperor who wrote private Stoic meditations', 'A slave philosopher who taught Stoicism in Athens', 'A senator who codified Roman law'], correctIndex: 1, explanation: 'Marcus Aurelius was Roman emperor (161–180 CE) whose private notebooks, the "Meditations," became one of history\'s most read philosophical works.' },
+        ],
+      },
+      {
+        id: 'epicureanism',
+        title: 'Epicureanism: Pleasure, Friendship & Death',
+        imageUrl: 'https://images.unsplash.com/photo-1474552226712-ac0f0961a954?w=800&q=80',
+        pages: [
+          {
+            title: 'The Most Misunderstood Philosophy',
+            imageUrl: 'https://images.unsplash.com/photo-1474552226712-ac0f0961a954?w=800&q=80',
+            body: 'Epicurus (341–270 BCE) taught that the goal of life is pleasure — which sounds like a recipe for hedonism. It is not. Epicurus\'s conception of pleasure was subtle and demanding: the highest pleasure is ataraxia, a serene, undisturbed tranquillity of mind.\n\nLuxury, ambition, and passion were, for Epicurus, sources not of pleasure but of anxiety. The truly pleasurable life required simple food, close friendships, philosophical conversation, and freedom from fear — especially fear of death and fear of the gods.\n\nEpicurus founded a community called the Garden outside Athens. Unusually for antiquity, women and slaves were admitted as equals. The community lived simply, ate bread and olives, and devoted themselves to philosophical inquiry and friendship.',
+          },
+          {
+            title: 'On the Fear of Death',
+            body: 'Epicurus\'s most famous argument addresses the fear of death with disarming logic: "Death is nothing to us. When we exist, death is not yet present. When death is present, then we do not exist."\n\nThis is not mere wordplay. It is a serious philosophical argument. Death cannot be experienced. You will never experience being dead — for experience requires a subject, and death eliminates the subject. Therefore death can cause no suffering, and should cause no fear.\n\nLucretius, the Roman Epicurean poet, extended this argument: you were non-existent for billions of years before your birth, and it caused you no distress. Death is simply a return to that prior non-existence.\n\nThe Epicurean project was therapeutic: philosophy as medicine for the soul. Its four remedies — the "tetrapharmakos" — were: do not fear god, do not fear death, what is good is easy to get, what is terrible is easy to endure.',
+          },
+        ],
+        quiz: [
+          { id: 'q1', question: 'What did Epicurus mean by "ataraxia"?', options: ['Intense physical pleasure', 'Serene tranquillity of mind', 'Victory over one\'s enemies', 'Devotion to the gods'], correctIndex: 1, explanation: 'Ataraxia — serene, undisturbed mental tranquillity — was Epicurus\'s highest form of pleasure, achievable through simplicity and friendship.' },
+          { id: 'q2', question: 'What was Epicurus\'s core argument about death?', options: ['Death is a gateway to divine reward', 'Death is nature\'s greatest injustice', 'Death cannot be experienced, so it is nothing to fear', 'Death should be sought through philosophy'], correctIndex: 2, explanation: 'Epicurus argued that death cannot be experienced — when you exist, death is absent; when death arrives, you no longer exist to experience it.' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'ethics-morality',
+    title: 'What Is Right? A History of Ethics',
+    imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
+    topicId: 'philosophy',
+    rating: 4.8,
+    estimatedMinutes: 18,
+    lessons: [
+      {
+        id: 'kant-ethics',
+        title: 'Kant: The Moral Law Within',
+        imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
+        pages: [
+          {
+            title: 'The Philosopher Who Never Left Königsberg',
+            imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
+            body: 'Immanuel Kant (1724–1804) spent his entire life in the Prussian city of Königsberg and was so punctually routine that neighbours set their watches by his afternoon walks. Yet his ideas detonated a revolution in philosophy that we are still living through.\n\nKant\'s central ethical insight was this: the moral worth of an action does not depend on its consequences but on whether it was done from duty — from respect for the moral law. An action done for self-interest, even one that happens to help others, has no genuine moral worth.\n\nHis "Categorical Imperative" — his supreme principle of morality — states: "Act only according to that maxim by which you can at the same time will that it should become a universal law." In other words: only act in ways you would be happy for everyone, everywhere, to act.',
+          },
+          {
+            title: 'Kant\'s Second Formula: Treating People as Ends',
+            body: 'Kant offered a second formulation of his Categorical Imperative that many find even more intuitive: "Act so that you treat humanity, both in your own person and that of another, always as an end and never merely as a means."\n\nThis principle — that people must never be used merely as tools for someone else\'s purposes — underlies much of modern human rights thinking. Slavery, exploitation, manipulation, deception — all violate this principle by treating persons as instruments.\n\nKant believed these principles were accessible to any rational being through pure reason alone, without appeal to religion, culture, or consequences. Morality was universal precisely because it was rational.',
+          },
+        ],
+        quiz: [
+          { id: 'q1', question: 'What does Kant\'s Categorical Imperative require?', options: ['Act to maximise happiness for the greatest number', 'Follow the commands of God above all', 'Act only according to principles you\'d want everyone to follow', 'Obey the laws of your society'], correctIndex: 2, explanation: 'Kant\'s Categorical Imperative: act only on principles you could consistently will to be universal laws for all rational beings.' },
+          { id: 'q2', question: 'According to Kant, what gives an action genuine moral worth?', options: ['Its good consequences', 'Being done from duty and respect for the moral law', 'Social approval', 'The intentions of the majority'], correctIndex: 1, explanation: 'For Kant, only actions done from duty — not self-interest or sentiment — have genuine moral worth.' },
+        ],
+      },
+      {
+        id: 'utilitarianism',
+        title: 'Utilitarianism: The Greatest Happiness',
+        imageUrl: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80',
+        pages: [
+          {
+            title: 'Bentham and the Happiness Calculus',
+            imageUrl: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80',
+            body: 'Jeremy Bentham (1748–1832) proposed a beautifully simple principle for ethics: an action is right if it produces the greatest happiness for the greatest number. Pleasure is good; pain is bad. Morality is a calculation.\n\nBentham even sketched a "felicific calculus" — a mathematical procedure for measuring units of pleasure and pain to determine the right course of action. Every person\'s happiness counts equally. The king\'s pleasure counts no more than the beggar\'s.\n\nThis was radical. In a society of rigid hierarchy, the claim that every person\'s wellbeing counts equally had revolutionary implications for criminal justice, animal welfare, poverty relief, and political reform.',
+          },
+          {
+            title: 'Mill and Higher Pleasures',
+            body: 'John Stuart Mill (1806–1873) refined Bentham\'s utilitarianism to address an obvious objection: if only quantity of pleasure matters, is it better to be a satisfied pig than a dissatisfied philosopher?\n\nMill insisted on a distinction between "higher" and "lower" pleasures. The pleasures of the intellect, the moral sentiments, and the imagination are qualitatively superior to mere bodily satisfaction. "It is better to be Socrates dissatisfied than a fool satisfied."\n\nMill also wrote "On Liberty" (1859), arguing that the only legitimate reason to restrict anyone\'s freedom is to prevent harm to others. His "harm principle" remains a cornerstone of liberal political philosophy and continues to shape debates about free speech, drug legislation, and personal autonomy.',
+          },
+        ],
+        quiz: [
+          { id: 'q1', question: 'What is the core principle of Utilitarianism?', options: ['Obey natural law above all else', 'The greatest happiness for the greatest number', 'Virtue is its own reward', 'The strong have the right to rule'], correctIndex: 1, explanation: 'Utilitarianism holds that the morally right action is the one that produces the greatest total happiness for the greatest number of people.' },
+          { id: 'q2', question: 'What is Mill\'s "harm principle"?', options: ['Pain is always harmful and must be avoided', 'Freedom should only be restricted to prevent harm to others', 'Governments must prevent all suffering', 'Pleasure causes harm and should be regulated'], correctIndex: 1, explanation: 'Mill\'s harm principle states that individual freedom should only be restricted to prevent harm to others — a foundation of modern liberalism.' },
+        ],
+      },
+      {
+        id: 'existentialism',
+        title: 'Existentialism: Freedom and Anxiety',
+        imageUrl: 'https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=800&q=80',
+        pages: [
+          {
+            title: 'Existence Before Essence',
+            imageUrl: 'https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=800&q=80',
+            body: 'Existentialism emerged in the 19th and 20th centuries as a response to the collapse of traditional religious certainties and the horrors of modern war. Its central claim is disorienting: there is no pre-given human nature or purpose. Existence comes before essence.\n\nJean-Paul Sartre (1905–1980) put it starkly: "We are condemned to be free." There is no script, no nature, no God to dictate who you should be. You must create yourself through your choices — and you bear full responsibility for what you become.\n\nThis is liberating and terrifying in equal measure. The "existential anxiety" (Angst) that pervades the tradition is not a psychological disorder but a rational response to the vertigo of absolute freedom.',
+          },
+          {
+            title: 'Camus and the Absurd',
+            body: 'Albert Camus (1913–1960) is often grouped with existentialists, though he rejected the label. His concept of the "absurd" captures something existentialists shared: the collision between the human hunger for meaning and the universe\'s total silence on the matter.\n\nCamus\'s response was neither despair nor false comfort but rebellion: we must imagine Sisyphus — condemned to roll his boulder up a hill forever — as happy. To embrace life fully, without illusions, in the face of its absurdity, is the authentic human response.\n\nSimone de Beauvoir extended existentialism into feminism. In "The Second Sex" (1949) she argued that women have been defined as "Other" — as the deviation from a male norm — rather than as free subjects. "One is not born, but rather becomes, a woman." Social existence, not biology, determines gender roles.',
+          },
+        ],
+        quiz: [
+          { id: 'q1', question: 'What does Sartre mean by "existence before essence"?', options: ['Physical existence is more real than abstract ideas', 'There is no fixed human nature — we define ourselves through choices', 'God creates our essence before we are born', 'Animals exist before they develop a soul'], correctIndex: 1, explanation: 'Sartre\'s "existence before essence" means humans have no pre-given nature or purpose — we create ourselves through our choices and actions.' },
+          { id: 'q2', question: 'What is Camus\'s concept of "the absurd"?', options: ['The universe is designed to frustrate human ambition', 'The collision between our hunger for meaning and the universe\'s silence', 'Life is so bizarre that it must be humorous', 'God is unknowable and therefore absurd'], correctIndex: 1, explanation: 'The absurd, for Camus, is the confrontation between the human need for meaning and the universe\'s complete indifference to that need.' },
+          { id: 'q3', question: 'What was Simone de Beauvoir\'s famous claim about women?', options: ['Women are naturally more empathetic than men', 'Women have been historically oppressed by religion', '"One is not born, but becomes, a woman"', 'Women should embrace existential freedom by rejecting marriage'], correctIndex: 2, explanation: 'De Beauvoir argued that "femininity" is not biological destiny but a social construction imposed on women — a founding claim of modern feminism.' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'mind-reality',
+    title: 'Mind, Knowledge & Reality',
+    imageUrl: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80',
+    topicId: 'philosophy',
+    rating: 4.6,
+    estimatedMinutes: 14,
+    lessons: [
+      {
+        id: 'descartes-doubt',
+        title: 'Descartes: I Think, Therefore I Am',
+        imageUrl: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80',
+        pages: [
+          {
+            title: 'The Method of Radical Doubt',
+            imageUrl: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80',
+            body: 'René Descartes (1596–1650) set out to find a foundation for knowledge that was utterly certain — immune to any possible doubt. His method was radical: doubt everything that can possibly be doubted, and see what survives.\n\nDescartes doubted his senses (they sometimes deceive us). He doubted the external world (perhaps he was dreaming). He even entertained the hypothesis of a supremely powerful "evil demon" who might be deceiving him about everything — including mathematics.\n\nAnd yet one thing survived. The very act of doubting required a doubter. Even if he was being deceived about everything, the deception required that he existed to be deceived. "Cogito ergo sum" — I think, therefore I am — became the bedrock of his philosophy.',
+          },
+          {
+            title: 'The Mind-Body Problem',
+            body: 'Having established the certainty of his own existence as a thinking thing, Descartes faced a new problem. He conceived of mind and body as entirely different substances: mind is unextended and immaterial; body is extended and material. But if they are so different, how do they interact?\n\nHow does a thought — a purely mental event — cause your arm to move? How does a physical injury cause a felt pain? This "mind-body problem" remains one of philosophy\'s most contested puzzles. Neuroscientists can describe every firing neuron, yet the subjective "what it\'s like" — consciousness itself — seems to escape physical explanation.\n\nDescartes\'s framing of this problem has shaped philosophy, psychology, and neuroscience ever since. "Cartesian dualism" remains the folk psychological view of most people, even those who have never heard of Descartes.',
+          },
+        ],
+        quiz: [
+          { id: 'q1', question: 'What survived Descartes\'s method of radical doubt?', options: ['The existence of God', 'The laws of mathematics', 'His own existence as a thinking being', 'The reality of the physical world'], correctIndex: 2, explanation: '"Cogito ergo sum" — even radical doubt proves you exist, since doubting requires a doubter.' },
+          { id: 'q2', question: 'What is "Cartesian dualism"?', options: ['The view that there are two Gods', 'The idea that mind and body are fundamentally different substances', 'A theory that truth has two sides', 'The belief that science and religion are compatible'], correctIndex: 1, explanation: 'Cartesian dualism holds that mind (immaterial, unextended) and body (material, extended) are two entirely distinct substances — creating the mind-body problem.' },
+        ],
+      },
+      {
+        id: 'plato-reality',
+        title: 'Plato: The World of Forms',
+        imageUrl: 'https://images.unsplash.com/photo-1555990793-da11153b2473?w=800&q=80',
+        pages: [
+          {
+            title: 'The Cave and the Shadow World',
+            imageUrl: 'https://images.unsplash.com/photo-1555990793-da11153b2473?w=800&q=80',
+            body: 'Plato (428–348 BCE) believed the world we see is not the real world. In his famous "Allegory of the Cave," he describes prisoners chained in a cave, seeing only shadows on the wall — and mistaking those shadows for reality.\n\nPhilosophy, for Plato, was the process of turning away from the shadows and emerging into the sunlight — from appearance to reality, from opinion to knowledge. But most people are so comfortable with their shadows that they resist this liberation, and may even kill those who attempt it (as Athens killed Socrates).\n\nBehind the visible world, Plato argued, lies a realm of perfect, eternal "Forms" — abstract templates of which physical things are mere imperfect copies. There is a perfect Form of Beauty, of Justice, of the Good. Individual beautiful things are beautiful only by participating in the Form of Beauty.',
+          },
+          {
+            title: 'Philosophy as a Way of Life',
+            body: 'Plato founded the Academy in Athens — perhaps the first institution of higher education in the Western world. It operated for over 900 years, until the Emperor Justinian closed it in 529 CE.\n\nPlato\'s "Republic" is one of the most ambitious and controversial books in the Western tradition. It asks: what is justice? What is the ideal state? Plato\'s answer was philosopher-kings — those who have escaped the cave and seen reality should rule, whether they want to or not.\n\nThe philosopher Alfred North Whitehead called all of Western philosophy "footnotes to Plato." This is an exaggeration — but it captures something true. Almost every major philosophical question — the nature of knowledge, reality, justice, beauty, love — was first systematically explored by Plato, and almost every subsequent philosopher has had to take a position relative to his answers.',
+          },
+        ],
+        quiz: [
+          { id: 'q1', question: 'What does Plato\'s Allegory of the Cave represent?', options: ['The dangers of underground living in ancient Greece', 'The transition from ignorance and appearance to knowledge and reality', 'The role of agriculture in ancient Athenian society', 'The fear of darkness common to all humans'], correctIndex: 1, explanation: 'The Cave allegory represents the philosophical journey from mistaking appearances for reality (shadows) to encountering truth (sunlight).' },
+          { id: 'q2', question: 'What are Plato\'s "Forms"?', options: ['Mathematical equations describing nature', 'Perfect, eternal, abstract templates of which physical things are imperfect copies', 'The constitutions of ideal city-states', 'Written laws of the Athenian democracy'], correctIndex: 1, explanation: 'For Plato, Forms are perfect, eternal, non-physical realities — the true objects of knowledge — of which visible things are mere imperfect copies.' },
+        ],
+      },
+    ],
+  },
+  {
     id: 'cold-war-politics',
     title: 'The Cold War Explained',
     imageUrl: 'https://images.unsplash.com/photo-1584824486509-112e4181ff6b?w=800&q=80',
