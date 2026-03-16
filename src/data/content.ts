@@ -12,9 +12,18 @@ export interface QuizQuestion {
   explanation: string;
 }
 
+export interface PageImage {
+  url: string;
+  caption?: string;
+}
+
 export interface LessonPage {
   title: string;
   imageUrl?: string;
+  /** Images shown as a carousel, interspersed with paragraphs (one image per paragraph break) */
+  images?: PageImage[];
+  /** Extra images shown as a standalone gallery strip below the body text */
+  extraImages?: PageImage[];
   body: string;
 }
 
@@ -457,49 +466,121 @@ export const courses: Course[] = [
   {
     id: 'art-movements',
     title: 'Art That Changed the World',
-    imageUrl: 'https://images.unsplash.com/photo-1541367777708-7905fe3296c0?w=800&q=80',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Claude_Monet%2C_Impression%2C_soleil_levant.jpg/800px-Claude_Monet%2C_Impression%2C_soleil_levant.jpg',
     topicId: 'culture',
     rating: 4.7,
-    estimatedMinutes: 14,
+    estimatedMinutes: 18,
     lessons: [
       {
         id: 'impressionism',
         title: 'Impressionism: Painting Light',
-        imageUrl: 'https://images.unsplash.com/photo-1541367777708-7905fe3296c0?w=800&q=80',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Claude_Monet%2C_Impression%2C_soleil_levant.jpg/800px-Claude_Monet%2C_Impression%2C_soleil_levant.jpg',
         pages: [
           {
             title: 'A Scandal in Paris',
-            imageUrl: 'https://images.unsplash.com/photo-1541367777708-7905fe3296c0?w=800&q=80',
-            body: 'In 1874, a group of French painters held their own exhibition after being repeatedly rejected by the official Paris Salon. Critics mocked them. One reviewer sarcastically named the movement after Monet\'s painting "Impression, Sunrise" — and the label stuck.\n\nImpressionism broke every rule of academic painting. Instead of smooth, invisible brushstrokes, Impressionists left visible dabs of paint. Instead of studio-lit scenes, they painted outdoors (en plein air) to capture fleeting light. Instead of mythological subjects, they painted cafés, railway stations, and dancers.',
+            images: [
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Claude_Monet%2C_Impression%2C_soleil_levant.jpg/800px-Claude_Monet%2C_Impression%2C_soleil_levant.jpg',
+                caption: 'Claude Monet — Impression, Sunrise (1872). Musée Marmottan Monet, Paris. The painting that accidentally named a revolution.',
+              },
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Claude_Monet%2C_Water_Lilies_%281906%29%2C_Ryerson.jpg/800px-Claude_Monet%2C_Water_Lilies_%281906%29%2C_Ryerson.jpg',
+                caption: 'Claude Monet — Water Lilies (1906). Art Institute of Chicago. One of 250 water lily paintings Monet made in his last decades.',
+              },
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Renoir13.jpg/800px-Renoir13.jpg',
+                caption: 'Pierre-Auguste Renoir — Dance at Le Moulin de la Galette (1876). Musée d\'Orsay. Sunlight dapples a Sunday dance hall in Montmartre.',
+              },
+            ],
+            body: 'In 1874, a group of French painters held their own exhibition after being repeatedly rejected by the official Paris Salon. Critics mocked them. One reviewer sarcastically named the movement after Monet\'s painting "Impression, Sunrise" — and the label stuck.\n\nImpressionism broke every rule of academic painting. Instead of smooth, invisible brushstrokes, Impressionists left visible dabs of paint. Instead of studio-lit scenes, they painted outdoors (en plein air) to capture fleeting light. Instead of mythological subjects, they painted cafés, railway stations, and dancers.\n\nThe 1874 exhibition featured 165 works by thirty artists. Entrance cost one franc. Though mocked by critics, the show drew 3,500 visitors. Most importantly, it announced that art need not ask permission from the academy — a principle every modern artist has inherited.',
           },
           {
             title: 'The Artists Who Changed Everything',
-            body: 'Claude Monet obsessively painted the same subjects — haystacks, Rouen Cathedral, water lilies — at different times of day to study how light transformed them. Edgar Degas brought an almost photographic dynamism to ballet rehearsals and racetrack scenes. Pierre-Auguste Renoir captured the warmth and pleasure of bourgeois leisure.\n\nImpressionism opened the door for every modern art movement that followed. Without Impressionism, there is no Post-Impressionism, no Cubism, no abstraction. The "failed" 1874 exhibition was one of the most consequential events in cultural history.',
+            images: [
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Edgar_Degas_-_Dancer_Taking_a_Bow_%28The_Prima_Ballerina%29%2C_c._1877.jpg/600px-Edgar_Degas_-_Dancer_Taking_a_Bow_%28The_Prima_Ballerina%29%2C_c._1877.jpg',
+                caption: 'Edgar Degas — Dancer Taking a Bow (c. 1877). Musée d\'Orsay. Degas captured movement with near-photographic precision.',
+              },
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Berthe_Morisot%2C_The_Cradle.jpg/600px-Berthe_Morisot%2C_The_Cradle.jpg',
+                caption: 'Berthe Morisot — The Cradle (1872). Musée d\'Orsay. Morisot was the only woman in the core Impressionist group.',
+              },
+            ],
+            body: 'Claude Monet obsessively painted the same subjects — haystacks, Rouen Cathedral, water lilies — at different times of day to study how light transformed them. Edgar Degas brought an almost photographic dynamism to ballet rehearsals and racetrack scenes. Pierre-Auguste Renoir captured the warmth and pleasure of bourgeois leisure.\n\nBerthe Morisot, the only woman in the core Impressionist group, brought an intimate and psychologically acute gaze to domestic life. Her work is only now receiving its full critical recognition.\n\nImpressionism opened the door for every modern art movement that followed. Without Impressionism, there is no Post-Impressionism, no Cubism, no abstraction. The "failed" 1874 exhibition was one of the most consequential events in cultural history.',
+            extraImages: [
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Georges_Seurat_-_A_Sunday_on_La_Grande_Jatte_--_1884_-_Google_Art_Project.jpg/800px-Georges_Seurat_-_A_Sunday_on_La_Grande_Jatte_--_1884_-_Google_Art_Project.jpg',
+                caption: 'Georges Seurat — A Sunday on La Grande Jatte (1884–86). Art Institute of Chicago. Pointillism: the logical extreme of Impressionist colour theory.',
+              },
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Vincent_van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/800px-Vincent_van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg',
+                caption: 'Vincent van Gogh — The Starry Night (1889). MoMA, New York. Post-Impressionism: emotion supersedes observation.',
+              },
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Paul_Gauguin_-_D%27ou_venons-nous.jpg/800px-Paul_Gauguin_-_D%27ou_venons-nous.jpg',
+                caption: 'Paul Gauguin — Where Do We Come From? (1897–98). Museum of Fine Arts, Boston. Gauguin\'s synthesis of colour and myth.',
+              },
+            ],
           },
         ],
         quiz: [
           { id: 'q1', question: 'Where did the name "Impressionism" come from?', options: ['A government arts decree', 'A mocking critic reviewing Monet\'s painting', 'Monet chose it himself', 'It was the gallery\'s official name'], correctIndex: 1, explanation: 'A critic mockingly used "Impressionism" after Monet\'s "Impression, Sunrise" — the artists adopted it defiantly.' },
           { id: 'q2', question: 'What does "en plein air" mean?', options: ['In the studio', 'At night', 'Outdoors', 'By artificial light'], correctIndex: 2, explanation: '"En plein air" means painting outdoors to capture natural, changing light — a key Impressionist practice.' },
+          { id: 'q3', question: 'Who was the only woman in the core Impressionist group?', options: ['Mary Cassatt', 'Rosa Bonheur', 'Berthe Morisot', 'Camille Claudel'], correctIndex: 2, explanation: 'Berthe Morisot was the only woman in the original Impressionist group, exhibiting in seven of the eight Impressionist shows.' },
         ],
       },
       {
         id: 'renaissance-art',
         title: 'The Renaissance: Rebirth of Beauty',
-        imageUrl: 'https://images.unsplash.com/photo-1534349762230-e0cadf78f5da?w=800&q=80',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/600px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg',
         pages: [
           {
             title: 'Florence and the Birth of a New Vision',
-            imageUrl: 'https://images.unsplash.com/photo-1534349762230-e0cadf78f5da?w=800&q=80',
-            body: 'The Renaissance ("rebirth") began in 14th-century Florence and spread across Europe over the next two centuries. It was a revolution in how Europeans understood themselves, the world, and beauty.\n\nRenaissance artists rediscovered the art and philosophy of ancient Greece and Rome. They developed linear perspective — the mathematical system for depicting three-dimensional space on a flat surface — which fundamentally changed painting forever.',
+            images: [
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg/800px-Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg',
+                caption: 'Sandro Botticelli — The Birth of Venus (c. 1484–86). Uffizi Gallery, Florence. A touchstone of Renaissance idealism and classical revival.',
+              },
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Filippo_Brunelleschi%2C_Cupola_di_Santa_Maria_del_Fiore%2C_Firenze.jpg/600px-Filippo_Brunelleschi%2C_Cupola_di_Santa_Maria_del_Fiore%2C_Firenze.jpg',
+                caption: 'Brunelleschi\'s Dome, Florence Cathedral (completed 1436). The greatest feat of engineering since antiquity — built without scaffolding.',
+              },
+            ],
+            body: 'The Renaissance ("rebirth") began in 14th-century Florence and spread across Europe over the next two centuries. It was a revolution in how Europeans understood themselves, the world, and beauty.\n\nRenaissance artists rediscovered the art and philosophy of ancient Greece and Rome. They developed linear perspective — the mathematical system for depicting three-dimensional space on a flat surface — which fundamentally changed painting forever.\n\nThe Medici family of Florence, bankers who became the most powerful patrons in Europe, funded an explosion of artistic production. Botticelli, Brunelleschi, Donatello, and Leonardo all worked in their orbit. Florence became the cradle of a new world.',
           },
           {
             title: 'The Giants of the Renaissance',
-            body: 'Leonardo da Vinci was the ultimate "Renaissance man" — painter, sculptor, architect, scientist, and engineer. His notebooks are filled with designs for flying machines, anatomical studies, and hydraulic systems centuries ahead of their time.\n\nMichelangelo spent four back-breaking years painting the Sistine Chapel ceiling (1508–1512), creating one of humanity\'s greatest artistic achievements. Raphael\'s "School of Athens" depicted ancient philosophers in a harmonious composition that became a template for classical grandeur.',
+            images: [
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/600px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg',
+                caption: 'Leonardo da Vinci — Mona Lisa (1503–19). Louvre, Paris. The most visited, most written-about, most parodied painting in history.',
+              },
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Michelangelo%27s_Pieta_5450_cropncleaned_edit.jpg/600px-Michelangelo%27s_Pieta_5450_cropncleaned_edit.jpg',
+                caption: 'Michelangelo — Pietà (1498–99). St. Peter\'s Basilica, Vatican City. Carved when Michelangelo was 24 years old.',
+              },
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg/800px-%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg',
+                caption: 'Raphael — School of Athens (1509–11). Apostolic Palace, Vatican. Plato and Aristotle walk together under the ideal Roman arch.',
+              },
+            ],
+            body: 'Leonardo da Vinci was the ultimate "Renaissance man" — painter, sculptor, architect, scientist, and engineer. His notebooks contain thousands of pages of drawings: flying machines, hydraulic pumps, anatomical studies of dissected corpses, geological observations. He left most projects unfinished, driven perpetually by curiosity to the next question.\n\nMichelangelo spent four back-breaking years painting the Sistine Chapel ceiling (1508–1512), working alone on scaffolding 60 feet above the floor, creating over 300 figures including the iconic image of God reaching toward Adam.\n\nRaphael\'s "School of Athens" depicted ancient philosophers — Plato with Leonardo\'s face, Aristotle gesturing toward the earth — in a harmonious composition that became a template for classical grandeur. He died at 37, and Rome reportedly wept.',
+            extraImages: [
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Michelangelo_-_Creation_of_Adam_%28cropped%29.jpg/800px-Michelangelo_-_Creation_of_Adam_%28cropped%29.jpg',
+                caption: 'Michelangelo — Creation of Adam (1508–12). Sistine Chapel, Vatican. The most reproduced religious painting in history.',
+              },
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Leonardo_da_Vinci_-_The_Last_Supper_high_res.jpg/800px-Leonardo_da_Vinci_-_The_Last_Supper_high_res.jpg',
+                caption: 'Leonardo da Vinci — The Last Supper (c. 1495–98). Santa Maria delle Grazie, Milan. Painted in experimental fresco — and already deteriorating within years.',
+              },
+            ],
           },
         ],
         quiz: [
           { id: 'q1', question: 'What mathematical innovation did Renaissance artists develop for painting?', options: ['Colour theory', 'Linear perspective', 'The golden ratio', 'Chiaroscuro'], correctIndex: 1, explanation: 'Linear perspective let artists depict 3D space convincingly on a flat surface, transforming Western painting.' },
           { id: 'q2', question: 'How many years did Michelangelo spend painting the Sistine Chapel ceiling?', options: ['One year', 'Two years', 'Four years', 'Ten years'], correctIndex: 2, explanation: 'Michelangelo painted the Sistine Chapel ceiling from 1508 to 1512 — approximately four years.' },
+          { id: 'q3', question: 'Which family bankrolled the Florentine Renaissance?', options: ['The Borgias', 'The Sforzas', 'The Medicis', 'The Gonzagas'], correctIndex: 2, explanation: 'The Medici banking dynasty were the dominant patrons of Renaissance Florence, funding Botticelli, Leonardo, and Michelangelo.' },
         ],
       },
     ],
@@ -507,49 +588,195 @@ export const courses: Course[] = [
   {
     id: 'music-revolutions',
     title: 'How Music Shaped History',
-    imageUrl: 'https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=800&q=80',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Joseph_Karl_Stieler_-_Beethoven_mit_dem_Manuskript_der_Missa_solemnis.jpg/600px-Joseph_Karl_Stieler_-_Beethoven_mit_dem_Manuskript_der_Missa_solemnis.jpg',
     topicId: 'culture',
     rating: 4.6,
-    estimatedMinutes: 12,
+    estimatedMinutes: 16,
     lessons: [
       {
         id: 'beethoven-revolution',
         title: 'Beethoven and the Heroic Style',
-        imageUrl: 'https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=800&q=80',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Joseph_Karl_Stieler_-_Beethoven_mit_dem_Manuskript_der_Missa_solemnis.jpg/600px-Joseph_Karl_Stieler_-_Beethoven_mit_dem_Manuskript_der_Missa_solemnis.jpg',
         pages: [
           {
             title: 'The Deaf Composer Who Heard Everything',
-            imageUrl: 'https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=800&q=80',
-            body: 'Ludwig van Beethoven (1770–1827) bridged the Classical and Romantic eras — and in doing so, redefined what music could express. By his late twenties, he was going deaf. By his forties, he was completely deaf.\n\nYet he continued to compose. His Ninth Symphony — its finale featuring the "Ode to Joy" — was premiered when Beethoven could hear nothing. Legend has it he had to be turned around to see the audience\'s applause.',
+            images: [
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Joseph_Karl_Stieler_-_Beethoven_mit_dem_Manuskript_der_Missa_solemnis.jpg/600px-Joseph_Karl_Stieler_-_Beethoven_mit_dem_Manuskript_der_Missa_solemnis.jpg',
+                caption: 'Joseph Karl Stieler — Ludwig van Beethoven (1820). Beethoven-Haus, Bonn. The composer shown with the manuscript of his Missa Solemnis — already deaf.',
+              },
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Ary_Scheffer-_The_Temptation_of_Christ%2C_1854.jpg/600px-Ary_Scheffer-_The_Temptation_of_Christ%2C_1854.jpg',
+                caption: 'The Romantic era saw music as a vehicle for the sublime — emotions too vast for words.',
+              },
+            ],
+            body: 'Ludwig van Beethoven (1770–1827) bridged the Classical and Romantic eras — and in doing so, redefined what music could express. By his late twenties, he was going deaf. By his forties, he was completely deaf.\n\nYet he continued to compose. His Ninth Symphony — its finale featuring the "Ode to Joy" — was premiered in 1824 when Beethoven could hear nothing. Legend has it he had to be turned around to see the audience\'s applause because he could not hear it.\n\nBeethoven\'s deafness made his achievement all the more extraordinary. He composed the late string quartets — works of almost terrifying complexity and emotional depth — while utterly cut off from sound. He heard them only in his mind.',
           },
           {
             title: 'Music as Revolution',
-            body: 'Beethoven\'s "Eroica" Symphony (No. 3, 1803) was originally dedicated to Napoleon. When Napoleon declared himself Emperor, Beethoven furiously scratched out the dedication — he had believed in the revolutionary ideals, not the man.\n\nBeethoven\'s music was unprecedented in its emotional range and dramatic intensity. He turned the symphony into a vehicle for grand philosophical statements. Every major Romantic composer who followed — Brahms, Wagner, Mahler — worked in his shadow.',
+            images: [
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/David_-_Napoleon_crossing_the_Alps_-_Malmaison2.jpg/600px-David_-_Napoleon_crossing_the_Alps_-_Malmaison2.jpg',
+                caption: 'Jacques-Louis David — Napoleon Crossing the Alps (1800–01). Château de Malmaison. The hero Beethoven admired — until Napoleon crowned himself.',
+              },
+            ],
+            body: 'Beethoven\'s "Eroica" Symphony (No. 3, 1803) was originally dedicated to Napoleon. When Napoleon declared himself Emperor, Beethoven furiously scratched out the dedication on the manuscript — he had believed in the revolutionary ideals, not in a new king.\n\nBeethoven\'s music was unprecedented in its emotional range and dramatic intensity. His symphonies expanded in length, complexity, and expressive ambition beyond anything his predecessors had imagined. He turned the symphony into a vehicle for grand philosophical statements.\n\nEvery major Romantic composer who followed — Brahms, Wagner, Mahler, Schubert — worked in his shadow. Brahms reportedly delayed his First Symphony for twenty years because "you have no idea what it\'s like to hear his footsteps behind you."',
+            extraImages: [
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/GustaveMoreau-Jupiter_and_Semele%281895%29.jpg/600px-GustaveMoreau-Jupiter_and_Semele%281895%29.jpg',
+                caption: 'Gustave Moreau — Jupiter and Semele (1895). Musée Gustave Moreau, Paris. The Romantic era\'s hunger for the overwhelming and the sublime.',
+              },
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg/600px-Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg',
+                caption: 'Caspar David Friedrich — Wanderer above the Sea of Fog (1818). Kunsthalle Hamburg. The Romantic individual confronting an infinite world.',
+              },
+            ],
           },
         ],
         quiz: [
           { id: 'q1', question: 'What happened to Beethoven\'s hearing by his forties?', options: ['It improved', 'It was mildly affected', 'He became completely deaf', 'He had selective hearing loss'], correctIndex: 2, explanation: 'Beethoven became completely deaf by his mid-forties, yet continued composing masterworks including the Ninth Symphony.' },
           { id: 'q2', question: 'Who was Beethoven\'s "Eroica" symphony originally dedicated to?', options: ['The King of Austria', 'Napoleon Bonaparte', 'Friedrich Schiller', 'Franz Joseph Haydn'], correctIndex: 1, explanation: 'Beethoven dedicated the "Eroica" to Napoleon, then angrily withdrew the dedication when Napoleon crowned himself Emperor.' },
+          { id: 'q3', question: 'Why did Brahms reportedly delay his First Symphony for 20 years?', options: ['He was too busy', 'He couldn\'t afford an orchestra', 'He felt Beethoven\'s presence was overwhelming to follow', 'He lost the manuscript'], correctIndex: 2, explanation: 'Brahms said he could hear "the footsteps of Beethoven behind him" — the pressure of following Beethoven\'s symphonic legacy delayed his First Symphony by two decades.' },
         ],
       },
       {
         id: 'jazz-culture',
         title: 'Jazz: America\'s Classical Music',
-        imageUrl: 'https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=800&q=80',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Louis_Armstrong_restored.jpg/600px-Louis_Armstrong_restored.jpg',
         pages: [
           {
             title: 'Born in New Orleans',
-            imageUrl: 'https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=800&q=80',
-            body: 'Jazz emerged in New Orleans around the turn of the 20th century, blending African American musical traditions — blues, ragtime, gospel — with European harmonies. It was the sound of a city that was uniquely cosmopolitan: French, Spanish, African, Creole cultures mixing in ways found nowhere else in America.\n\nWhat made jazz revolutionary was improvisation. Within a shared structure, musicians invented new melodies in real time. It was composition and performance merged into one spontaneous act.',
+            images: [
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Louis_Armstrong_restored.jpg/600px-Louis_Armstrong_restored.jpg',
+                caption: 'Louis Armstrong (c. 1935). Armstrong transformed jazz from collective ensemble art to a soloist\'s medium — and introduced jazz to the world.',
+              },
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Archibald_Motley_-_Blues_%281929%29.jpg/700px-Archibald_Motley_-_Blues_%281929%29.jpg',
+                caption: 'Archibald Motley Jr. — Blues (1929). Collection of Mara Motley. The Harlem Renaissance put Black cultural life on the world stage.',
+              },
+            ],
+            body: 'Jazz emerged in New Orleans around the turn of the 20th century, blending African American musical traditions — blues, ragtime, gospel — with European harmonies. It was the sound of a city that was uniquely cosmopolitan: French, Spanish, African, Creole cultures mixing in ways found nowhere else in America.\n\nWhat made jazz revolutionary was improvisation. Within a shared harmonic structure, musicians invented new melodies in real time. It was composition and performance merged into one spontaneous act — a kind of musical conversation no other tradition had formalised.\n\nThe early jazz clubs of New Orleans\'s Storyville district were racially integrated spaces in a society otherwise rigidly segregated. Jazz was, from the very beginning, a music of encounter and mixture.',
           },
           {
             title: 'Jazz Goes Global',
-            body: 'The 1920s became the "Jazz Age." Jazz spread from New Orleans to Chicago to New York — and then to Paris, London, and beyond. For Europeans, jazz felt thrillingly modern and subversive.\n\nLouis Armstrong transformed jazz from a collective ensemble art into a soloist\'s medium. Miles Davis reinvented it multiple times — cool jazz, modal jazz, fusion — across a career spanning five decades. Jazz became a lens through which the 20th century\'s anxieties and aspirations were expressed.',
+            images: [
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/MilesDavisKindofBlue.jpg/600px-MilesDavisKindofBlue.jpg',
+                caption: 'Miles Davis — Kind of Blue album cover (1959). Columbia Records. The best-selling jazz album in history introduced modal jazz to the world.',
+              },
+            ],
+            body: 'The 1920s became the "Jazz Age." Jazz spread from New Orleans to Chicago to New York — and then to Paris, London, and beyond. For Europeans, jazz felt thrillingly modern and subversive. Josephine Baker became a superstar in Paris. Django Reinhardt invented a distinctly European voice for the music.\n\nLouis Armstrong transformed jazz from a collective ensemble art into a soloist\'s medium — his virtuosity and exuberant personality defined what jazz stardom meant. Miles Davis reinvented the music multiple times: cool jazz ("Birth of the Cool"), hard bop, modal jazz ("Kind of Blue"), fusion ("Bitches Brew").\n\nJazz became a lens through which the 20th century\'s anxieties and aspirations were expressed — freedom, improvisation, the dignity of Black culture, the collision of tradition and modernity.',
+            extraImages: [
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Duke_Ellington_-_publicity.jpg/600px-Duke_Ellington_-_publicity.jpg',
+                caption: 'Duke Ellington (c. 1940s). Ellington led his orchestra for 50 years and composed over 3,000 pieces — the most prolific jazz composer in history.',
+              },
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Billie_Holiday_1947.jpg/600px-Billie_Holiday_1947.jpg',
+                caption: 'Billie Holiday (1947). Her voice redefined jazz singing — her phrasing made every song sound like a confession.',
+              },
+            ],
           },
         ],
         quiz: [
           { id: 'q1', question: 'What city is considered the birthplace of jazz?', options: ['Chicago', 'New York', 'New Orleans', 'Memphis'], correctIndex: 2, explanation: 'Jazz was born in New Orleans around 1900, shaped by the city\'s unique cultural mix of African, French, Spanish and Creole influences.' },
           { id: 'q2', question: 'What musical innovation made jazz revolutionary?', options: ['The use of electric instruments', 'Real-time improvisation', 'Orchestral arrangements', 'Written musical scores'], correctIndex: 1, explanation: 'Improvisation — composing melodies spontaneously during performance within a shared structure — was jazz\'s defining innovation.' },
+          { id: 'q3', question: 'Which album is considered the best-selling jazz record of all time?', options: ['Birth of the Cool', 'A Love Supreme', 'Kind of Blue', 'Time Out'], correctIndex: 2, explanation: 'Miles Davis\'s Kind of Blue (1959) is the best-selling jazz album ever, introducing modal jazz to millions.' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'world-mythology',
+    title: 'Myths That Made the World',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Ingres_Jupiter_and_Thetis.jpg/700px-Ingres_Jupiter_and_Thetis.jpg',
+    topicId: 'culture',
+    rating: 4.9,
+    estimatedMinutes: 18,
+    lessons: [
+      {
+        id: 'greek-mythology',
+        title: 'Greek Myths: Gods, Heroes & Monsters',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Ingres_Jupiter_and_Thetis.jpg/700px-Ingres_Jupiter_and_Thetis.jpg',
+        pages: [
+          {
+            title: 'Why the Greeks Needed Their Gods',
+            images: [
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Ingres_Jupiter_and_Thetis.jpg/700px-Ingres_Jupiter_and_Thetis.jpg',
+                caption: 'Jean-Auguste-Dominique Ingres — Jupiter and Thetis (1811). Musée Granet, Aix-en-Provence. The king of the gods embodying divine power.',
+              },
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Gustave_Moreau_-_Oedipus_and_the_Sphinx_-_Metropolitan_Museum_of_Art.jpg/600px-Gustave_Moreau_-_Oedipus_and_the_Sphinx_-_Metropolitan_Museum_of_Art.jpg',
+                caption: 'Gustave Moreau — Oedipus and the Sphinx (1864). Metropolitan Museum of Art. Myth as psychological drama: man confronting fate.',
+              },
+            ],
+            body: 'Greek mythology is not a single system but an enormous, contradictory, endlessly revised body of stories that evolved over a thousand years. The Greeks did not have a Bible — their myths were told in poems, plays, sculptures, and on painted pottery, with each city-state, poet, and generation adding its own variations.\n\nThe gods of Mount Olympus — Zeus, Hera, Athena, Apollo, Aphrodite — were not all-knowing or all-good. They were magnificently, dangerously human: vain, lustful, jealous, and quarrelsome. Their conflicts explained everything from weather to disease to why one city defeated another in battle.\n\nMyths served as psychology before psychology existed. The story of Oedipus explores fate and the futility of trying to escape it. The myth of Narcissus maps the catastrophe of self-absorption. Prometheus stealing fire for humanity dramatises the ambiguous gift of knowledge and technology.',
+          },
+          {
+            title: 'Heroes and the Heroic Code',
+            images: [
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Achilles_sends_embassy_back_Pompei.jpg/700px-Achilles_sends_embassy_back_Pompei.jpg',
+                caption: 'Roman fresco from Pompeii — Achilles and the embassy (1st century CE). Achilles, the greatest Greek hero, chose glory over long life.',
+              },
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Fran%C3%A7ois_Lemoyne_-_Hercules_and_Omphale_-_WGA12665.jpg/600px-Fran%C3%A7ois_Lemoyne_-_Hercules_and_Omphale_-_WGA12665.jpg',
+                caption: 'François Lemoyne — Hercules and Omphale (1724). Louvre, Paris. Heracles: the hero who must suffer and atone to earn immortality.',
+              },
+            ],
+            body: 'The Greek hero was a fundamentally different kind of being from the gods. Where gods were immortal and largely free from suffering, heroes lived in time, aged, and died. Their greatness had to be earned and proved through trials.\n\nAchilles, hero of Homer\'s Iliad, embodies the heroic code: choose glory over long life, honour over safety. He knows he will die young at Troy — and goes anyway, because a short glorious life is worth more than a long obscure one.\n\nHeracles (Hercules) completed his famous twelve labours not out of free choice but as punishment for killing his family in a fit of divinely-sent madness. Greek heroism was inseparable from suffering. The hero did not simply triumph — he endured.',
+            extraImages: [
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Waterhouse-Ulysses_and_the_Sirens%281891%29.jpg/800px-Waterhouse-Ulysses_and_the_Sirens%281891%29.jpg',
+                caption: 'John William Waterhouse — Ulysses and the Sirens (1891). National Gallery of Victoria, Melbourne. Odysseus tied to the mast, hearing the Sirens\' song.',
+              },
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Peter_Paul_Rubens_-_Perseus_and_Andromeda_-_WGA20282.jpg/600px-Peter_Paul_Rubens_-_Perseus_and_Andromeda_-_WGA20282.jpg',
+                caption: 'Peter Paul Rubens — Perseus and Andromeda (c. 1622). Hermitage Museum, St. Petersburg.',
+              },
+            ],
+          },
+        ],
+        quiz: [
+          { id: 'q1', question: 'What made the Greek gods unusual compared to deities in other religions?', options: ['They were entirely good and just', 'They were magnificently human — vain, jealous, and quarrelsome', 'They never interfered in human affairs', 'They demanded constant sacrifice'], correctIndex: 1, explanation: 'Greek gods were powerfully human in their emotions — vain, lustful, jealous — which made them psychologically vivid and dramatically compelling.' },
+          { id: 'q2', question: 'What choice defined Achilles\'s heroism?', options: ['He chose long life over glory', 'He chose to avoid the Trojan War', 'He chose a short glorious life knowing he would die at Troy', 'He chose the gods\' side over humanity'], correctIndex: 2, explanation: 'Achilles knowingly chose a short, glorious life at Troy over a long, obscure one — the defining expression of the Greek heroic code.' },
+        ],
+      },
+      {
+        id: 'norse-mythology',
+        title: 'Norse Myths: Ragnarök and the World Tree',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/The_Ash_Yggdrasil_%281886%29_by_Friedrich_Wilhelm_Heine.jpg/600px-The_Ash_Yggdrasil_%281886%29_by_Friedrich_Wilhelm_Heine.jpg',
+        pages: [
+          {
+            title: 'A Cosmos Built for Doom',
+            images: [
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/The_Ash_Yggdrasil_%281886%29_by_Friedrich_Wilhelm_Heine.jpg/600px-The_Ash_Yggdrasil_%281886%29_by_Friedrich_Wilhelm_Heine.jpg',
+                caption: 'Friedrich Wilhelm Heine — Yggdrasil, the World Tree (1886). The ash tree whose roots and branches connect the nine worlds of Norse cosmology.',
+              },
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Odin_og_Fenrisulven_%281909%29.jpg/600px-Odin_og_Fenrisulven_%281909%29.jpg',
+                caption: 'Dorothy Hardy — Odin and Fenrir (1909). Odin sacrificed himself on the World Tree for nine days to gain the wisdom of the runes.',
+              },
+            ],
+            body: 'Norse mythology is unique among world mythologies in that the gods know they will lose. Ragnarök — the twilight of the gods — is not a possibility but a prophecy. Odin will die, consumed by the wolf Fenrir. Thor will kill the World Serpent Jörmungandr and die from its venom. The world will be destroyed.\n\nAnd yet the gods fight anyway. This is the Norse heroic code pushed to its cosmic extreme: you fight not because you will win, but because it is right to fight. Courage in the face of certain defeat is the highest virtue.\n\nYggdrasil, the immense ash tree, connects the nine worlds of Norse cosmology. Its roots reach into the realms of the dead, the frost giants, and the gods. At its base gnaws the dragon Níðhöggr, slowly consuming the tree\'s roots. Even the cosmos is in the process of ending.',
+          },
+          {
+            title: 'Odin, Thor, and Loki',
+            images: [
+              {
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Marten_Eskil_Winge_-_Tor%27s_Fight_with_the_Giants_-_Google_Art_Project.jpg/800px-Marten_Eskil_Winge_-_Tor%27s_Fight_with_the_Giants_-_Google_Art_Project.jpg',
+                caption: 'Mårten Eskil Winge — Thor\'s Fight with the Giants (1872). Nationalmuseum, Stockholm. Thor battling the forces of chaos that threaten the world.',
+              },
+            ],
+            body: 'Odin, the Allfather, is wisdom\'s god — but he achieves wisdom through sacrifice. He hung himself on Yggdrasil for nine days and nights, pierced by his own spear, to learn the secret of the runes. He sacrificed one of his eyes to drink from the Well of Mimir and gain cosmic knowledge.\n\nThor is strength and protection — the defender of Asgard and Midgard (Earth) against the giants who perpetually threaten them. His hammer Mjolnir returns after every throw. On the day of Ragnarök, he will kill the World Serpent and die from its venom after walking nine steps.\n\nLoki is the most fascinating figure: the trickster god, shape-shifter, agent of chaos — sometimes a help to the gods, sometimes their undoing. It was Loki who arranged the killing of the beloved god Baldr, the event that set Ragnarök in motion. Loki is bound under the earth, his punishment until the last battle begins.',
+          },
+        ],
+        quiz: [
+          { id: 'q1', question: 'What makes Norse mythology unique among world mythologies?', options: ['The gods are perfectly good', 'The gods know they will ultimately lose at Ragnarök', 'There is only one god', 'The gods are immortal and cannot die'], correctIndex: 1, explanation: 'Unlike most mythologies, Norse gods know Ragnarök is coming — they will die and the world will end. They fight anyway, which defines the Norse heroic ethos.' },
+          { id: 'q2', question: 'What did Odin sacrifice to gain cosmic wisdom?', options: ['His hammer', 'His throne', 'One of his eyes', 'His son Baldr'], correctIndex: 2, explanation: 'Odin sacrificed one eye to drink from the Well of Mimir and gain cosmic knowledge — and also hung himself on Yggdrasil for nine days to learn the runes.' },
         ],
       },
     ],

@@ -2,10 +2,92 @@ import { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { getLesson } from '@/data/content';
+import { getLesson, PageImage } from '@/data/content';
 import { useProgress } from '@/context/ProgressContext';
 import Navbar from '@/components/Navbar';
 
+// ── Inline carousel ──────────────────────────────────────────────────────────
+function ImageCarousel({ images }: { images: PageImage[] }) {
+  const [idx, setIdx] = useState(0);
+  if (!images.length) return null;
+  const img = images[idx];
+  return (
+    <figure className="my-6 w-full">
+      <div className="relative rounded-xl overflow-hidden bg-muted" style={{ maxHeight: '56vw', minHeight: 180 }}>
+        <img
+          key={idx}
+          src={img.url}
+          alt={img.caption ?? ''}
+          className="w-full h-full object-cover transition-opacity duration-300"
+          style={{ maxHeight: '56vw', minHeight: 180, display: 'block' }}
+        />
+        {images.length > 1 && (
+          <>
+            <button
+              onClick={() => setIdx(i => (i - 1 + images.length) % images.length)}
+              className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-background/80 backdrop-blur flex items-center justify-center shadow text-foreground hover:bg-background transition"
+              aria-label="Previous image"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+            <button
+              onClick={() => setIdx(i => (i + 1) % images.length)}
+              className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-background/80 backdrop-blur flex items-center justify-center shadow text-foreground hover:bg-background transition"
+              aria-label="Next image"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
+            {/* Dots */}
+            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
+              {images.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setIdx(i)}
+                  className={`w-1.5 h-1.5 rounded-full transition-all ${i === idx ? 'bg-white scale-125' : 'bg-white/50'}`}
+                />
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+      {img.caption && (
+        <figcaption className="mt-2 text-xs text-muted-foreground text-center italic leading-snug px-2">
+          {img.caption}
+        </figcaption>
+      )}
+    </figure>
+  );
+}
+
+// ── Extra images gallery strip ────────────────────────────────────────────────
+function ExtraImagesGallery({ images }: { images: PageImage[] }) {
+  if (!images.length) return null;
+  return (
+    <div className="mt-8 mb-2">
+      <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">Related Works</p>
+      <div className={`grid gap-3 ${images.length === 1 ? 'grid-cols-1' : images.length === 2 ? 'grid-cols-2' : 'grid-cols-2 sm:grid-cols-3'}`}>
+        {images.map((img, i) => (
+          <figure key={i} className="group">
+            <div className="rounded-lg overflow-hidden bg-muted aspect-[4/3]">
+              <img
+                src={img.url}
+                alt={img.caption ?? ''}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            {img.caption && (
+              <figcaption className="mt-1 text-[11px] text-muted-foreground leading-snug italic text-center">
+                {img.caption}
+              </figcaption>
+            )}
+          </figure>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ── Main page ─────────────────────────────────────────────────────────────────
 export default function ReadingPage() {
   const { courseId, lessonId } = useParams<{ courseId: string; lessonId: string }>();
   const navigate = useNavigate();
@@ -42,6 +124,11 @@ export default function ReadingPage() {
     if (currentPage > 0) setCurrentPage(p => p - 1);
   };
 
+  // Split body into paragraphs; intersperse carousel images between them
+  const paragraphs = page.body.split('\n\n');
+  const carouselImages = page.images ?? [];
+  const hasCarousel = carouselImages.length > 0;
+
   return (
     <div className="min-h-screen bg-background pb-20">
       <Navbar />
@@ -67,7 +154,8 @@ export default function ReadingPage() {
           <p className="text-xs font-medium text-primary uppercase tracking-wider mb-1">{lesson.title}</p>
           <h1 className="text-2xl font-bold mb-6">{page.title}</h1>
 
-          {page.imageUrl && (
+          {/* Legacy single image (no carousel defined) */}
+          {page.imageUrl && !hasCarousel && (
             <img
               src={page.imageUrl}
               alt={page.title}
@@ -75,13 +163,21 @@ export default function ReadingPage() {
             />
           )}
 
+          {/* Paragraphs interspersed with carousel */}
           <div className="max-w-none">
-            {page.body.split('\n\n').map((para, i) => (
-              <p key={i} className="font-serif text-lg leading-relaxed text-foreground mb-4">
-                {para}
-              </p>
+            {paragraphs.map((para, i) => (
+              <div key={i}>
+                <p className="font-serif text-lg leading-relaxed text-foreground mb-4">{para}</p>
+                {/* Insert carousel after the first paragraph if images are defined */}
+                {hasCarousel && i === 0 && (
+                  <ImageCarousel images={carouselImages} />
+                )}
+              </div>
             ))}
           </div>
+
+          {/* Extra standalone gallery below body */}
+          {page.extraImages && <ExtraImagesGallery images={page.extraImages} />}
 
           <div className="flex gap-3 mt-10">
             {currentPage > 0 && (
