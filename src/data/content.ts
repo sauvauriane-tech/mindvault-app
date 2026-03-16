@@ -1013,7 +1013,7 @@ export const courses: Course[] = [
             title: 'Why the Greeks Needed Their Gods',
             images: [
               {
-                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Ingres_Jupiter_and_Thetis.jpg/700px-Ingres_Jupiter_and_Thetis.jpg',
+                url: '/paintings/ingres_jupiter_thetis.jpg',
                 caption: 'Jean-Auguste-Dominique Ingres — Jupiter and Thetis (1811). Musée Granet, Aix-en-Provence. The king of the gods embodying divine power.',
               },
               {
