@@ -24,7 +24,7 @@ export default function LessonPreviewPage() {
       <div className="pt-14">
         {/* Hero */}
         <div className="relative h-[280px]">
-          <img src={lesson.imageUrl} alt={lesson.title} className="w-full h-full object-cover" />
+          <img src={lesson.imageUrl} alt={lesson.title} referrerPolicy="no-referrer" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/20" />
           <button
             onClick={() => navigate(-1)}

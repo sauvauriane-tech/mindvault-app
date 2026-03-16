@@ -16,6 +16,7 @@ export default function CourseCard({ course, progress }: CourseCardProps) {
           <img
             src={course.imageUrl}
             alt={course.title}
+            referrerPolicy="no-referrer"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/10" />
