@@ -587,7 +587,7 @@ export const courses: Course[] = [
       {
         id: 'buddhism',
         title: 'Buddhism: The End of Suffering',
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Gautama_Buddha_in_Sarnath_Museum_%28Dhammajak_Mutra%29.jpg/600px-Gautama_Buddha_in_Sarnath_Museum_%28Dhammajak_Mutra%29.jpg',
+        imageUrl: '/paintings/buddha_sarnath.jpg',
         pages: [
           {
             title: 'The Prince Who Renounced Everything',
