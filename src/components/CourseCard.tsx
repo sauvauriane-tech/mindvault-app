@@ -15,7 +15,7 @@ export default function CourseCard({ course, progress }: CourseCardProps) {
         {/* Image */}
         <div className="relative h-[200px]">
           <img
-            src={course.imageUrl}
+            src={proxyImageUrl(course.imageUrl)}
             alt={course.title}
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover"
