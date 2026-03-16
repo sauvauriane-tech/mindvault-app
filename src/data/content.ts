@@ -456,7 +456,7 @@ export const courses: Course[] = [
           {
             title: 'The Method of Radical Doubt',
             images: [
-              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Frans_Hals_-_Portret_van_René_Descartes.jpg/500px-Frans_Hals_-_Portret_van_René_Descartes.jpg', caption: 'Frans Hals — Portrait of René Descartes (c. 1649–1700). Louvre, Paris. "Cogito ergo sum" — the bedrock of modern philosophy.' },
+              { url: '/paintings/descartes_portrait.jpg', caption: 'Frans Hals — Portrait of René Descartes (c. 1649–1700). Louvre, Paris. "Cogito ergo sum" — the bedrock of modern philosophy.' },
             ],
             body: 'René Descartes (1596–1650) set out to find a foundation for knowledge that was utterly certain — immune to any possible doubt. His method was radical: doubt everything that can possibly be doubted, and see what survives.\n\nDescartes doubted his senses (they sometimes deceive us). He doubted the external world (perhaps he was dreaming). He even entertained the hypothesis of a supremely powerful "evil demon" who might be deceiving him about everything — including mathematics.\n\nAnd yet one thing survived. The very act of doubting required a doubter. Even if he was being deceived about everything, the deception required that he existed to be deceived. "Cogito ergo sum" — I think, therefore I am — became the bedrock of his philosophy.',
           },
