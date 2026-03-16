@@ -59,7 +59,7 @@ export const courses: Course[] = [
   {
     id: 'medieval-europe',
     title: 'Medieval Europe: Myths & Realities',
-    imageUrl: 'https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=800&q=80',
+    imageUrl: '/paintings/feudal_europe.jpg',
     topicId: 'history',
     rating: 4.8,
     estimatedMinutes: 20,
@@ -67,15 +67,21 @@ export const courses: Course[] = [
       {
         id: 'real-middle-ages',
         title: 'The Real Middle Ages',
-        imageUrl: 'https://images.unsplash.com/photo-1564415315949-7a0c4c73aab4?w=800&q=80',
+        imageUrl: '/paintings/feudal_europe.jpg',
         pages: [
           {
             title: 'Not as Dark as You Think',
-            imageUrl: 'https://images.unsplash.com/photo-1564415315949-7a0c4c73aab4?w=800&q=80',
+            images: [
+              { url: '/paintings/feudal_europe.jpg', caption: 'Illuminated manuscript — feudal Europe (c. 13th century). Medieval society was far more structured and literate than the "Dark Ages" myth suggests.' },
+              { url: '/paintings/netherlandish_rosary.jpg', caption: 'Master of the Rosary — Netherlandish devotional panel (c. 1500). The Catholic Church was the great patron of medieval art and scholarship.' },
+            ],
             body: 'The Middle Ages are often called the "Dark Ages," but this label is deeply misleading. Between roughly 500 and 1500 CE, Europe was a place of remarkable creativity, scholarship, and innovation.\n\nDespite the popular image of ignorant, superstitious peasants stumbling through filthy villages, medieval people built soaring cathedrals, wrote sophisticated philosophy, and established the first universities. Places like Bologna (founded 1088), Oxford (circa 1096), and Paris (circa 1150) were thriving centers of learning.\n\nMedieval scholars preserved and expanded upon classical knowledge. Far from rejecting ancient Greek and Roman texts, they translated them, debated them, and built on them. Figures like Thomas Aquinas synthesized Aristotelian philosophy with Christian theology in ways that shaped Western thought for centuries.',
           },
           {
             title: 'Inventions & Innovations',
+            images: [
+              { url: '/paintings/medieval_armet.jpg', caption: 'Medieval armet helmet (c. 15th century). Medieval metallurgy and engineering produced innovations that shaped Europe for centuries.' },
+            ],
             body: 'The medieval period gave us inventions we still use today. The mechanical clock, eyeglasses, the printing press (late medieval), the heavy plow that transformed European agriculture — all emerged in this era.\n\nWater mills and windmills harnessed natural energy to grind grain and power workshops. The horse collar, invented around the 9th century, allowed horses to pull heavy loads without choking, revolutionizing farming and transport.\n\nGothic architecture, with its pointed arches and flying buttresses, solved engineering problems that had stumped builders for centuries — allowing churches to soar to previously impossible heights while flooding interiors with light through stained glass windows.',
           },
         ],
@@ -87,15 +93,21 @@ export const courses: Course[] = [
       {
         id: 'peasant-life',
         title: 'Peasant Life: Harder Than You Know',
-        imageUrl: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80',
+        imageUrl: '/paintings/feudal_europe.jpg',
         pages: [
           {
             title: 'The Village World',
-            imageUrl: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80',
+            images: [
+              { url: '/paintings/feudal_europe.jpg', caption: 'Medieval manuscript illumination depicting peasant life. About 90% of Europeans worked the land in the Middle Ages.' },
+              { url: '/paintings/black_death.jpg', caption: 'The Black Death (c. 1347–53) — a miniature from the Toggenburg Bible (1411). The plague killed up to half of Europe\'s population, transforming peasant labour markets.' },
+            ],
             body: 'About 90% of medieval Europeans were peasants — farmers tied to the land and the rhythms of the agricultural calendar. Life was hard, but it was not quite the miserable squalor of popular imagination.\n\nMost peasants lived in small villages of perhaps 50 to 150 people, in timber-framed houses with thatched roofs. Families slept together in one or two rooms, often sharing space with their most valuable animals during cold months.\n\nThe peasant diet, while limited, was not as poor as often depicted. Bread was the staple — dark, dense loaves of rye or barley. Peas, beans, onions, and cabbages were common. Ale (safer than water, which was often contaminated) was drunk by men, women, and children alike.',
           },
           {
             title: 'Work, Rest & Feasts',
+            images: [
+              { url: '/paintings/charlemagne.jpg', caption: 'Albrecht Dürer — Charlemagne (1512). Germanisches Nationalmuseum, Nuremberg. The feudal system Charlemagne consolidated shaped European peasant life for centuries.' },
+            ],
             body: 'Peasants worked hard, but they also had considerable time off. Medieval Christianity mandated rest on Sundays and on saints\' days — and there were dozens of saints\' days throughout the year. By some estimates, peasants worked fewer total hours per year than modern office workers.\n\nThe agricultural year had its own rhythm. Spring meant plowing and planting. Summer brought haymaking and tending crops. Autumn was harvest time — the most critical and busiest period. Winter allowed for rest, maintenance of tools, and various craft activities.',
           },
         ],
@@ -107,15 +119,21 @@ export const courses: Course[] = [
       {
         id: 'monks-knowledge',
         title: 'How Monks Saved Knowledge',
-        imageUrl: 'https://images.unsplash.com/photo-1568667256549-094345857637?w=800&q=80',
+        imageUrl: '/paintings/netherlandish_rosary.jpg',
         pages: [
           {
             title: 'Scriptoria: The Knowledge Factories',
-            imageUrl: 'https://images.unsplash.com/photo-1568667256549-094345857637?w=800&q=80',
+            images: [
+              { url: '/paintings/netherlandish_rosary.jpg', caption: 'Master of the Rosary — Netherlandish devotional panel (c. 1500). Monasteries produced devotional art alongside manuscripts preserving ancient knowledge.' },
+              { url: '/paintings/signorelli_madonna.jpg', caption: 'Luca Signorelli — Madonna and Child (c. 1490). Monasteries were patrons of Renaissance painting — the bridge between medieval scholarship and the new humanism.' },
+            ],
             body: 'When the Western Roman Empire collapsed in the 5th century, vast amounts of knowledge were at risk of being lost forever. It was largely Christian monasteries that preserved the intellectual heritage of the ancient world.\n\nEvery major monastery had a scriptorium — a room dedicated to copying manuscripts. Monks worked for hours each day, painstakingly transcribing ancient texts by hand. They copied not just religious works but classical literature, philosophy, science, and medicine.\n\nWithout the monks of Ireland, England, France, Germany, and Italy, we might never have heard of Cicero, Virgil, or Plato.',
           },
           {
             title: 'Monasteries as Centers of Learning',
+            images: [
+              { url: '/paintings/martin_luther.jpg', caption: 'Lucas Cranach the Elder — Martin Luther (1529). Luther\'s Reformation began as a scholarly dispute — a product of the very monastic tradition he challenged.' },
+            ],
             body: 'Monasteries were far more than just places of prayer. They ran hospitals for the sick, hospices for travelers, schools for local children, and agricultural estates that pioneered new farming techniques.\n\nBenedictine monks, following the Rule of Saint Benedict, divided their day between prayer, work, and study. This balance between intellectual and physical labor made monasteries unusually productive institutions.',
           },
         ],
@@ -127,15 +145,21 @@ export const courses: Course[] = [
       {
         id: 'flat-earth-myth',
         title: 'The Flat Earth Myth',
-        imageUrl: 'https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=800&q=80',
+        imageUrl: '/paintings/roman_empire.jpg',
         pages: [
           {
             title: 'Did Medieval People Think Earth Was Flat?',
-            imageUrl: 'https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=800&q=80',
+            images: [
+              { url: '/paintings/roman_augustus_cameo.jpg', caption: 'The Gemma Augustea — Roman cameo (c. 9 CE). Kunsthistorisches Museum, Vienna. Roman and Greek scholars knew the Earth was spherical centuries before the Middle Ages.' },
+              { url: '/paintings/roman_empire.jpg', caption: 'Map of the Roman Empire at its height. The Romans inherited Greek geographical knowledge — including the Earth\'s spherical shape.' },
+            ],
             body: 'One of the most persistent myths about the Middle Ages is that people believed the Earth was flat. This is almost entirely false. Educated medieval people — and even most ordinary people — knew perfectly well that the Earth was round.\n\nThe ancient Greeks had established the Earth\'s spherical shape through careful observation and reasoning. By around 240 BCE, Eratosthenes had even calculated the Earth\'s circumference with remarkable accuracy.',
           },
           {
             title: 'Where Did the Myth Come From?',
+            images: [
+              { url: '/paintings/columbus_americas.jpg', caption: 'John Vanderlyn — Columbus\'s Landing at Guanahani (1847). Rotunda of the Capitol, Washington D.C. Columbus\'s contemporaries knew the Earth was round — they just disagreed about its size.' },
+            ],
             body: 'The myth that medieval people believed in a flat Earth was largely invented in the 19th century — particularly by Washington Irving in his 1828 fictionalized biography of Christopher Columbus.\n\nColumbus\'s contemporaries did not think he would fall off the edge of the world. They thought (correctly) that he was underestimating the distance to Asia.',
           },
         ],
@@ -149,7 +173,7 @@ export const courses: Course[] = [
   {
     id: 'ancient-egypt',
     title: 'Mysteries of Ancient Egypt',
-    imageUrl: 'https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=800&q=80',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Obelisk_of_Thutmose_I%2C_Karnak.jpg/600px-Obelisk_of_Thutmose_I%2C_Karnak.jpg',
     topicId: 'history',
     rating: 4.9,
     estimatedMinutes: 12,
@@ -157,15 +181,21 @@ export const courses: Course[] = [
       {
         id: 'pyramid-builders',
         title: 'Who Really Built the Pyramids?',
-        imageUrl: 'https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=800&q=80',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Khufu%27s_Pyramid_Sides_South_face.jpg/800px-Khufu%27s_Pyramid_Sides_South_face.jpg',
         pages: [
           {
             title: 'Not Slaves — Skilled Workers',
-            imageUrl: 'https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=800&q=80',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Khufu%27s_Pyramid_Sides_South_face.jpg/800px-Khufu%27s_Pyramid_Sides_South_face.jpg', caption: 'The Great Pyramid of Khufu at Giza (c. 2560 BCE). Built not by slaves but by skilled, organised Egyptian workers who were housed, fed, and treated medically.' },
+              { url: '/paintings/roman_augustus_cameo.jpg', caption: 'Egyptian workers were part of a sophisticated state system — not so different from Roman imperial organisation centuries later.' },
+            ],
             body: 'The popular image of thousands of slaves being whipped as they drag massive stones under the Egyptian sun is wrong. Archaeological evidence discovered since the 1990s paints a very different picture.\n\nThe pyramid builders were skilled Egyptian workers — craftsmen, engineers, and laborers who were paid in food, beer, and medical care. Their village has been excavated near Giza: a well-planned settlement with bakeries, breweries, and even a hospital.',
           },
           {
             title: 'How Was It Done?',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Egypt.KomOmbo.03.jpg/800px-Egypt.KomOmbo.03.jpg', caption: 'Kom Ombo temple reliefs depicting ancient Egyptian craftsmen and workers. Egyptian art extensively documented practical working life.' },
+            ],
             body: 'The logistics of building the Great Pyramid of Giza are staggering. About 2.3 million stone blocks, averaging 2.5 tons each, were quarried, transported, and precisely placed.\n\nModern experiments and computer modeling have shown that relatively small teams could move the stones using wooden sledges, water-lubricated sand, and ramps. A workforce of around 20,000–30,000 workers could have built the Great Pyramid over 20 years.',
           },
         ],
@@ -177,15 +207,21 @@ export const courses: Course[] = [
       {
         id: 'cleopatra',
         title: 'Cleopatra: Beyond the Myth',
-        imageUrl: 'https://images.unsplash.com/photo-1569949381669-ecf31ae8e613?w=800&q=80',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Kleopatra-VII.-Altes-Museum-Berlin1.jpg/600px-Kleopatra-VII.-Altes-Museum-Berlin1.jpg',
         pages: [
           {
             title: 'The Real Cleopatra',
-            imageUrl: 'https://images.unsplash.com/photo-1569949381669-ecf31ae8e613?w=800&q=80',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Kleopatra-VII.-Altes-Museum-Berlin1.jpg/600px-Kleopatra-VII.-Altes-Museum-Berlin1.jpg', caption: 'Marble portrait of Cleopatra VII (c. 50–30 BCE). Altes Museum, Berlin. The "Berlin Cleopatra" — one of the few surviving portraits thought to genuinely resemble her.' },
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Lawrence_Alma-Tadema_-_The_Meeting_of_Antony_and_Cleopatra%2C_41_BC.jpg/800px-Lawrence_Alma-Tadema_-_The_Meeting_of_Antony_and_Cleopatra%2C_41_BC.jpg', caption: 'Lawrence Alma-Tadema — The Meeting of Antony and Cleopatra, 41 BC (1883). Private collection. The alliance was calculated politics as much as romance.' },
+            ],
             body: 'Cleopatra VII was far more remarkable than Hollywood suggests. She was not primarily known for her looks but for her extraordinary intelligence and political skill.\n\nCleopatra was the first ruler of her dynasty to actually learn the Egyptian language. She spoke nine languages in total. Previous Ptolemaic rulers had ruled Egypt for nearly 300 years without learning Egyptian.',
           },
           {
             title: 'A Political Mastermind',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Jean-Leon-Gerome_Pollice_Verso.jpg/800px-Jean-Leon-Gerome_Pollice_Verso.jpg', caption: 'Jean-Léon Gérôme — Pollice Verso (1872). Phoenix Art Museum. Rome\'s power — which Cleopatra spent her life navigating — was ultimately backed by military force.' },
+            ],
             body: 'Cleopatra\'s relationships with Julius Caesar and Mark Antony were calculated political alliances to protect Egypt\'s independence from the growing Roman Republic.\n\nAfter Caesar\'s assassination, she allied with Mark Antony. Together they tried to create an Eastern empire. When their forces were defeated at the Battle of Actium in 31 BCE, Cleopatra chose death over the humiliation of being paraded through Rome as a captive.',
           },
         ],
@@ -239,7 +275,7 @@ export const courses: Course[] = [
   {
     id: 'stoicism-epicureanism',
     title: 'Stoics vs. Epicureans: The Art of Living',
-    imageUrl: 'https://images.unsplash.com/photo-1456081101716-74e616ab23d8?w=800&q=80',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/MSR-ra-61-b-1-DSC00164.jpg/600px-MSR-ra-61-b-1-DSC00164.jpg',
     topicId: 'philosophy',
     rating: 4.9,
     estimatedMinutes: 16,
@@ -247,7 +283,7 @@ export const courses: Course[] = [
       {
         id: 'stoicism',
         title: 'Stoicism: Mastering the Inner World',
-        imageUrl: 'https://images.unsplash.com/photo-1456081101716-74e616ab23d8?w=800&q=80',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/MSR-ra-61-b-1-DSC00164.jpg/600px-MSR-ra-61-b-1-DSC00164.jpg',
         pages: [
           {
             title: 'The Philosophy That Conquered Rome',
@@ -285,7 +321,7 @@ export const courses: Course[] = [
       {
         id: 'epicureanism',
         title: 'Epicureanism: Pleasure, Friendship & Death',
-        imageUrl: 'https://images.unsplash.com/photo-1474552226712-ac0f0961a954?w=800&q=80',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Epikouros_BM_1843.jpg/500px-Epikouros_BM_1843.jpg',
         pages: [
           {
             title: 'The Most Misunderstood Philosophy',
@@ -312,7 +348,7 @@ export const courses: Course[] = [
   {
     id: 'ethics-morality',
     title: 'What Is Right? A History of Ethics',
-    imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Kant_gemaelde_3.jpg/500px-Kant_gemaelde_3.jpg',
     topicId: 'philosophy',
     rating: 4.8,
     estimatedMinutes: 18,
@@ -320,7 +356,7 @@ export const courses: Course[] = [
       {
         id: 'kant-ethics',
         title: 'Kant: The Moral Law Within',
-        imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Kant_gemaelde_3.jpg/500px-Kant_gemaelde_3.jpg',
         pages: [
           {
             title: 'The Philosopher Who Never Left Königsberg',
@@ -349,7 +385,7 @@ export const courses: Course[] = [
       {
         id: 'utilitarianism',
         title: 'Utilitarianism: The Greatest Happiness',
-        imageUrl: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Jeremy_Bentham_by_Henry_William_Pickersgill_detail.jpg/500px-Jeremy_Bentham_by_Henry_William_Pickersgill_detail.jpg',
         pages: [
           {
             title: 'Bentham and the Happiness Calculus',
@@ -374,7 +410,7 @@ export const courses: Course[] = [
       {
         id: 'existentialism',
         title: 'Existentialism: Freedom and Anxiety',
-        imageUrl: 'https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=800&q=80',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Edvard_Munch_-_The_Scream_-_Google_Art_Project.jpg/600px-Edvard_Munch_-_The_Scream_-_Google_Art_Project.jpg',
         pages: [
           {
             title: 'Existence Before Essence',
@@ -407,7 +443,7 @@ export const courses: Course[] = [
   {
     id: 'mind-reality',
     title: 'Mind, Knowledge & Reality',
-    imageUrl: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Frans_Hals_-_Portret_van_René_Descartes.jpg/500px-Frans_Hals_-_Portret_van_René_Descartes.jpg',
     topicId: 'philosophy',
     rating: 4.6,
     estimatedMinutes: 14,
@@ -415,7 +451,7 @@ export const courses: Course[] = [
       {
         id: 'descartes-doubt',
         title: 'Descartes: I Think, Therefore I Am',
-        imageUrl: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Frans_Hals_-_Portret_van_René_Descartes.jpg/500px-Frans_Hals_-_Portret_van_René_Descartes.jpg',
         pages: [
           {
             title: 'The Method of Radical Doubt',
@@ -440,7 +476,7 @@ export const courses: Course[] = [
       {
         id: 'plato-reality',
         title: 'Plato: The World of Forms',
-        imageUrl: 'https://images.unsplash.com/photo-1555990793-da11153b2473?w=800&q=80',
+        imageUrl: '/paintings/school_of_athens.jpg',
         pages: [
           {
             title: 'The Cave and the Shadow World',
@@ -471,7 +507,7 @@ export const courses: Course[] = [
   {
     id: 'cold-war-politics',
     title: 'The Cold War Explained',
-    imageUrl: 'https://images.unsplash.com/photo-1584824486509-112e4181ff6b?w=800&q=80',
+    imageUrl: '/paintings/berlin_wall.jpg',
     topicId: 'politics',
     rating: 4.6,
     estimatedMinutes: 10,
@@ -479,15 +515,21 @@ export const courses: Course[] = [
       {
         id: 'iron-curtain',
         title: 'Behind the Iron Curtain',
-        imageUrl: 'https://images.unsplash.com/photo-1584824486509-112e4181ff6b?w=800&q=80',
+        imageUrl: '/paintings/berlin_wall.jpg',
         pages: [
           {
             title: 'A World Divided',
-            imageUrl: 'https://images.unsplash.com/photo-1584824486509-112e4181ff6b?w=800&q=80',
+            images: [
+              { url: '/paintings/berlin_wall.jpg', caption: 'The Berlin Wall — the Iron Curtain made concrete. For 28 years it divided East and West Berlin, and symbolised the Cold War division of the entire world.' },
+              { url: '/paintings/german_reunification.jpg', caption: 'German Reunification, 1990. The end of the Cold War began with the fall of the Wall on 9 November 1989.' },
+            ],
             body: 'The Cold War (1947–1991) was not a traditional war fought with armies on battlefields. It was a prolonged geopolitical, ideological, and economic struggle between two superpowers: the United States and the Soviet Union.\n\nThe term "Iron Curtain" was popularized by Winston Churchill in a 1946 speech. It described the division of Europe into Western liberal democracies and Eastern Soviet-dominated communist states.',
           },
           {
             title: 'Ideology and Proxy Wars',
+            images: [
+              { url: '/paintings/berlin_wall_fall.jpg', caption: 'The fall of the Berlin Wall, November 1989 — the moment the Cold War ended. The crowd tears down the symbol of four decades of division.' },
+            ],
             body: 'The Cold War was fundamentally a battle of ideas: American capitalism and liberal democracy versus Soviet communism. Both sides believed their system was the natural destiny of humanity.\n\nBecause direct war between nuclear-armed superpowers would risk mutual annihilation, the conflict played out through proxy wars in Korea, Vietnam, Angola, Afghanistan, and dozens of other countries.',
           },
         ],
@@ -501,7 +543,7 @@ export const courses: Course[] = [
   {
     id: 'world-cultures',
     title: 'Lost Civilizations',
-    imageUrl: 'https://images.unsplash.com/photo-1518638150340-f706e86654de?w=800&q=80',
+    imageUrl: '/paintings/greek_amphora.jpg',
     topicId: 'culture',
     rating: 4.8,
     estimatedMinutes: 10,
@@ -509,15 +551,21 @@ export const courses: Course[] = [
       {
         id: 'maya-civilization',
         title: 'The Maya: Masters of Time',
-        imageUrl: 'https://images.unsplash.com/photo-1518638150340-f706e86654de?w=800&q=80',
+        imageUrl: '/paintings/greek_amphora.jpg',
         pages: [
           {
             title: 'A Civilization of Genius',
-            imageUrl: 'https://images.unsplash.com/photo-1518638150340-f706e86654de?w=800&q=80',
+            images: [
+              { url: '/paintings/greek_amphora.jpg', caption: 'Greek amphora with mythological scenes (c. 530 BCE). Ancient civilisations across the world independently developed complex art, writing, and astronomy.' },
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Chichen_Itza_3.jpg/800px-Chichen_Itza_3.jpg', caption: 'El Castillo (Temple of Kukulcán), Chichen Itza, Mexico (c. 9th–12th century CE). A testament to Maya astronomical and architectural precision.' },
+            ],
             body: 'The Maya civilization flourished for over two thousand years in Mesoamerica. At their height (roughly 250–900 CE), the Maya built some of the most sophisticated cities in the ancient world.\n\nMayan cities like Tikal, Palenque, and Chichen Itza featured towering pyramids, elaborate palaces, astronomic observatories, and complex water management systems. Tikal at its peak had a population of perhaps 100,000 people.',
           },
           {
             title: 'Mathematics, Astronomy & Collapse',
+            images: [
+              { url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Maya_maize_god_-_The_Walters_Art_Museum.jpg/500px-Maya_maize_god_-_The_Walters_Art_Museum.jpg', caption: 'Maya maize god sculpture (c. 715 CE). The Walters Art Museum. The Maya developed one of the most sophisticated cosmologies of the ancient world.' },
+            ],
             body: 'The Maya made extraordinary advances in mathematics and astronomy. They independently developed the concept of zero — one of history\'s most important mathematical innovations. Their calendar system was so precise it rivals our own.\n\nThe "Classic Maya Collapse" between 800 and 1000 CE saw the abandonment of major southern lowland cities. But the Maya did not disappear — millions of Maya people live in Mexico and Central America today.',
           },
         ],
@@ -1046,7 +1094,7 @@ export const courses: Course[] = [
   {
     id: 'democracy-origins',
     title: 'The Origins of Democracy',
-    imageUrl: 'https://images.unsplash.com/photo-1555848962-6e79363ec58f?w=800&q=80',
+    imageUrl: '/paintings/acropolis_daguerreotype.jpg',
     topicId: 'politics',
     rating: 4.8,
     estimatedMinutes: 12,
@@ -1054,15 +1102,21 @@ export const courses: Course[] = [
       {
         id: 'athens-democracy',
         title: 'Athens: The First Democracy',
-        imageUrl: 'https://images.unsplash.com/photo-1555848962-6e79363ec58f?w=800&q=80',
+        imageUrl: '/paintings/acropolis_daguerreotype.jpg',
         pages: [
           {
             title: 'The World\'s First Experiment',
-            imageUrl: 'https://images.unsplash.com/photo-1555848962-6e79363ec58f?w=800&q=80',
+            images: [
+              { url: '/paintings/acropolis_daguerreotype.jpg', caption: 'Daguerreotype of the Acropolis, Athens (c. 1842). The Parthenon looms over the city where democracy was born in 508 BCE.' },
+              { url: '/paintings/school_of_athens.jpg', caption: 'Raphael — The School of Athens (1509–11). The intellectual culture of Athens gave birth to philosophy and democracy simultaneously.' },
+            ],
             body: 'Around 508 BCE, the Athenian statesman Cleisthenes introduced a radical new system of government: demokratia — "rule by the people." For the first time in recorded history, ordinary citizens would have a direct voice in how their city was run.\n\nThe Athenian Assembly (Ekklesia) met regularly on a hillside called the Pnyx. Any adult male citizen could attend, speak, and vote. Decisions on war, treaties, laws, and finances were made by a show of hands. At its height, perhaps 6,000 citizens regularly participated.',
           },
           {
             title: 'The Limits and Legacies',
+            images: [
+              { url: '/paintings/greek_amphora.jpg', caption: 'Athenian black-figure amphora (c. 530 BCE). Everyday life depicted on pottery shows the vibrant civic culture that democracy both reflected and produced.' },
+            ],
             body: 'Athenian democracy had profound limitations. Women, slaves, and foreigners — the majority of Athens\'s population — were excluded. "The people" meant a privileged minority.\n\nYet the Athenian experiment planted ideas that would not die: that ordinary people could govern themselves, that rulers should be accountable, that free debate is the foundation of good decisions. These ideas resurfaced in the Roman Republic, the Magna Carta, the English Parliament, the American Revolution, and the French Revolution.',
           },
         ],
@@ -1074,15 +1128,21 @@ export const courses: Course[] = [
       {
         id: 'magna-carta',
         title: 'Magna Carta: The Law Above Kings',
-        imageUrl: 'https://images.unsplash.com/photo-1568819317551-f8b8b4e7c9f2?w=800&q=80',
+        imageUrl: '/paintings/feudal_europe.jpg',
         pages: [
           {
             title: 'A King Forced to Sign',
-            imageUrl: 'https://images.unsplash.com/photo-1568819317551-f8b8b4e7c9f2?w=800&q=80',
+            images: [
+              { url: '/paintings/feudal_europe.jpg', caption: 'Medieval manuscript illumination depicting feudal hierarchy. In 1215, English barons challenged royal authority — an act with world-historical consequences.' },
+              { url: '/paintings/charlemagne.jpg', caption: 'Albrecht Dürer — Charlemagne (1512). The feudal order that Charlemagne established made the barons\' revolt against King John possible.' },
+            ],
             body: 'In June 1215, English barons who had grown fed up with the arbitrary tyranny of King John forced him to a meadow at Runnymede, beside the River Thames, and made him set his seal on a document: the Magna Carta (Great Charter).\n\nFor the first time, an English monarch was forced to acknowledge that his power had limits. The King was subject to the law, not above it. Key clauses guaranteed that no free man could be imprisoned or punished except by the lawful judgment of his peers.',
           },
           {
             title: 'Why It Still Matters',
+            images: [
+              { url: '/paintings/congress_vienna.jpg', caption: 'Jean-Baptiste Isabey — Congress of Vienna (1819). Europe\'s post-Napoleonic statesmen invoked Magna Carta principles in crafting a new constitutional order.' },
+            ],
             body: 'Most of the Magna Carta\'s 63 clauses dealt with feudal grievances of little lasting importance. But a handful of principles proved immortal: due process, the rule of law, and the idea that government requires consent.\n\nThe document was reinterpreted in every subsequent era of constitutional struggle. When American colonists declared independence from Britain, they cited Magna Carta principles. The 1948 Universal Declaration of Human Rights echoes its spirit. Today it is considered the cornerstone of constitutional government in the English-speaking world.',
           },
         ],
@@ -1096,7 +1156,7 @@ export const courses: Course[] = [
   {
     id: 'revolutions-power',
     title: 'Revolutions & the Seizure of Power',
-    imageUrl: 'https://images.unsplash.com/photo-1609743522653-52354461eb27?w=800&q=80',
+    imageUrl: '/paintings/liberty_leading_people.jpg',
     topicId: 'politics',
     rating: 4.7,
     estimatedMinutes: 14,
@@ -1104,15 +1164,22 @@ export const courses: Course[] = [
       {
         id: 'french-revolution',
         title: 'The French Revolution',
-        imageUrl: 'https://images.unsplash.com/photo-1609743522653-52354461eb27?w=800&q=80',
+        imageUrl: '/paintings/liberty_leading_people.jpg',
         pages: [
           {
             title: 'Liberty, Equality, Fraternity — and Terror',
-            imageUrl: 'https://images.unsplash.com/photo-1609743522653-52354461eb27?w=800&q=80',
+            images: [
+              { url: '/paintings/prise_de_la_bastille.jpg', caption: 'Jean-Pierre Houël — The Storming of the Bastille (1789). Bibliothèque nationale de France. The symbolic act that launched the Revolution.' },
+              { url: '/paintings/liberty_leading_people.jpg', caption: 'Eugène Delacroix — Liberty Leading the People (1830). Louvre, Paris. The Revolution\'s enduring image: liberty as a force of nature.' },
+            ],
             body: 'The French Revolution (1789–1799) began with bread riots and a storming of the Bastille prison and ended with Napoleon seizing power. In between, it executed a king and queen, launched a Reign of Terror that killed tens of thousands, abolished feudalism, and proclaimed the rights of man.\n\nFrance in 1789 was a society on the edge. The state was bankrupt from wars. Harvests had failed. The nobility and clergy paid almost no taxes while ordinary people starved. When Louis XVI called the Estates-General, the Third Estate (commoners) refused to play by the old rules.',
           },
           {
             title: 'The Revolution Devours Its Own',
+            images: [
+              { url: '/paintings/marat_assassinated.jpg', caption: 'Jacques-Louis David — The Death of Marat (1793). Musées royaux des Beaux-Arts, Brussels. The revolutionary journalist Jean-Paul Marat, murdered in his bath.' },
+              { url: '/paintings/coronation_napoleon.jpg', caption: 'Jacques-Louis David — The Coronation of Napoleon (1807). Louvre, Paris. The Revolution ended with Napoleon crowning himself Emperor.' },
+            ],
             body: 'The Reign of Terror (1793–1794) showed how revolutions can turn monstrous. Maximilien Robespierre and the Committee of Public Safety guillotined not just aristocrats and priests but fellow revolutionaries — anyone suspected of insufficient zeal.\n\nRobespierre himself was eventually arrested and guillotined. The Revolution\'s ideals — liberty, equality, fraternity — survived in the long run, spreading across Europe and the Americas. But the path was soaked in blood.',
           },
         ],
@@ -1124,15 +1191,21 @@ export const courses: Course[] = [
       {
         id: 'propaganda-power',
         title: 'Propaganda: The Weapon of Regimes',
-        imageUrl: 'https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=800&q=80',
+        imageUrl: '/paintings/weimar_satire.jpg',
         pages: [
           {
             title: 'How Governments Shape Minds',
-            imageUrl: 'https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=800&q=80',
+            images: [
+              { url: '/paintings/weimar_satire.jpg', caption: 'George Grosz — Weimar-era political satire (1920s). The collapse of democratic norms and rise of propaganda in the Weimar Republic paved the way for fascism.' },
+              { url: '/paintings/fascist_italy.jpg', caption: 'Fascist Italy poster art (1930s). Mussolini\'s regime perfected the use of monumental imagery, mass rallies, and state-controlled media.' },
+            ],
             body: 'Propaganda is as old as politics. Roman emperors had their image stamped on every coin. Medieval kings used religious pageantry to project sacred authority. But the 20th century industrialised propaganda on a terrifying scale.\n\nJoseph Goebbels, Nazi Germany\'s Minister of Propaganda, understood that controlling information meant controlling reality. Radio, cinema, rallies, posters, textbooks — every medium was weaponised. The aim was not simply to inform but to overwhelm rational thought with emotional intensity.',
           },
           {
             title: 'Propaganda in the Modern World',
+            images: [
+              { url: '/paintings/wwii_holocaust.jpg', caption: 'The Holocaust — the ultimate consequence of unchallenged propaganda and dehumanisation. Propaganda did not cause it alone, but made it possible.' },
+            ],
             body: 'Soviet propaganda used heroic imagery — the selfless worker, the brave soldier — to project an idealised vision of communist society far removed from the reality of gulags and famines.\n\nModern propaganda has moved online. Social media algorithms amplify outrage and division. "Deepfake" technology can put words in anyone\'s mouth. The mechanisms are new but the goal is ancient: to make people see what power wants them to see, and to distrust what power wants them to doubt.',
           },
         ],
